@@ -10,6 +10,8 @@ export default function LoginScreen({ navigation }) {
     <View style={styles.container}>
       <Text>Login Screen</Text>
       <StatusBar style="auto" />
+      <Button title="Login" onPress={() => navigation.navigate('Landing')}/>
+      <Button title="Register" onPress={() => navigation.navigate('Register')}/>
     </View>
   );
 }

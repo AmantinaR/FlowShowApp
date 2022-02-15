@@ -10,6 +10,7 @@ export default function RegisterScreen({ navigation }) {
     <View style={styles.container}>
       <Text>Register Screen</Text>
       <StatusBar style="auto" />
+      <Button title="Register" onPress={() => navigation.navigate('Landing')}/>
     </View>
   );
 }
