@@ -1,16 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
+import { Text, View, StyleSheet, Button, SafeAreaView, TextInput } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import AddScreenInput from './AddScreenInput';
+import AddScreenConfirm from './AddScreenConfirm';
+
+const AddStack = createStackNavigator();
 
 export default function AddTab({ navigation }) {
   return (
-    <View style={styles.container}>
-      <Text>Add Tab</Text>
-      <StatusBar style="auto" />
-    </View>
+    <AddStack.Navigator>
+      <AddStack.Screen name = "Input" component={AddScreenInput} options={{headerShown: false}}/>
+      <AddStack.Screen name = "Confirm" component={AddScreenConfirm}/>
+    </AddStack.Navigator>
   );
 }
 

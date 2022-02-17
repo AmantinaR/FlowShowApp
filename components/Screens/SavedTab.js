@@ -1,16 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
+import { Text, View, StyleSheet, Button, SafeAreaView, TextInput } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-export default function ReportTab({ navigation }) {
+export default function SavedTab({ navigation }) {
   return (
-    <View style={styles.container}>
-      <Text>Profile Tab</Text>
+    <SafeAreaView style={styles.container}>
+      <Text>Saved Tab, only one screen so create flatlist here</Text>
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
