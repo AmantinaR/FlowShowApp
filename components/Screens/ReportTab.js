@@ -14,7 +14,7 @@ const ReportStack = createStackNavigator();
 export default function ReportTab({ navigation }) {
   return (
     <ReportStack.Navigator>
-      <ReportStack.Screen name="Landing" component={Landing}/>
+      <ReportStack.Screen name="Landing" component={Landing} options={{headerShown: false}}/>
       <ReportStack.Screen name="Input" component={Input}/>
       <ReportStack.Screen name="Confirm" component={Confirm}/>
       <ReportStack.Screen name="Status" component={Status}/>

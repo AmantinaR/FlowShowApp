@@ -13,7 +13,11 @@ import ProfileTab from './ProfileTab';
 
 import SVGImg from '../../assets/saved-icon.svg';
 import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Octicons } from '@expo/vector-icons';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -24,18 +28,20 @@ export default function MainTab({ navigation }) {
             let iconName;
 
             if (route.name === 'Search') {
-              iconName = 'safari'
+              return <FontAwesome5 name='search-location' size={size} color={color} />;
             } else if (route.name === 'Saved') {
-              iconName = 'map-pin'
+              return <FontAwesome name='bookmark-o' size={size} color={color} />;
             } else if (route.name === 'Profile') {
-              return <Image source={require('../../assets/favicon.png')}/>
+              return <MaterialCommunityIcons name='account-circle-outline' size={size} color={color} />;
+            } else if (route.name == 'Add') {
+              return <Ionicons name='add-circle' size={size} color={color} />;
+            } else if (route.name == 'Report') {
+              return <Octicons name='report' size={size} color={color} />;
             }
 
-            // You can return any component that you like here!
-            return <FontAwesome name={iconName} size={size} color={color} />;
           },
-          tabBarActiveTintColor: 'black',
-          tabBarInactiveTintColor: 'gray'})}>
+          tabBarActiveTintColor: '#C10C0D',
+          tabBarInactiveTintColor: 'black'})}>
 
         <Tab.Screen name="Saved" component={SavedTab} options={{headerShown: false}}/>
         <Tab.Screen name="Add" component={AddTab} options={{headerShown: false}}/>

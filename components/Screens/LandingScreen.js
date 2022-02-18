@@ -11,7 +11,6 @@ import SVGImg from '../../assets/saved-icon.svg';
 export default function LandingScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <SVGImg width="20" height="15"/>
       <Image source={require('../../assets/landing-blob.png')} style={styles.blob}/>
       <Image source={require("../../assets/logo-large.png")} style={styles.logo}/>
       <StatusBar style="auto" />
