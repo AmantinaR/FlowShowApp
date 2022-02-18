@@ -4,12 +4,14 @@ import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, Image, Pressab
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
+import Svg, { Circle } from 'react-native-svg';
+import SVGImg from '../../assets/saved-icon.svg';
 
 
 export default function LandingScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
+      <SVGImg width="20" height="15"/>
       <Image source={require('../../assets/landing-blob.png')} style={styles.blob}/>
       <Image source={require("../../assets/logo-large.png")} style={styles.logo}/>
       <StatusBar style="auto" />
