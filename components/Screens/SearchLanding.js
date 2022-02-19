@@ -8,16 +8,26 @@ import MapView from 'react-native-maps';
 import FeatureButton from '../buttons/FeatureButton';
 import FeatureList from '../FeaturesList';
 import SearchBar from '../SearchBar';
-import SearchLanding from './SearchLanding'
+import Default from '../lists/data/Default.js';
+import ResultList from '../lists/ResultsList';
 
-const SearchStack = createStackNavigator();
-
-export default function SearchTab({ navigation }) {
-
+export default function SearchLanding({ navigation }) {
   return (
-    <SearchStack.Navigator>
-      <SearchStack.Screen name="Landing" component={SearchLanding} options={{headerShown: false}}/>
-    </SearchStack.Navigator>
+    <SafeAreaView style={styles.container}>
+      <SearchBar/>
+      <Text>Search Features</Text>
+      <FeatureList/>
+      <StatusBar style="auto" />
+      <MapView
+        initialRegion={{
+          latitude: 37.78825,
+          longitude: -122.4324,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
+        }} style={styles.map}
+        />
+
+    </SafeAreaView>
   );
 }
 

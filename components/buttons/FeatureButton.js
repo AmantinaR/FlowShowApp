@@ -38,4 +38,4 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 8.87
   }
-})
+});
