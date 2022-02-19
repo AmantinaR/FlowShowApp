@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
-import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, Image, Pressable } from 'react-native';
+import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, Image, Pressable, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -15,15 +15,15 @@ export default function LandingScreen({ navigation }) {
       <Image source={require("../../assets/logo-large.png")} style={styles.logo}/>
       <StatusBar style="auto" />
       <View style={styles.buttonsBox}>
-        <Pressable onPress={() => navigation.navigate('Tabs', { screen: 'Search' })}>
+        <TouchableOpacity onPress={() => navigation.navigate('Tabs', { screen: 'Search' })}>
           <Image source={require('../../assets/find-bathroom.png')} style={styles.button}/>
-        </Pressable>
-        <Pressable onPress={() => navigation.navigate('Tabs', { screen: 'Report' })}>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Tabs', { screen: 'Report' })}>
           <Image source={require('../../assets/report-bathroom.png')} style={styles.button}/>
-        </Pressable>
-        <Pressable onPress={() => navigation.navigate('Tabs', { screen: 'Saved' })}>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('Tabs', { screen: 'Saved' })}>
           <Image source={require('../../assets/saved-bathrooms.png')} style={styles.button}/>
-        </Pressable>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
