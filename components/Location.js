@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
     color: 'pink'
   },
   text: {
-    fontSize: 10
+    fontSize: 10,
+
   },
 });
