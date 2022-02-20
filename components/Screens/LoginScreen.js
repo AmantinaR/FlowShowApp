@@ -8,7 +8,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 export default function LoginScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Login Test</Text>
+      <Text>Login Screen</Text>
       <StatusBar style="auto" />
       <TextInput style={styles.textBox} placeholder='username' autoCorrect={false}/>
       <TextInput style={styles.textBox} placeholder='password' secureTextEntry={true}/>
