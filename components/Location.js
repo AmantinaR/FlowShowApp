@@ -28,10 +28,10 @@ const styles = StyleSheet.create({
   container: {
     //flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     borderWidth: 1,
     borderColor: 'black',
-    width: 200
+    width: 350
   },
   distanceTextFlex: {
     flexDirection: 'row',

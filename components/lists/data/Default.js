@@ -49,3 +49,5 @@ const Default = [
     status : 'Open Now'
   }
 ];
+
+export default Default;

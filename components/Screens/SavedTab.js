@@ -7,14 +7,14 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ResultsList from '../lists/ResultsList'
 import Default from '../lists/data/Default';
 import Location from '../Location';
-import Image from '../../assets/LocationImages';
+import Images from '../../assets/LocationImages';
 
 export default function SavedTab({ navigation }) {
+  console.log(Default);
   return (
     <SafeAreaView style={styles.container}>
       <Text>Saved Tab, only one screen so create flatlist here</Text>
-      <Location miles='50ft' name='test' address='test' number='234' status='open' source={Image.Lathrop}/>
-      <ResultsList data={Default}/>
+      <ResultsList data = {Default}/>
       <StatusBar style="auto" />
     </SafeAreaView>
   );

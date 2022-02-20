@@ -4,11 +4,41 @@ import { Text, View, StyleSheet, Button, SafeAreaView, TextInput } from 'react-n
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import ProductsRequested from '../ProductsRequested';
+import Disposal from '../Disposal';
+import Satisfaction from '../buttons/Satisfaction';
 
 export default function ReportInput({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Report Input</Text>
+      <Text>Report Issue(s)</Text>
+      <Text>You tell us the issue(s), and we'll work with the building managers to solve them</Text>
+      <View style={styles.textFlex}>
+        <Text>Bathroom Building</Text>
+        <TextInput style={styles.textBox} placeholder='Building Name'/>
+      </View>
+      <View style={styles.textFlex}>
+        <Text>Bathroom Room #</Text>
+        <TextInput style={styles.textBox} placeholder='Room #'/>
+      </View>
+      <View style={styles.featuresFlex}>
+        <Text>Products Requested</Text>
+        <ProductsRequested/>
+      </View>
+      <View style={styles.featuresFlex}>
+        <Text>Disposal Options Missing</Text>
+        <Disposal/>
+      </View>
+      <View style={styles.featuresFlex}>
+        <Text>How satisfied are you with the cleanliness?</Text>
+        <View style={styles.satisfaction}>
+          <Satisfaction emotion='angry'/>
+          <Satisfaction emotion='sad'/>
+          <Satisfaction emotion='neutral'/>
+          <Satisfaction emotion='smile'/>
+          <Satisfaction emotion='happy'/>
+        </View>
+      </View>
       <Button title="Confirm" onPress={() => navigation.navigate('Confirm')}/>
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -22,4 +52,25 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  textFlex: {
+    flexDirection: 'row',
+  },
+  textBox: {
+    borderWidth: 1,
+    borderColor: 'black',
+    height: 40,
+    padding: 10,
+    margin: 12,
+    width: 200
+  },
+  featuresFlex: {
+
+  },
+  satisfaction: {
+    flexDirection: 'row',
+    borderWidth: 1,
+    borderColor: '#E8A798',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  }
 });
