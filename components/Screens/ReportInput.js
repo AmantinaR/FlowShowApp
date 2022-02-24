@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
+import {useState} from 'react';
 import { Text, View, StyleSheet, Button, SafeAreaView, TextInput } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -7,8 +8,17 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ProductsRequested from '../ProductsRequested';
 import Disposal from '../Disposal';
 import Satisfaction from '../buttons/Satisfaction';
+import SatisfactionRadio from '../buttons/SatisfactionRadio';
 
 export default function ReportInput({ navigation }) {
+  const [option, setOption] = useState(null);
+  const data = [
+    { value: "angry" },
+    { value: "sad" },
+    { value: "neutral" },
+    { value: "smile" },
+    { value: "happy" },
+  ];
   return (
     <SafeAreaView style={styles.container}>
       <Text>Report Issue(s)</Text>
@@ -31,13 +41,7 @@ export default function ReportInput({ navigation }) {
       </View>
       <View style={styles.featuresFlex}>
         <Text>How satisfied are you with the cleanliness?</Text>
-        <View style={styles.satisfaction}>
-          <Satisfaction emotion='angry'/>
-          <Satisfaction emotion='sad'/>
-          <Satisfaction emotion='neutral'/>
-          <Satisfaction emotion='smile'/>
-          <Satisfaction emotion='happy'/>
-        </View>
+        <SatisfactionRadio data={data} onSelect={(value) => setOption(value)}/>
       </View>
       <Button title="Confirm" onPress={() => navigation.navigate('Confirm')}/>
       <StatusBar style="auto" />

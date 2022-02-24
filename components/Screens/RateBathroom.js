@@ -1,31 +1,26 @@
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 import {useState} from 'react';
-import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, Image, ImageBackground } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import GenderRadio from '../buttons/GenderRadio';
 import FeaturesList from '../FeaturesList';
 
-export default function AddScreenInput({ navigation }) {
-  const [option, setOption] = useState(null);
-  const data = [
-    { value: "Women's" },
-    { value: "Gender Neutral" },
-    { value: "Men's" },
-  ];
 
+
+export default function RateScreen({ navigation, route }) {
+  const params = route.params;
+  console.log(params.accessible);
   return (
     <SafeAreaView style={styles.container}>
-    <ScrollView contentContainerStyle={styles.container}>
-      <Text>Add Screen Input</Text>
-      <TextInput style={styles.textBox} placeholder='Bathroom Building'/>
-      <TextInput style={styles.textBox} placeholder='Room #'/>
-      <Text>What gender is this bathroom?</Text>
-      <GenderRadio data={data} onSelect={(value) => setOption(value)}/>
+      <ImageBackground source={params.source} style={styles.imagebkd} imageStyle={styles.image} >
+        <Text style={styles.nameText}>{params.name}</Text>
+        <Text style={styles.numberText}>Bathroom {params.number}</Text>
+      </ImageBackground>
       <Text>Rate Bathroom</Text>
-      <Text>What features does this bathroom have</Text>
+      <Text>Features</Text>
       <FeaturesList/>
       <Text>Upload a Photo of Bathroom Assets</Text>
       <View style={styles.photoSection}>
@@ -36,12 +31,10 @@ export default function AddScreenInput({ navigation }) {
           <Text>take photo button here</Text>
           <Text>upload photo button here</Text>
         </View>
+
       </View>
-      <Text>Additional Comments</Text>
       <TextInput style={styles.comments} placeholder={'Please write any comments here'}/>
-      <Button title="Add Bathroom" onPress={() => navigation.navigate('Confirm')}/>
-      <StatusBar style="auto" />
-    </ScrollView>
+      <Text> done button here, take to confirm page?</Text>
     </SafeAreaView>
   );
 }
@@ -53,13 +46,39 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  textBox: {
-    borderWidth: 1,
+  imagebkd: {
+    height: '37%',
+    width: '92%',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-end',
     borderColor: 'black',
-    height: 40,
+    borderWidth: 1,
+
+
+  },
+  image: {
+    height: '100%',
+    width: '100%',
+
+  },
+  nameText: {
+    marginLeft: 10,
+    color: 'white'
+  },
+  numberText: {
+    marginLeft: 10,
+    color: 'white'
+  },
+  features: {
+    flexDirection: 'row'
+  },
+  comments: {
+    borderWidth: 1,
+    borderColor: 'grey',
+    width: '90%',
+    height: '18%',
     padding: 10,
-    margin: 12,
-    width: 200
+    alignItems: 'flex-end'
   },
   photoSection: {
     flexDirection: 'row'
@@ -70,13 +89,5 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     width: 150,
     height: 90
-  },
-  comments: {
-    borderWidth: 1,
-    borderColor: 'grey',
-    width: '90%',
-    height: '18%',
-    padding: 10,
-    alignItems: 'flex-end'
-  },
+  }
 });

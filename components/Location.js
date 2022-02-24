@@ -2,10 +2,12 @@ import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, TouchableOpacity, Pressable, Image } from 'react-native';
 import { useState } from "react";
+import { useNavigation } from '@react-navigation/native';
 
 export default function Location(props) {
+  const navigation = useNavigation();
   return(
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={() => navigation.navigate(props.list, props)}>
       <View style={styles.distanceTextFlex}>
         <Text style={styles.miles}>{props.miles}</Text>
         <Text style={styles.text}>away from you</Text>

@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MapView from 'react-native-maps';
+import {Marker} from 'react-native-maps';
 import FeatureButton from '../buttons/FeatureButton';
 import FeatureList from '../FeaturesList';
 import SearchBar from '../SearchBar';
@@ -20,12 +21,22 @@ export default function SearchLanding({ navigation }) {
       <StatusBar style="auto" />
       <MapView
         initialRegion={{
-          latitude: 37.78825,
-          longitude: -122.4324,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
+          latitude: 37.427238,
+          longitude: -122.168587,
+          latitudeDelta: 0.005,
+          longitudeDelta: 0.005,
         }} style={styles.map}
-        />
+        >
+          <Marker coordinate={{latitude: 37.4295238646884, longitude: -122.16790117770296}}
+          image={require('../../assets/current-location.png')}/>
+          {Default.map((item) => {
+            return(
+              <Marker coordinate = {{latitude: item.lat, longitude: item.lng}}
+              title={item.name}/>
+            );
+          })}
+        </MapView>
+        <ResultList data = {Default}/>
 
     </SafeAreaView>
   );

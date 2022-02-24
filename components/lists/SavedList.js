@@ -11,7 +11,7 @@ import DataList from './data/Default';
 
 
 
-export default function ResultsList(props) {
+export default function SavedList(props) {
 
   const renderLocation = (location) => {
     return(
@@ -22,16 +22,7 @@ export default function ResultsList(props) {
         address = {location.item.address}
         number = {location.item.number}
         status = {location.item.status}
-        list = {'Bathroom'}
-        accessible= {location.item.accessible}
-        gNeutral= {location.item.gNeutral}
-        freePads= {location.item.freePads}
-        tampons= {location.item.tampons}
-        clean= {location.item.clean}
-        diapers= {location.item.diapers}
-        condoms= {location.item.condoms}
-        planB= {location.item.planB}
-        wipes= {location.item.wipes}
+        list = {'Saved'}
       />);
   }
 
@@ -57,6 +48,5 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     borderWidth: 1,
     width: 375,
-    height: 250,
   },
 });

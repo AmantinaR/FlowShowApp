@@ -8,7 +8,9 @@ import MapView from 'react-native-maps';
 import FeatureButton from '../buttons/FeatureButton';
 import FeatureList from '../FeaturesList';
 import SearchBar from '../SearchBar';
-import SearchLanding from './SearchLanding'
+import SearchLanding from './SearchLanding';
+import Bathroom from './BathroomScreen';
+import Rate from './RateBathroom';
 
 const SearchStack = createStackNavigator();
 
@@ -17,6 +19,8 @@ export default function SearchTab({ navigation }) {
   return (
     <SearchStack.Navigator>
       <SearchStack.Screen name="Landing" component={SearchLanding} options={{headerShown: false}}/>
+      <SearchStack.Screen name="Bathroom" component={Bathroom}/>
+      <SearchStack.Screen name="Rate" component={Rate}/>
     </SearchStack.Navigator>
   );
 }
