@@ -32,6 +32,8 @@ export default function ResultsList(props) {
         condoms= {location.item.condoms}
         planB= {location.item.planB}
         wipes= {location.item.wipes}
+        ratings={location.item.ratings}
+        locationRating={location.item.locationRating}
       />);
   }
 

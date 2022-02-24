@@ -2,6 +2,7 @@ import React from 'react';
 import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar } from 'react-native';
 import Images from '../../../assets/LocationImages';
 import Features from '../../../assets/Features';
+import Ratings from './DefaultRating';
 
 
 const Default = [
@@ -23,7 +24,9 @@ const Default = [
     diapers: false,
     condoms: false,
     planB: false,
-    wipes: false
+    wipes: false,
+    ratings: Ratings,
+    locationRating: 5,
   },
   {
     id : 1,
@@ -35,15 +38,17 @@ const Default = [
     status : 'Open Now',
     lat: 37.4263874662526,
     lng: -122.16909536937837,
-    accessible: true,
-    gNeutral: true,
-    freePads: true,
-    tampons: true,
-    clean: true,
+    accessible: Features.accessible,
+    gNeutral: Features.gNeutral,
+    freePads: Features.freePads,
+    tampons: Features.tampons,
+    clean: Features.clean,
     diapers: false,
     condoms: false,
     planB: false,
-    wipes: false
+    wipes: false,
+    ratings: Ratings,
+    locationRating: 5,
   },
   {
     id : 2,
@@ -55,15 +60,17 @@ const Default = [
     status : 'Open Now',
     lat: 37.42516775014037,
     lng: -122.17027261481661,
-    accessible: true,
-    gNeutral: true,
-    freePads: true,
-    tampons: true,
-    clean: true,
+    accessible: Features.accessible,
+    gNeutral: Features.gNeutral,
+    freePads: Features.freePads,
+    tampons: Features.tampons,
+    clean: Features.clean,
     diapers: false,
     condoms: false,
     planB: false,
-    wipes: false
+    wipes: false,
+    ratings: Ratings,
+    locationRating: 5,
   },
   {
     id : 3,
@@ -75,15 +82,17 @@ const Default = [
     status : 'Open Now',
     lat: 37.42835301721096,
     lng: -122.1690006487887,
-    accessible: true,
-    gNeutral: true,
-    freePads: true,
-    tampons: true,
-    clean: true,
+    accessible: Features.accessible,
+    gNeutral: Features.gNeutral,
+    freePads: Features.freePads,
+    tampons: Features.tampons,
+    clean: Features.clean,
     diapers: false,
     condoms: false,
     planB: false,
-    wipes: false
+    wipes: false,
+    ratings: Ratings,
+    locationRating: 5,
 
   },
   {
@@ -96,15 +105,17 @@ const Default = [
     status : 'Open Now',
     lat: 37.428310368754985,
     lng: -122.16841244270897,
-    accessible: true,
-    gNeutral: true,
-    freePads: true,
-    tampons: true,
-    clean: true,
+    accessible: Features.accessible,
+    gNeutral: Features.gNeutral,
+    freePads: Features.freePads,
+    tampons: Features.tampons,
+    clean: Features.clean,
     diapers: false,
     condoms: false,
     planB: false,
-    wipes: false
+    wipes: false,
+    ratings: Ratings,
+    locationRating: 5,
   }
 ];
 

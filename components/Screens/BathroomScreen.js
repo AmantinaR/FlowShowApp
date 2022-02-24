@@ -6,15 +6,18 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import GenderRadio from '../buttons/GenderRadio';
+import BloodRating from '../bloodStatic/BloodRating';
+import RatingList from '../lists/RatingList';
+
 
 export default function BathroomScreen({ navigation, route }) {
   const params = route.params;
-  console.log(params.accessible);
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground source={params.source} style={styles.imagebkd} imageStyle={styles.image} >
         <Text style={styles.nameText}>{params.name}</Text>
         <Text style={styles.numberText}>Bathroom {params.number}</Text>
+        <BloodRating number={params.locationRating}/>
       </ImageBackground>
 
       <Text>{params.miles}</Text>
@@ -33,6 +36,7 @@ export default function BathroomScreen({ navigation, route }) {
         <Image source={params.planB}/>
         <Image source={params.wipes}/>
       </View>
+      <RatingList data={params.ratings}/>
       <Button title={'rate'} onPress={() => navigation.navigate('Rate', params)}/>
     </SafeAreaView>
   );

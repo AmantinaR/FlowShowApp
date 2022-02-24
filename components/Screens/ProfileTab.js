@@ -6,6 +6,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import GenderRadio from '../buttons/GenderRadio';
+import Rating from '../Rating';
+import RatingList from '../lists/RatingList';
+import RatingData from '../lists/data/DefaultRating';
 
 export default function ReportTab({ navigation }) {
   const [option, setOption] = useState(null);
