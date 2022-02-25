@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { View, Text, Pressable, StyleSheet } from 'react-native';
 import Satisfaction from './Satisfaction';
+import Blood from '../bloodStatic/Blood';
 
-export default function SatisfactionRadio({data, onSelect}) {
+export default function BloodRadio({data, onSelect}) {
   const [userOption, setUserOption] = useState(null);
   const selectHandler = (value) => {
     onSelect(value);
@@ -12,7 +13,9 @@ export default function SatisfactionRadio({data, onSelect}) {
     <View style={styles.option}>
       {data.map((item) => {
         return (
-          <Satisfaction emotion={item.value} onPress={() => selectHandler(item.value)} selected={item.value === userOption ? true : false}/>
+          <Pressable onPress={() => selectHandler(item.value)}>
+            <Blood color={item.value <= userOption? 'red' : '#D3D3D3'}/>
+          </Pressable>
         );
       })}
     </View>

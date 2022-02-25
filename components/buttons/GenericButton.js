@@ -64,6 +64,15 @@ export default function GenericButton(props) {
         </View>
       </TouchableOpacity>
     );
+  } else if (props.text === 'Report'){
+    return(
+      <TouchableOpacity onPress={props.onPress}>
+        <View style={styles.buttonFlex}>
+          <Octicons name='report' size={19} color={'white'} />
+          <Text>REPORT A BATHROOM</Text>
+        </View>
+      </TouchableOpacity>
+    );
   }
 
 

@@ -19,30 +19,31 @@ export default function AddScreenInput({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-    <ScrollView contentContainerStyle={styles.container}>
-      <Text>Add Screen Input</Text>
-      <TextInput style={styles.textBox} placeholder='Bathroom Building'/>
-      <TextInput style={styles.textBox} placeholder='Room #'/>
-      <Text>What gender is this bathroom?</Text>
-      <GenderRadio data={data} onSelect={(value) => setOption(value)}/>
-      <Text>Rate Bathroom</Text>
-      <Text>What features does this bathroom have</Text>
-      <FeaturesList/>
-      <Text>Upload a Photo of Bathroom Assets</Text>
-      <View style={styles.photoSection}>
-        <View style={styles.photoHolder}>
-          <Text>No Image Uploaded</Text>
+      <ScrollView contentContainerStyle={styles.container}>
+        <Text>Add a New Bathroom</Text>
+        <Text>By the way, we cross check your entry across our database to make sure there are no double entries</Text>
+        <TextInput style={styles.textBox} placeholder='Bathroom Building'/>
+        <TextInput style={styles.textBox} placeholder='Room #'/>
+        <Text>What gender is this bathroom?</Text>
+        <GenderRadio data={data} onSelect={(value) => setOption(value)}/>
+        <Text>Rate Bathroom</Text>
+        <Text>What features does this bathroom have</Text>
+        <FeaturesList/>
+        <Text>Upload a Photo of Bathroom Assets</Text>
+        <View style={styles.photoSection}>
+          <View style={styles.photoHolder}>
+            <Text>No Image Uploaded</Text>
+          </View>
+          <View>
+            <GenericButton text={'Take Photo'}/>
+            <GenericButton text={'Upload Photo'}/>
+          </View>
         </View>
-        <View>
-          <GenericButton text={'Take Photo'}/>
-          <GenericButton text={'Upload Photo'}/>
-        </View>
-      </View>
-      <Text>Additional Comments</Text>
-      <TextInput style={styles.comments} placeholder={'Please write any comments here'}/>
-      <GenericButton text={'Confirm'} onPress={() => navigation.navigate('Confirm')}/>
-      <StatusBar style="auto" />
-    </ScrollView>
+        <Text>Additional Comments</Text>
+        <TextInput style={styles.comments} placeholder={'Please write any comments here'}/>
+        <GenericButton text={'Confirm'} onPress={() => navigation.navigate('Confirm')}/>
+        <StatusBar style="auto" />
+      </ScrollView>
     </SafeAreaView>
   );
 }

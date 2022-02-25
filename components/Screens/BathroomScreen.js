@@ -11,12 +11,13 @@ import RatingList from '../lists/RatingList';
 import { Octicons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import GenericButton from '../buttons/GenericButton';
-
+import SavedButton from '../buttons/SavedButton';
 
 export default function BathroomScreen({ navigation, route }) {
   const params = route.params;
   return (
     <SafeAreaView style={styles.container}>
+      <SavedButton/>
       <ImageBackground source={params.source} style={styles.imagebkd} imageStyle={styles.image} >
         <Text style={styles.nameText}>{params.name}</Text>
         <Text style={styles.numberText}>Bathroom {params.number}</Text>

@@ -4,12 +4,12 @@ import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, TouchableOpaci
 import { useState } from "react";
 import { FontAwesome } from '@expo/vector-icons';
 
-export default function FeatureButton(props) {
+export default function SavedButton(props) {
   const [selected, setSelected] = useState(false);
   return(
     <TouchableOpacity
         onPress={() => setSelected(!selected)}>
-        {selected ? <FontAwesome name='bookmark-o' size={size} color={'red'} /> : <FontAwesome name='bookmark-o' size={size} color={'black'} />}
+        {selected ? <FontAwesome name='bookmark' size={24} color={'red'} /> : <FontAwesome name='bookmark-o' size={24} color={'black'} />}
       </TouchableOpacity>
 
   );
