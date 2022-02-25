@@ -75,7 +75,7 @@ const Default = [
   {
     id : 3,
     miles : '50 ft',
-    source : Images.Lathrop,
+    source : Images.Green,
     name : 'Green Library',
     address : '557 Escondido Mall',
     number : '100',

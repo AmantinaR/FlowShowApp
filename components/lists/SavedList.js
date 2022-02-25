@@ -23,6 +23,7 @@ export default function SavedList(props) {
         number = {location.item.number}
         status = {location.item.status}
         list = {'Saved'}
+        locationRating = {location.item.locationRating}
       />);
   }
 

@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, TouchableOpacity, Pressable, Image } from 'react-native';
 import { useState } from "react";
 import { useNavigation } from '@react-navigation/native';
+import BloodRating from './bloodStatic/BloodRating';
 
 export default function Location(props) {
   const navigation = useNavigation();
@@ -20,6 +21,7 @@ export default function Location(props) {
           <Text style={styles.text}>{props.number}</Text>
           <Text style={styles.open}>{props.status}</Text>
         </View>
+        <BloodRating number={props.locationRating}/>
       </View>
     </TouchableOpacity>
 
@@ -39,25 +41,33 @@ const styles = StyleSheet.create({
   },
   distanceTextFlex: {
     flexDirection: 'row',
+    alignItems: 'flex-start',
+    width: '100%'
   },
   mainFlex: {
+    flex: 1,
     flexDirection: 'row',
+    justifyContent: 'flex-start',
   },
   picture: {
     borderRadius: 8,
+    width: 90,
+    height: 90,
+    marginRight: '2%'
   },
   detailsFlex: {
     alignItems: 'flex-start',
   },
   miles: {
     fontWeight: 'bold',
+    fontSize: 16
   },
   open: {
     fontWeight: 'bold',
     color: 'pink'
   },
   text: {
-    fontSize: 10,
+    fontSize: 14,
 
   },
 });
