@@ -28,7 +28,7 @@ export default function GenderRadio({data, onSelect}) {
 
 const styles = StyleSheet.create({
   selected: {
-    backgroundColor: 'yellow',
+    backgroundColor: '#fcc181',
     width: 25,
     height: 25,
     flexDirection: 'row',
