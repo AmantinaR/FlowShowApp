@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
-import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, TouchableOpacity, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -14,7 +14,7 @@ export default function LoginScreen({ navigation }) {
       <TextInput style={styles.textBox} placeholder='password' secureTextEntry={true}/>
       <TouchableOpacity onPress={() => navigation.navigate('Landing')}>
         <View>
-          <Text> Login</Text>
+        <Image source={require('../../assets/login-button.png')} style={styles.button}/>
         </View>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('Register')}>
@@ -40,5 +40,9 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 12,
     width: 200
+  },
+  button: {
+    marginTop: 10,
+    marginBottom: 0,
   }
 });
