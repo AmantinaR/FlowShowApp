@@ -11,7 +11,7 @@ export default function GenderRadio({data, onSelect}) {
     <View>
       {data.map((item) => {
         return (
-          <View>
+          <View style = {styles.option}>
           <Pressable
             style={
               item.value === userOption ? styles.selected : styles.unselected
@@ -61,20 +61,14 @@ const styles = StyleSheet.create({
   },
   option: {
     flexDirection: 'row',
-    borderRadius: 2,
-    padding: '2%',
-    shadowColor: "#000",
-    shadowOffset: {
-	  width: 0,
-	  height: 2,
-    },
-   shadowOpacity: 0.25,
-   shadowRadius: 2,
+    alignItems: 'center',
+    marginVertical: '1%'
   },
   text: {
-    fontSize: 15,
-    left: '15%',
-    top: '-50%'
+    marginLeft: '5%',
+    fontSize: 13,
+    color: 'grey',
+    fontFamily: 'Helvetica'
   }
 
 });
