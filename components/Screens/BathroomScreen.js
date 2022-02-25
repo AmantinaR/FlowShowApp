@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 import {useState} from 'react';
-import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, Image, ImageBackground } from 'react-native';
+import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, Image, ImageBackground, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -37,7 +37,16 @@ export default function BathroomScreen({ navigation, route }) {
         <Image source={params.wipes}/>
       </View>
       <RatingList data={params.ratings}/>
-      <Button title={'rate'} onPress={() => navigation.navigate('Rate', params)}/>
+      <TouchableOpacity onPress={() => navigation.navigate('Rate', params)}>
+        <View style={styles.buttonFlex}>
+          <Text>Rate</Text>
+        </View>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('Input', params)}>
+        <View style={styles.buttonFlex}>
+          <Text>Report</Text>
+        </View>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 }
@@ -74,5 +83,8 @@ const styles = StyleSheet.create({
   },
   features: {
     flexDirection: 'row'
+  },
+  buttonFlex: {
+    backgroundColor: '#FCC181'
   }
 });
