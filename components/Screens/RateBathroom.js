@@ -8,11 +8,20 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import GenderRadio from '../buttons/GenderRadio';
 import FeaturesList from '../FeaturesList';
 import GenericButton from '../buttons/GenericButton';
+import BloodRadio from '../buttons/BloodRadio';
+
 
 
 export default function RateScreen({ navigation, route }) {
   const params = route.params;
-  console.log(params.accessible);
+  const [option, setOption] = useState(null);
+  const data = [
+    { value: 1 },
+    { value: 2 },
+    { value: 3 },
+    { value: 4 },
+    { value: 5 },
+  ];
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground source={params.source} style={styles.imagebkd} imageStyle={styles.image} >
@@ -20,6 +29,7 @@ export default function RateScreen({ navigation, route }) {
         <Text style={styles.numberText}>Bathroom {params.number}</Text>
       </ImageBackground>
       <Text>Rate Bathroom</Text>
+      <BloodRadio data={data} onSelect={(value) => setOption(value)}/>
       <Text>Features</Text>
       <FeaturesList/>
       <Text>Upload a Photo of Bathroom Assets</Text>

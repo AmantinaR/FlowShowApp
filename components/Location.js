@@ -31,9 +31,11 @@ const styles = StyleSheet.create({
     //flex: 1,
     alignItems: 'center',
     justifyContent: 'space-around',
-    borderWidth: 1,
-    borderColor: 'black',
-    width: 350
+    width: 350,
+    marginVertical: 5,
+    borderBottomColor: '#F1F2F3',
+    paddingVertical: 5,
+    borderBottomWidth: 3
   },
   distanceTextFlex: {
     flexDirection: 'row',
