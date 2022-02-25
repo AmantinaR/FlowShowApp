@@ -9,6 +9,7 @@ import ProductsRequested from '../ProductsRequested';
 import Disposal from '../Disposal';
 import Satisfaction from '../buttons/Satisfaction';
 import SatisfactionRadio from '../buttons/SatisfactionRadio';
+import GenericButton from '../buttons/GenericButton';
 
 export default function ReportInput({ navigation, route }) {
   const [option, setOption] = useState(null);
@@ -43,7 +44,7 @@ export default function ReportInput({ navigation, route }) {
         <Text>How satisfied are you with the cleanliness?</Text>
         <SatisfactionRadio data={data} onSelect={(value) => setOption(value)}/>
       </View>
-      <Button title="Confirm" onPress={() => navigation.navigate('Confirm')}/>
+      <GenericButton text={"Confirm"} onPress={() => navigation.navigate('Confirm')}/>
       <StatusBar style="auto" />
     </SafeAreaView>
   );

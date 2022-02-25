@@ -8,6 +8,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import GenderRadio from '../buttons/GenderRadio';
 import BloodRating from '../bloodStatic/BloodRating';
 import RatingList from '../lists/RatingList';
+import { Octicons } from '@expo/vector-icons';
+import { Ionicons } from '@expo/vector-icons';
+import GenericButton from '../buttons/GenericButton';
 
 
 export default function BathroomScreen({ navigation, route }) {
@@ -37,16 +40,11 @@ export default function BathroomScreen({ navigation, route }) {
         <Image source={params.wipes}/>
       </View>
       <RatingList data={params.ratings}/>
-      <TouchableOpacity onPress={() => navigation.navigate('Rate', params)}>
-        <View style={styles.buttonFlex}>
-          <Text>Rate</Text>
-        </View>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('Input', params)}>
-        <View style={styles.buttonFlex}>
-          <Text>Report</Text>
-        </View>
-      </TouchableOpacity>
+      <View style={styles.lowerButtons}>
+        <GenericButton text={"Rate"} params={params} onPress={() => navigation.navigate('Rate', params)}/>
+        <GenericButton text={"Report"} params={params} onPress={() => navigation.navigate('Report', { screen: 'Input' })}/>
+
+      </View>
     </SafeAreaView>
   );
 }
@@ -85,6 +83,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   buttonFlex: {
-    backgroundColor: '#FCC181'
+    backgroundColor: '#FCC181',
+    flexDirection: 'row',
+    margin: 10,
+    width: 101
+  },
+  lowerButtons: {
+    flexDirection: 'row'
   }
 });

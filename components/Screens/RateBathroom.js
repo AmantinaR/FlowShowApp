@@ -7,7 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import GenderRadio from '../buttons/GenderRadio';
 import FeaturesList from '../FeaturesList';
-
+import GenericButton from '../buttons/GenericButton';
 
 
 export default function RateScreen({ navigation, route }) {
@@ -28,8 +28,8 @@ export default function RateScreen({ navigation, route }) {
           <Text>No Image Uploaded</Text>
         </View>
         <View>
-          <Text>take photo button here</Text>
-          <Text>upload photo button here</Text>
+          <GenericButton text="Take Photo"/>
+          <GenericButton text="Upload Photo"/>
         </View>
 
       </View>

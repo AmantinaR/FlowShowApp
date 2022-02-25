@@ -7,6 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import GenderRadio from '../buttons/GenderRadio';
 import FeaturesList from '../FeaturesList';
+import GenericButton from '../buttons/GenericButton';
 
 export default function AddScreenInput({ navigation }) {
   const [option, setOption] = useState(null);
@@ -33,13 +34,13 @@ export default function AddScreenInput({ navigation }) {
           <Text>No Image Uploaded</Text>
         </View>
         <View>
-          <Text>take photo button here</Text>
-          <Text>upload photo button here</Text>
+          <GenericButton text={'Take Photo'}/>
+          <GenericButton text={'Upload Photo'}/>
         </View>
       </View>
       <Text>Additional Comments</Text>
       <TextInput style={styles.comments} placeholder={'Please write any comments here'}/>
-      <Button title="Add Bathroom" onPress={() => navigation.navigate('Confirm')}/>
+      <GenericButton text={'Confirm'} onPress={() => navigation.navigate('Confirm')}/>
       <StatusBar style="auto" />
     </ScrollView>
     </SafeAreaView>
