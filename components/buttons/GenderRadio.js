@@ -11,14 +11,14 @@ export default function GenderRadio({data, onSelect}) {
     <View>
       {data.map((item) => {
         return (
-          <View style={styles.option}>
+          <View>
           <Pressable
             style={
               item.value === userOption ? styles.selected : styles.unselected
             }
             onPress={() => selectHandler(item.value)}>
           </Pressable>
-          <Text>{item.value}</Text>
+          <Text style = {styles.text}>{item.value}</Text>
           </View>
         );
       })}
@@ -31,6 +31,16 @@ const styles = StyleSheet.create({
     backgroundColor: 'yellow',
     width: 25,
     height: 25,
+    flexDirection: 'row',
+    borderRadius: 2,
+    padding: '2%',
+    shadowColor: "#000",
+    shadowOffset: {
+	  width: 0,
+	  height: 2,
+    },
+   shadowOpacity: 0.25,
+   shadowRadius: 2,
   },
   unselected: {
     backgroundColor: 'transparent',
@@ -38,8 +48,33 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     width: 25,
     height: 25,
+    flexDirection: 'row',
+    borderRadius: 2,
+    padding: '2%',
+    shadowColor: "#000",
+    shadowOffset: {
+	  width: 0,
+	  height: 2,
+    },
+   shadowOpacity: 0.25,
+   shadowRadius: 2,
   },
   option: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    borderRadius: 2,
+    padding: '2%',
+    shadowColor: "#000",
+    shadowOffset: {
+	  width: 0,
+	  height: 2,
+    },
+   shadowOpacity: 0.25,
+   shadowRadius: 2,
+  },
+  text: {
+    fontSize: 15,
+    left: '15%',
+    top: '-50%'
   }
+
 });

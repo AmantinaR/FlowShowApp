@@ -19,18 +19,22 @@ export default function ReportTab({ navigation }) {
   ];
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Amara25's Profile</Text>
-      <Text>You can manage your account info here</Text>
-      <Image source={require('../../assets/Avatar.png')}/>
-      <Text>Username: Amara25</Text>
-      <Text>Password: ************</Text>
+      <Text style={styles.header}>Amara25's Profile</Text>
+      <Text style={styles.manage}>You can manage your account info here</Text>
+      <Image source={require('../../assets/Avatar.png')} style = {styles.avatar}/>
+      <Text style = {styles.u_p}>Username: Amara25</Text>
+      <Text style = {styles.u_p}>Password: ************</Text>
       <StatusBar style="auto" />
-      <View style={{borderBottomColor: 'grey', borderBottomWidth:1, width: 326}}>
+      <View style={{borderBottomColor: 'grey', borderBottomWidth:1, width: 326, top: '4%'}}>
       </View>
-      <Text>Bathroom Gender Preference</Text>
-      <GenderRadio data={data} onSelect={(value) => setOption(value)}/>
-      <Text>Accessibility Needs</Text>
+      <View style={{top: '8%', left: '-1%'}}>
+      <Text style = {styles.preferences_text}>Bathroom Gender Preference</Text>
+      <GenderRadio  data={data} onSelect={(value) => setOption(value)}/>
+      </View>
+      <View style = {styles.needs}>
+      <Text style = {{top: '-10%', fontSize:'15'}}>Accessibility Needs</Text>
       <Image source={require('../../assets/needs.png')}/>
+      </View>
     </SafeAreaView>
   );
 }
@@ -42,4 +46,33 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  header: {
+    fontWeight: 'bold',
+    fontSize: 30,
+    top: '-10%'
+  },
+  manage: {
+    top: '-10%',
+    color: 'grey'
+  },
+  avatar: {
+    top: '-5%',
+    width: 150,
+    height: 150
+  },
+  u_p: {
+    fontSize: 15,
+    alignItems: 'center',
+  },
+  preferences_text: {
+    fontSize: 15,
+    left: '-10%',
+    top: '-10%'
+  },
+  needs: {
+    top: '10%', 
+    alignItems: 'center',
+    margin: "1%"
+  }
+
 });
