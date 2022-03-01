@@ -83,12 +83,12 @@ export default function SearchLanding({ navigation }) {
         </MapView>
         <FeatureButtonList data={featurenames}/>
         <SwipeUpDown
-        	itemMini={(show) => <FeatureButtonList data={featurenames}/>, <ResultList data = {Default}/>}
-        	itemFull={(hide) => <FeatureButtonList data={featurenames}/>, <ResultList data = {Default}/>}
+        	itemMini={(show) =>  <ResultList data = {Default} feature={featurenames}/>}
+        	itemFull={(hide) =>  <ResultList data = {Default} feature={featurenames}/>}
         	onShowMini={() => console.log('mini')}
         	onShowFull={() => console.log('full')}
         	animation="ease in"
-        	disableSwipeIcon
+
           swipeHeight={200}
         	extraMarginTop={100}
         	style={{ backgroundColor: '#000' }} // style for swipe

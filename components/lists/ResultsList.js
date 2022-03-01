@@ -7,6 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Location from '../Location';
 import Images from '../../assets/LocationImages';
 import DataList from './data/Default';
+import FeatureButtonList from './FeatureButtonList';
 
 
 
@@ -39,6 +40,7 @@ export default function ResultsList(props) {
 
   return (
     <View style={styles.container}>
+    <FeatureButtonList data={props.feature}/>
     <FlatList
         data = {props.data}
         renderItem={(location) => renderLocation(location)}
@@ -57,6 +59,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 17,
     width: 375,
-    height: 250,
+    
   },
 });
