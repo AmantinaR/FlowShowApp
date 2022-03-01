@@ -94,6 +94,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#FCC181',
     flexDirection: 'row',
     margin: 10,
+    borderRadius: 4,
+    padding: 12,
+    shadowColor: "#000",
+    shadowOffset: {
+	  width: 0,
+	  height: 2,
+    },
+   shadowOpacity: 0.25,
+   shadowRadius: 2,
   },
   btnIdle: {
     backgroundColor: 'white',
