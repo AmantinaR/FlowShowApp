@@ -14,9 +14,9 @@ export default function RegisterScreen({ navigation }) {
       <TextInput style={styles.textBox} placeholder='username' autoCorrect={false}/>
       <TextInput style={styles.textBox} placeholder='email' autoCorrect={false}/>
       <TextInput style={styles.textBox} placeholder='password' secureTextEntry={true}/>
-      <TouchableOpacity onPress={() => navigation.navigate('Landing')}>
+      <TouchableOpacity onPress={() => navigation.navigate('Landing')} style={styles.button}>
       <View>
-        <Text style = {styles.button}>Register</Text>
+        <Text style = {styles.text}>Register</Text>
         </View>
       </TouchableOpacity>
       <View style = {styles.row}>
@@ -57,7 +57,7 @@ textBox: {
 row: {
   flexDirection: "row",
   left: -75,
-  
+
 },
 already_member:{
   top: 50
@@ -71,8 +71,8 @@ login: {
 button: {
   color: '#ffffff',
   fontSize: 15,
-  justifyContent: 'flex-end',
-  alignItems: 'flex-end',
+  justifyContent: 'center',
+  alignItems: 'center',
   textAlign: 'center',
   backgroundColor: '#fcc181',
   top: 80,
@@ -91,5 +91,8 @@ button: {
   },
  shadowOpacity: 0.25,
  shadowRadius: 2,
+},
+text: {
+  color: 'white'
 }
 });
