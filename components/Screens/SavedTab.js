@@ -11,7 +11,7 @@ import Images from '../../assets/LocationImages';
 import SavedList from '../lists/SavedList';
 
 export default function SavedTab({ navigation }) {
-  console.log(Default);
+  
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.headerText}>Saved Tab, only one screen so create flatlist here</Text>

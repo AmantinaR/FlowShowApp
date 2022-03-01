@@ -7,8 +7,9 @@ import { FontAwesome5 } from '@expo/vector-icons';
 export default function SearchBar(props) {
   return(
     <View style={styles.container}>
-      <TextInput style={styles.textBox} placeholder='Enter a Location'/>
-      <TouchableOpacity style={styles.search}>
+      <TextInput style={styles.textBox} placeholder='Enter a Location'
+      onChangeText={(text) => props.setText(text)}/>
+      <TouchableOpacity style={styles.search} onPress={props.onPress}>
         <FontAwesome5 name='search-location' size={16} color='white' />
       </TouchableOpacity>
     </View>

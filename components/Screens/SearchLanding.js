@@ -15,9 +15,35 @@ import Default from '../lists/data/Default.js';
 import ResultList from '../lists/ResultsList';
 import FeatureButtonList from '../lists/FeatureButtonList';
 import { useState } from 'react';
+import { useCallback, useMemo, useRef } from 'react';
+import BottomSheet from '@gorhom/bottom-sheet';
 
 export default function SearchLanding({ navigation }) {
   const [option, setOption] = useState(null);
+  const [text, setText] = useState('');
+  const [resultdata, setResultData] = useState(Default);
+
+  const bottomSheetRef = useRef<BottomSheet>(null);
+
+  // variables
+  const snapPoints = useMemo(() => ['100%', '50%'], []);
+
+  // callbacks
+  const handleSheetChanges = useCallback((index: number) => {
+    console.log('handleSheetChanges', index);
+  }, []);
+
+  const searchName = () => {
+    if (text !== '') {
+      let newData = Default.filter(location => location.name === text);
+      setResultData(newData);
+    } else {
+      setResultData(Default);
+    }
+    console.log(text);
+
+  };
+
   const featurenames = [
     {
       id : 0,
@@ -62,7 +88,7 @@ export default function SearchLanding({ navigation }) {
   ];
   return (
     <SafeAreaView style={styles.container}>
-      <Search/>
+      <Search setText={setText} onPress={searchName}/>
       <StatusBar style="auto" />
       <MapView
         initialRegion={{
@@ -81,8 +107,17 @@ export default function SearchLanding({ navigation }) {
             );
           })}
         </MapView>
-        
-        <ResultList data = {Default} feature={featurenames}/>
+
+        <View style={styles.container1}>
+        <BottomSheet
+
+          index={1}
+          snapPoints={snapPoints}
+          onChange={handleSheetChanges}
+        >
+          <ResultList data = {resultdata} feature={featurenames}/>
+        </BottomSheet>
+      </View>
 
 
 
@@ -103,5 +138,11 @@ const styles = StyleSheet.create({
     height: 350,
     borderRadius: 14,
     //top: -100.66
-  }
+  },
+  container1: {
+    width: 365,
+    height: 700,
+    position: 'absolute',
+    top: 100
+  },
 });

@@ -9,15 +9,41 @@ import GenericButton from '../buttons/GenericButton';
 import SwipeUpDown from 'react-native-swipe-up-down';
 import SlidingUpPanel from 'rn-sliding-up-panel';
 import Modal from "react-native-modalbox";
+import { useCallback, useMemo, useRef } from 'react';
+import BottomSheet from '@gorhom/bottom-sheet';
+
+
 
 
 export default function ReportLanding({ navigation }) {
+  const bottomSheetRef = useRef<BottomSheet>(null);
+
+  // variables
+  const snapPoints = useMemo(() => ['100%', '50%'], []);
+
+  // callbacks
+  const handleSheetChanges = useCallback((index: number) => {
+    console.log('handleSheetChanges', index);
+  }, []);
+
   return (
     <SafeAreaView style={styles.container}>
       <Text>Report a Bathroom</Text>
       <Button title="Report Status" onPress={() => navigation.navigate('Status')}/>
       <GenericButton text={'Report'} onPress={() => navigation.navigate('Input')}/>
 
+      <View style={styles.container1}>
+      <BottomSheet
+
+        index={1}
+        snapPoints={snapPoints}
+        onChange={handleSheetChanges}
+      >
+        <View style={styles.contentContainer}>
+          <Text>Awesome 🎉</Text>
+        </View>
+      </BottomSheet>
+    </View>
 
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -30,6 +56,18 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  container1: {
+    width: 300,
+    height: 300,
+    padding: 24,
+    backgroundColor: 'grey',
+  },
+  contentContainer: {
+    width: 300,
+    height: 300,
+    backgroundColor: 'purple',
+    alignItems: 'center',
   },
 
 });

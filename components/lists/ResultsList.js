@@ -13,7 +13,6 @@ import FeatureButtonList from './FeatureButtonList';
 
 
 export default function ResultsList(props) {
-
   const renderLocation = (location) => {
     return(
       <Location
@@ -59,7 +58,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 17,
     width: 375,
-    height: 390
+    height: 700
+
 
   },
 });
