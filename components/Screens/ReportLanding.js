@@ -19,7 +19,7 @@ export default function ReportLanding({ navigation }) {
   const bottomSheetRef = useRef<BottomSheet>(null);
 
   // variables
-  const snapPoints = useMemo(() => ['100%', '50%'], []);
+  const snapPoints = useMemo(() => ['25%', '50%'], []);
 
   // callbacks
   const handleSheetChanges = useCallback((index: number) => {
@@ -35,7 +35,7 @@ export default function ReportLanding({ navigation }) {
       <View style={styles.container1}>
       <BottomSheet
 
-        index={1}
+        index={0}
         snapPoints={snapPoints}
         onChange={handleSheetChanges}
       >

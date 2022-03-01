@@ -11,7 +11,8 @@ export default function GenderRadio({data, onSelect}) {
     <View>
       {data.map((item) => {
         return (
-          <View style = {styles.option}>
+
+          <View key={item.id} style = {styles.option}>
           <Pressable
             style={
               item.value === userOption ? styles.selected : styles.unselected
@@ -20,6 +21,8 @@ export default function GenderRadio({data, onSelect}) {
           </Pressable>
           <Text style = {styles.text}>{item.value}</Text>
           </View>
+
+
         );
       })}
     </View>

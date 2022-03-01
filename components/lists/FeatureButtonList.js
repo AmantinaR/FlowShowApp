@@ -14,22 +14,21 @@ import FeatureButton from '../buttons/FeatureButton';
 export default function FeatureButtonList(props) {
 
   const renderFeature = (feature) => {
-    console.log(feature.item.id);
     return(
       <FeatureButton title={feature.item.title}
       />);
   }
 
   return (
-
-    <FlatList
-        horizontal
-        data = {props.data}
-        renderItem={(feature) => renderFeature(feature)}
-        keyExtractor={(feature) => feature.id}
-        contentContainerStyle={styles.container}
-    />
-
+    <View style={styles.mainContainer}>
+      <FlatList
+          horizontal
+          data = {props.data}
+          renderItem={(feature) => renderFeature(feature)}
+          keyExtractor={(feature) => feature.id}
+          contentContainerStyle={styles.container}
+      />
+    </View>
   );
 }
 
@@ -39,6 +38,9 @@ const styles = StyleSheet.create({
 
     alignItems: 'center',
     justifyContent: 'center',
-    margin: 10
+    margin: 10,
   },
+  mainContainer: {
+    height: '5%'
+  }
 });

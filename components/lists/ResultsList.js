@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
+import {useState} from 'react'
 import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, FlatList } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -8,6 +9,7 @@ import Location from '../Location';
 import Images from '../../assets/LocationImages';
 import DataList from './data/Default';
 import FeatureButtonList from './FeatureButtonList';
+
 
 
 
@@ -38,14 +40,14 @@ export default function ResultsList(props) {
   }
 
   return (
-    <View style={styles.container}>
-    <FeatureButtonList data={props.feature}/>
-    <FlatList
-        data = {props.data}
-        renderItem={(location) => renderLocation(location)}
-        keyExtractor={(location) => location.id}
+    <View style={[styles.container, {height: props.height}]}>
 
-    />
+        <FlatList
+            data = {props.data}
+            renderItem={(location) => renderLocation(location)}
+            keyExtractor={(location) => location.index}
+        />
+
     </View>
   );
 }
@@ -58,8 +60,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 17,
     width: 375,
-    height: 700
+    paddingVertical: '5%',
 
 
   },
+  list: {
+    height: 100,
+
+  }
 });

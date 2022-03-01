@@ -22,15 +22,23 @@ export default function SearchLanding({ navigation }) {
   const [option, setOption] = useState(null);
   const [text, setText] = useState('');
   const [resultdata, setResultData] = useState(Default);
+  const [listHeight, setHeight] = useState('40%');
+  const [featureSelected, setFeature] = useState([]);
 
-  const bottomSheetRef = useRef<BottomSheet>(null);
 
   // variables
-  const snapPoints = useMemo(() => ['100%', '50%'], []);
+  const snapPoints = useMemo(() => ['50%', '100%'], []);
 
   // callbacks
   const handleSheetChanges = useCallback((index: number) => {
     console.log('handleSheetChanges', index);
+    if (index === 0) {
+      let newHeight = '40%';
+      setHeight(newHeight);
+    } else if (index === 1) {
+      let newHeight = '87%';
+      setHeight(newHeight);
+    }
   }, []);
 
   const searchName = () => {
@@ -90,33 +98,34 @@ export default function SearchLanding({ navigation }) {
     <SafeAreaView style={styles.container}>
       <Search setText={setText} onPress={searchName}/>
       <StatusBar style="auto" />
-      <MapView
-        initialRegion={{
-          latitude: 37.427238,
-          longitude: -122.168587,
-          latitudeDelta: 0.005,
-          longitudeDelta: 0.005,
-        }} style={styles.map}
-        >
-          <Marker coordinate={{latitude: 37.4295238646884, longitude: -122.16790117770296}}
-          image={require('../../assets/current-location.png')}/>
-          {Default.map((item) => {
-            return(
-              <Marker coordinate = {{latitude: item.lat, longitude: item.lng}}
-              title={item.name}/>
-            );
-          })}
-        </MapView>
+      <View style={styles.container1}>
+        <MapView
+          initialRegion={{
+            latitude: 37.427238,
+            longitude: -122.168587,
+            latitudeDelta: 0.005,
+            longitudeDelta: 0.005,
+          }} style={styles.map}
+          >
+            <Marker coordinate={{latitude: 37.4295238646884, longitude: -122.16790117770296}}
+            image={require('../../assets/current-location.png')}/>
+            {resultdata.map((item) => {
+              return(
+                <Marker coordinate = {{latitude: item.lat, longitude: item.lng}}
+                title={item.name}/>
+              );
+            })}
+          </MapView>
+          <BottomSheet
 
-        <View style={styles.container1}>
-        <BottomSheet
+            index={0}
+            snapPoints={snapPoints}
+            onChange={handleSheetChanges}
+          >
+          <FeatureButtonList data={featurenames}/>
+          <ResultList data = {resultdata} feature={featurenames} height={listHeight}/>
 
-          index={1}
-          snapPoints={snapPoints}
-          onChange={handleSheetChanges}
-        >
-          <ResultList data = {resultdata} feature={featurenames}/>
-        </BottomSheet>
+          </BottomSheet>
       </View>
 
 
@@ -141,8 +150,12 @@ const styles = StyleSheet.create({
   },
   container1: {
     width: 365,
-    height: 700,
+    height: '100%',
     position: 'absolute',
-    top: 100
+    top: 100,
+  },
+  results: {
+    backgroundColor: 'purple',
+    //height: '40%'
   },
 });

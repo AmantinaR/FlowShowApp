@@ -107,7 +107,7 @@ const Default = [
     lng: -122.16841244270897,
     accessible: Features.accessible,
     gNeutral: Features.gNeutral,
-    freePads: Features.freePads,
+    freePads: false,
     tampons: Features.tampons,
     clean: Features.clean,
     diapers: false,
