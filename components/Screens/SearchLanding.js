@@ -52,6 +52,13 @@ export default function SearchLanding({ navigation }) {
 
   };
 
+  const updateFeatures = () => {
+    if (featureSelected !== []) {
+      let newFeature = [...featureSelected];
+      newFeature
+    }
+  };
+
   const featurenames = [
     {
       id : 0,

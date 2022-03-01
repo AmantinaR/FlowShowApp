@@ -14,10 +14,8 @@ export default function LoginScreen({ navigation }) {
       <StatusBar style="auto" />
       <TextInput style={styles.textBox} placeholder='username' autoCorrect={false}/>
       <TextInput style={styles.textBox} placeholder='password' secureTextEntry={true}/>
-      <TouchableOpacity onPress={() => navigation.navigate('Landing')}>
-        <View>
-        <Text style = {styles.button}>Login</Text>
-        </View>
+      <TouchableOpacity onPress={() => navigation.navigate('Landing')} style={styles.button}>
+        <Text style={styles.text}>Login</Text>
       </TouchableOpacity>
       <View style = {styles.row}>
       <Text style = {styles.new_here}>  New here?  </Text>
@@ -57,7 +55,7 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
     left: -75,
-    
+
   },
   new_here:{
     top: 48
@@ -71,8 +69,8 @@ const styles = StyleSheet.create({
   button: {
     color: '#ffffff',
     fontSize: 15,
-    justifyContent: 'flex-end',
-    alignItems: 'flex-end',
+    justifyContent: 'center',
+    alignItems: 'center',
     textAlign: 'center',
     backgroundColor: '#fcc181',
     top: 80,
@@ -91,5 +89,8 @@ const styles = StyleSheet.create({
     },
    shadowOpacity: 0.25,
    shadowRadius: 2,
-  }
+ },
+  text: {
+    color: 'white'
+  },
 });
