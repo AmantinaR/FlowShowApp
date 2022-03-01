@@ -11,13 +11,55 @@ import FeatureList from '../FeaturesList';
 import SearchBar from '../SearchBar';
 import Default from '../lists/data/Default.js';
 import ResultList from '../lists/ResultsList';
+import FeatureButtonList from '../lists/FeatureButtonList';
+import { useState } from 'react';
 
 export default function SearchLanding({ navigation }) {
+  const featurenames = [
+    {
+      id : 0,
+      title:'Pads'
+    },
+    {
+      id : 1,
+      title:'Free Pads'
+    },
+    {
+      id : 2,
+      title:'Tampons'
+    },
+    {
+      id : 3,
+      title:'Single occupancy'
+    },
+    {
+      id : 4,
+      title:'Wipes'
+    },
+    {
+      id : 5,
+      title:'Condoms'
+    },
+    {
+      id : 6,
+      title:'Plan B'
+    },
+    {
+      id : 7,
+      title:'Diapers'
+    },
+    {
+      id : 8,
+      title:'Accessible'
+    },
+    {
+      id : 9,
+      title:'Clean'
+    }
+  ];
   return (
     <SafeAreaView style={styles.container}>
       <SearchBar/>
-      <Text>Search Features</Text>
-      <FeatureList/>
       <StatusBar style="auto" />
       <MapView
         initialRegion={{
@@ -36,6 +78,7 @@ export default function SearchLanding({ navigation }) {
             );
           })}
         </MapView>
+        <FeatureButtonList data={featurenames}/>
         <ResultList data = {Default}/>
 
     </SafeAreaView>
