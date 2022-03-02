@@ -14,14 +14,16 @@ export default function LoginScreen({ navigation }) {
       <StatusBar style="auto" />
       <TextInput style={styles.textBox} placeholder='username' autoCorrect={false}/>
       <TextInput style={styles.textBox} placeholder='password' secureTextEntry={true}/>
-      <TouchableOpacity onPress={() => navigation.navigate('Landing')} style={styles.button}>
-        <Text style={styles.text}>Login</Text>
-      </TouchableOpacity>
       <View style = {styles.row}>
-      <Text style = {styles.new_here}>  New here?  </Text>
-      <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-          <Text style = {styles.register}> Register</Text>
-      </TouchableOpacity>
+        <View style={{flexDirection: 'row', alignItems: 'center'}}>
+          <Text style = {styles.new_here}>  New here?  </Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Register')}>
+              <Text style = {styles.register}> Register</Text>
+          </TouchableOpacity>
+        </View>
+        <TouchableOpacity onPress={() => navigation.navigate('Landing')} style={styles.button}>
+          <Text style={styles.text}>Login</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
@@ -49,20 +51,21 @@ const styles = StyleSheet.create({
     height: 50,
     padding: 10,
     margin: 12,
-    width: 230,
-    top: 40
+    width: '84%',
+    borderRadius: 10
   },
   row: {
     flexDirection: "row",
-    left: -75,
+    width: '84%',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: '20%'
 
   },
   new_here:{
-    top: 48
   },
   register: {
     fontSize: 18,
-    top: 45,
     color: '#ff8984',
     textDecorationLine: 'underline'
   },
@@ -73,12 +76,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     textAlign: 'center',
     backgroundColor: '#fcc181',
-    top: 80,
-    left: 100,
-    marginTop: 10,
-    marginBottom: 0,
     height: 48,
-    margin: 12,
     width: 97,
     borderRadius: 4,
     padding: 12,
