@@ -93,39 +93,39 @@ export default function SearchLanding({ navigation }) {
     setFeature(newFeature);
 
     function featureFilter(location) {
-      if (featureSelected[0].accessible === true && location.accessible === false) {
+      if (featureSelected[0].accessible === true && location.accessible === Images.False) {
         return(false);
       }
-      if (featureSelected[0].pads === true && location.pads === false) {
+      if (featureSelected[0].pads === true && location.pads === Images.False) {
         console.log(featureSelected[0].pads);
         console.log(location.pads);
         return(false);
       }
-      if (featureSelected[0].freePads === true && location.freePads === false) {
+      if (featureSelected[0].freePads === true && location.freePads === Images.False) {
         return(false);
       }
-      if (featureSelected[0].tampons === true && location.tampons === false) {
+      if (featureSelected[0].tampons === true && location.tampons === Images.False) {
         return(false);
       }
-      if (featureSelected[0].singleOcc === true && location.singleOcc === false) {
+      if (featureSelected[0].singleOcc === true && location.singleOcc === Images.False) {
         return(false);
       }
-      if (featureSelected[0].wipes === true && location.wipes === false) {
+      if (featureSelected[0].wipes === true && location.wipes === Images.False) {
         return(false);
       }
-      if (featureSelected[0].condoms === true && location.condoms === false) {
+      if (featureSelected[0].condoms === true && location.condoms === Images.False) {
         return(false);
       }
-      if (featureSelected[0].planB === true && location.planB === false) {
+      if (featureSelected[0].planB === true && location.planB === Images.False) {
         return(false);
       }
-      if (featureSelected[0].diapers === true && location.diapers === false) {
+      if (featureSelected[0].diapers === true && location.diapers === Images.False) {
         return(false);
       }
-      if (featureSelected[0].clean === true && location.clean === false) {
+      if (featureSelected[0].clean === true && location.clean === Images.False) {
         return(false);
       }
-      if (featureSelected[0].gNeutral === true && location.gNeutral === false) {
+      if (featureSelected[0].gNeutral === true && location.gNeutral === Images.False) {
         return(false);
       }
 

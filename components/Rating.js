@@ -10,10 +10,10 @@ export default function Rating(props) {
     <View style={[styles.container, styles.shadow]}>
       <View>
         <View style={styles.topFlex}>
-          <BloodRating number = {props.number}/>
+          <BloodRating number = {props.number} small={true}/>
           <Text style={styles.date}>{props.date}</Text>
         </View>
-        <View>
+        <View style={styles.textFlex}>
           <Text style={styles.title}>{props.title}</Text>
           <Text style={styles.description}>{props.description}</Text>
         </View>
@@ -48,15 +48,18 @@ const styles = StyleSheet.create({
   topFlex: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginBottom: '4%'
   },
   textFlex: {
-    flexDirection: 'row',
-    marginVertical: 50
+    justifyContent: 'space-between',
+    height: '42%',
+    marginBottom: '3%',
   },
   userFlex: {
     alignItems: 'flex-start',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    marginTop: '3%'
   },
   line: {
     borderBottomColor: 'grey',
@@ -65,13 +68,16 @@ const styles = StyleSheet.create({
   },
   user: {
     fontWeight: 'bold',
+    fontFamily: 'Helvetica'
   },
   title: {
     fontWeight: 'bold',
-    fontSize: 16
+    fontSize: 16,
+    fontFamily: 'Helvetica'
   },
   description: {
     fontSize: 12,
+
   },
   date: {
     fontWeight: '300',

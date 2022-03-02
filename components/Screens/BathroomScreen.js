@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 import {useState} from 'react';
-import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, Image, ImageBackground, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, Image, ImageBackground, TouchableOpacity, Linking } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -15,30 +15,49 @@ import SavedButton from '../buttons/SavedButton';
 
 export default function BathroomScreen({ navigation, route }) {
   const params = route.params;
+
   return (
     <SafeAreaView style={styles.container}>
-      <SavedButton/>
-      <ImageBackground source={params.source} style={styles.imagebkd} imageStyle={styles.image} >
-        <Text style={styles.nameText}>{params.name}</Text>
-        <Text style={styles.numberText}>Bathroom {params.number}</Text>
-        <BloodRating number={params.locationRating}/>
-      </ImageBackground>
+      <View style={styles.saved}>
+        <SavedButton/>
+      </View>
 
-      <Text>{params.miles}</Text>
-      <Text>{params.address}</Text>
-      <Text>{params.number}</Text>
-      <Text>{params.status}</Text>
-      <Text>Features</Text>
+      <ImageBackground source={params.source} style={styles.imagebkd} imageStyle={styles.image} >
+        <View style={styles.titleCard}>
+          <Text style={styles.nameText}>{params.name}</Text>
+          <Text style={styles.numberText}>Bathroom {params.number}</Text>
+          <View style={styles.blood}>
+            <BloodRating number={params.locationRating}/>
+          </View>
+        </View>
+
+      </ImageBackground>
+      <View style={styles.detailsFlex}>
+        <View>
+          <Text style={styles.text}>{params.address}</Text>
+          <TouchableOpacity onPress={() => Linking.openURL("maps://app?daddr=" + params.lat + "+" + params.lng)}>
+            <Text style={styles.open}>Open in Maps</Text>
+          </TouchableOpacity>
+
+        </View>
+        <View style={styles.distanceFlex}>
+          <Text style={styles.distanceText}>{params.miles} away</Text>
+          <Text style={styles.distanceText}>Open Now</Text>
+        </View>
+      </View>
+      <View style={{width: '92%', flexDirection: 'row', justifyContent: 'flex-start', marginTop: '3%', marginBottom: '2%'}}>
+        <Text style={[styles.text, {textAlign: 'left'}]}>Features</Text>
+      </View>
       <View style={styles.features}>
-        <Image source={params.accessible}/>
-        <Image source={params.gNeutral}/>
-        <Image source={params.freePads}/>
-        <Image source={params.tampons}/>
-        <Image source={params.clean}/>
-        <Image source={params.diapers}/>
-        <Image source={params.condoms}/>
-        <Image source={params.planB}/>
-        <Image source={params.wipes}/>
+        {params.accessible !== Images.False ? <Image source={params.accessible}/> : undefined}
+        {params.gNeutral !== Images.False ? <Image source={params.gNeutral}/> : undefined}
+        {params.freePads !== Images.False ? <Image source={params.freePads}/> : undefined}
+        {params.tampons !== Images.False ? <Image source={params.tampons}/> : undefined}
+        {params.clean !== Images.False ? <Image source={params.clean}/> : undefined}
+        {params.diapers !== Images.False ? <Image source={params.diapers}/> : undefined}
+        {params.condoms !== Images.False ? <Image source={params.condoms}/> : undefined}
+        {params.planB !== Images.False ? <Image source={params.planB}/> : undefined}
+        {params.wipes !== Images.False ? <Image source={params.wipes}/> : undefined}
       </View>
       <RatingList data={params.ratings}/>
       <View style={styles.lowerButtons}>
@@ -58,30 +77,39 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   imagebkd: {
-    height: '37%',
+    height: '33%',
     width: '92%',
     alignItems: 'flex-start',
     justifyContent: 'flex-end',
-    borderColor: 'black',
-    borderWidth: 1,
+    borderRadius: 5
 
 
   },
   image: {
     height: '100%',
     width: '100%',
+    borderRadius: 5
 
   },
   nameText: {
-    marginLeft: 10,
-    color: 'white'
+
+    color: 'white',
+    fontFamily: 'Helvetica-Bold',
+    fontSize: 24
   },
   numberText: {
-    marginLeft: 10,
-    color: 'white'
+
+    color: 'white',
+    fontFamily: 'Helvetica',
+    fontSize: 16
+
   },
   features: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    width: '98%',
+    justifyContent: 'space-around',
+    flexWrap: 'wrap',
+    marginBottom: '3%'
   },
   buttonFlex: {
     backgroundColor: '#FCC181',
@@ -91,5 +119,45 @@ const styles = StyleSheet.create({
   },
   lowerButtons: {
     flexDirection: 'row'
+  },
+  blood: {
+    marginLeft: '-12%',
+    justifyContent: 'flex-start'
+  },
+  titleCard: {
+    marginBottom: '3%',
+    marginLeft: '3%',
+    backgroundColor: 'rgba(0, 0, 0, 0.40)',
+  },
+  saved: {
+    width: '80%',
+    justifyContent: 'flex-end',
+    flexDirection: 'row'
+  },
+  detailsFlex: {
+    flexDirection: 'row',
+    width: '92%',
+    justifyContent: 'space-between',
+    paddingHorizontal: '3%'
+  },
+  distanceFlex: {
+    justifyContent: 'flex-start',
+    paddingRight: 3
+  },
+  distanceText: {
+    textAlign: 'right',
+    fontSize: 16,
+    fontFamily: 'Helvetica'
+  },
+  text: {
+    fontSize: 16,
+    fontFamily: 'Helvetica'
+  },
+  open: {
+    color: "#FF8984",
+    textDecorationLine: 'underline',
+    fontSize: 16,
+    fontFamily: 'Helvetica',
+
   }
 });

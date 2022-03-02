@@ -25,8 +25,11 @@ export default function RateScreen({ navigation, route }) {
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground source={params.source} style={styles.imagebkd} imageStyle={styles.image} >
-        <Text style={styles.nameText}>{params.name}</Text>
-        <Text style={styles.numberText}>Bathroom {params.number}</Text>
+        <View style={styles.titleCard}>
+          <Text style={styles.nameText}>{params.name}</Text>
+          <Text style={styles.numberText}>Bathroom {params.number}</Text>
+        </View>
+
       </ImageBackground>
       <Text>Rate Bathroom</Text>
       <BloodRadio data={data} onSelect={(value) => setOption(value)}/>
@@ -57,27 +60,31 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   imagebkd: {
-    height: '37%',
+    height: '33%',
     width: '92%',
     alignItems: 'flex-start',
     justifyContent: 'flex-end',
-    borderColor: 'black',
-    borderWidth: 1,
-
+    borderRadius: 5
 
   },
   image: {
     height: '100%',
     width: '100%',
+    borderRadius: 5
 
   },
   nameText: {
-    marginLeft: 10,
-    color: 'white'
+
+    color: 'white',
+    fontFamily: 'Helvetica-Bold',
+    fontSize: 24
   },
   numberText: {
-    marginLeft: 10,
-    color: 'white'
+
+    color: 'white',
+    fontFamily: 'Helvetica',
+    fontSize: 16
+
   },
   features: {
     flexDirection: 'row'
@@ -99,5 +106,10 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     width: 150,
     height: 90
+  },
+  titleCard: {
+    marginBottom: '3%',
+    marginLeft: '3%',
+    backgroundColor: 'rgba(0, 0, 0, 0.40)',
   }
 });

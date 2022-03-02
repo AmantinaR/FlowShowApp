@@ -6,13 +6,27 @@ import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 
 
-export default function Blood() {
-
+export default function HalfBlood({small}) {
+  let width = 0;
+  let height = 0;
+  let half = 0;
+  let size = 0;
+  if (small) {
+    width = 20;
+    height = 20;
+    size = 15;
+    half = 10;
+  } else {
+    width = 24;
+    height = 24;
+    size = 19;
+    half = 12;
+  }
   return(
-    <View style={styles.container}>
-      <View style={styles.grey}></View>
+    <View style={[styles.container, {width: width, height: height}]}>
+      <View style={[styles.grey, {width: half, height: height}]}></View>
       <View style={styles.icon}>
-        <Ionicons name='water-sharp' size={19} color={'white'} />
+        <Ionicons name='water-sharp' size={size} color={'white'} />
       </View>
 
     </View>
@@ -22,17 +36,13 @@ export default function Blood() {
 const styles = StyleSheet.create({
   container: {
     //flex: 1,
-    backgroundColor: 'red',
-    height: 24,
-    width: 24,
+    backgroundColor: '#C10C0D',
     alignItems: 'center',
     justifyContent: 'center',
     margin: 2
   },
   grey: {
     backgroundColor: '#D3D3D3',
-    height: 24,
-    width: 12,
     position: 'relative',
     left: 6
   },

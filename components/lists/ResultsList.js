@@ -36,6 +36,8 @@ export default function ResultsList(props) {
         wipes= {location.item.wipes}
         ratings={location.item.ratings}
         locationRating={location.item.locationRating}
+        lat={location.item.lat}
+        lng={location.item.lng}
       />);
   }
 

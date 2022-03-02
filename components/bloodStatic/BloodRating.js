@@ -8,107 +8,107 @@ import Blood from './Blood';
 import HalfBlood from './HalfBlood';
 
 
-export default function BloodRating({number}) {
+export default function BloodRating({number, small}) {
   if (number === 0) {
 
   } else if (number === 0.5) {
     return(
       <View style={styles.container}>
-        <HalfBlood/>
-        <Blood color='#D3D3D3'/>
-        <Blood color='#D3D3D3'/>
-        <Blood color='#D3D3D3'/>
-        <Blood color='#D3D3D3'/>
+        <HalfBlood small={small}/>
+        <Blood color='#D3D3D3' small={small}/>
+        <Blood color='#D3D3D3'small={small}/>
+        <Blood color='#D3D3D3'small={small}/>
+        <Blood color='#D3D3D3'small={small}/>
       </View>
     );
   } else if (number === 1) {
     return(
       <View style={styles.container}>
-        <Blood color='red'/>
-        <Blood color='#D3D3D3'/>
-        <Blood color='#D3D3D3'/>
-        <Blood color='#D3D3D3'/>
-        <Blood color='#D3D3D3'/>
+        <Blood color='#C10C0D'small={small}/>
+        <Blood color='#D3D3D3' small={small}/>
+        <Blood color='#D3D3D3' small={small}/>
+        <Blood color='#D3D3D3' small={small}/>
+        <Blood color='#D3D3D3' small={small}/>
       </View>
     );
   } else if (number === 1.5) {
     return(
       <View style={styles.container}>
-        <Blood color='red'/>
-        <HalfBlood/>
-        <Blood color='#D3D3D3'/>
-        <Blood color='#D3D3D3'/>
-        <Blood color='#D3D3D3'/>
+        <Blood color='#C10C0D'small={small}/>
+        <HalfBlood small={small}/>
+        <Blood color='#D3D3D3' small={small}/>
+        <Blood color='#D3D3D3' small={small}/>
+        <Blood color='#D3D3D3' small={small}/>
       </View>
     );
   } else if (number === 2) {
     return(
       <View style={styles.container}>
-        <Blood color='red'/>
-        <Blood color='red'/>
-        <Blood color='#D3D3D3'/>
-        <Blood color='#D3D3D3'/>
-        <Blood color='#D3D3D3'/>
+        <Blood color='#C10C0D' small={small}/>
+        <Blood color='#C10C0D' small={small}/>
+        <Blood color='#D3D3D3' small={small}/>
+        <Blood color='#D3D3D3' small={small}/>
+        <Blood color='#D3D3D3' small={small}/>
       </View>
     );
   } else if (number === 2.5) {
     return(
       <View style={styles.container}>
-        <Blood color='red'/>
-        <Blood color='red'/>
-        <HalfBlood/>
-        <Blood color='#D3D3D3'/>
-        <Blood color='#D3D3D3'/>
+        <Blood color='#C10C0D' small={small}/>
+        <Blood color='#C10C0D' small={small}/>
+        <HalfBlood small={small}/>
+        <Blood color='#D3D3D3' small={small}/>
+        <Blood color='#D3D3D3' small={small}/>
       </View>
     );
   } else if (number === 3) {
     return(
       <View style={styles.container}>
-        <Blood color='red'/>
-        <Blood color='red'/>
-        <Blood color='red'/>
-        <Blood color='#D3D3D3'/>
-        <Blood color='#D3D3D3'/>
+        <Blood color='#C10C0D' small={small}/>
+        <Blood color='#C10C0D' small={small}/>
+        <Blood color='#C10C0D' small={small}/>
+        <Blood color='#D3D3D3' small={small}/>
+        <Blood color='#D3D3D3' small={small}/>
       </View>
     );
   } else if (number === 3.5) {
     return(
       <View style={styles.container}>
-        <Blood color='red'/>
-        <Blood color='red'/>
-        <Blood color='red'/>
-        <HalfBlood/>
-        <Blood color='#D3D3D3'/>
+        <Blood color='#C10C0D' small={small}/>
+        <Blood color='#C10C0D' small={small}/>
+        <Blood color='#C10C0D' small={small}/>
+        <HalfBlood small={small}/>
+        <Blood color='#D3D3D3' small={small}/>
       </View>
     );
   } else if (number === 4) {
     return(
       <View style={styles.container}>
-        <Blood color='red'/>
-        <Blood color='red'/>
-        <Blood color='red'/>
-        <Blood color='red'/>
-        <Blood color='#D3D3D3'/>
+        <Blood color='#C10C0D' small={small}/>
+        <Blood color='#C10C0D' small={small}/>
+        <Blood color='#C10C0D' small={small}/>
+        <Blood color='#C10C0D' small={small}/>
+        <Blood color='#D3D3D3' small={small}/>
       </View>
     );
   } else if (number === 4.5) {
     return(
       <View style={styles.container}>
-        <Blood color='red'/>
-        <Blood color='red'/>
-        <Blood color='red'/>
-        <Blood color='red'/>
-        <HalfBlood/>
+        <Blood color='#C10C0D' small={small}/>
+        <Blood color='#C10C0D' small={small}/>
+        <Blood color='#C10C0D' small={small}/>
+        <Blood color='#C10C0D' small={small}/>
+        <HalfBlood small={small}/>
       </View>
     );
   } else if (number === 5) {
     return(
       <View style={styles.container}>
-        <Blood color='red'/>
-        <Blood color='red'/>
-        <Blood color='red'/>
-        <Blood color='red'/>
-        <Blood color='red'/>
+        <Blood color='#C10C0D' small={small}/>
+        <Blood color='#C10C0D' small={small}/>
+        <Blood color='#C10C0D' small={small}/>
+        <Blood color='#C10C0D' small={small}/>
+        <Blood color='#C10C0D' small={small}/>
       </View>
     );
   }

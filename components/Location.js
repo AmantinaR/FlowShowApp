@@ -9,9 +9,12 @@ export default function Location(props) {
   const navigation = useNavigation();
   return(
     <TouchableOpacity style={styles.container} onPress={() => navigation.navigate(props.list, props)}>
-      <View style={styles.distanceTextFlex}>
-        <Text style={styles.miles}>{props.miles}</Text>
-        <Text style={styles.text}>away from you</Text>
+      <View style={styles.topRow}>
+        <View style={styles.distanceTextFlex}>
+          <Text style={styles.miles}>{props.miles}</Text>
+          <Text style={styles.text}>away from you</Text>
+        </View>
+        <BloodRating number={props.locationRating} small={true}/>
       </View>
       <View style={styles.mainFlex}>
         <Image style={styles.picture} source={props.source}/>
@@ -21,7 +24,7 @@ export default function Location(props) {
           <Text style={styles.text}>{props.number}</Text>
           <Text style={styles.open}>{props.status}</Text>
         </View>
-        <BloodRating number={props.locationRating}/>
+
       </View>
     </TouchableOpacity>
 
@@ -37,17 +40,22 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     borderBottomColor: '#F1F2F3',
     paddingVertical: 5,
-    borderBottomWidth: 3
+    borderBottomWidth: 3,
   },
   distanceTextFlex: {
     flexDirection: 'row',
-    alignItems: 'flex-start',
-    width: '100%'
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginRight: '8%',
+    marginLeft: '-3%',
+    width: '45%'
+
   },
   mainFlex: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'flex-start',
+    width: '90%'
   },
   picture: {
     borderRadius: 8,
@@ -64,10 +72,18 @@ const styles = StyleSheet.create({
   },
   open: {
     fontWeight: 'bold',
-    color: 'pink'
+    color: '#FF8984'
   },
   text: {
     fontSize: 14,
+    fontFamily: 'Helvetica',
+    color: '#1D1F22'
 
   },
+  topRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'stretch',
+    width: '90%'
+  }
 });

@@ -13,7 +13,7 @@ export default function GenericButton(props) {
       <TouchableOpacity onPress={props.onPress}>
         <View style={styles.buttonFlex}>
           <Ionicons name='water-sharp' size={19} color={'white'} />
-          <Text>{props.text}</Text>
+          <Text style={styles.text}>{props.text}</Text>
         </View>
       </TouchableOpacity>
 
@@ -23,7 +23,8 @@ export default function GenericButton(props) {
       <TouchableOpacity onPress={props.onPress}>
         <View style={styles.buttonFlex}>
           <Octicons name='report' size={19} color={'white'} />
-          <Text>{props.text}</Text>
+          <Text> </Text>
+          <Text style={styles.text}>{props.text}</Text>
         </View>
       </TouchableOpacity>
     );
@@ -32,7 +33,7 @@ export default function GenericButton(props) {
       <TouchableOpacity onPress={props.onPress}>
         <View style={styles.buttonFlex}>
           <Feather name='camera' size={19} color={'white'} />
-          <Text>{props.text}</Text>
+          <Text style={styles.text}>{props.text}</Text>
         </View>
       </TouchableOpacity>
     );
@@ -41,7 +42,7 @@ export default function GenericButton(props) {
       <TouchableOpacity onPress={props.onPress}>
         <View style={styles.buttonFlex}>
           <Feather name='image' size={19} color={'white'} />
-          <Text>{props.text}</Text>
+          <Text style={styles.text}>{props.text}</Text>
         </View>
       </TouchableOpacity>
     );
@@ -49,7 +50,7 @@ export default function GenericButton(props) {
     return(
       <TouchableOpacity onPress={props.onPress}>
         <View style={styles.buttonFlex}>
-          <Text>Next</Text>
+          <Text style={styles.text}>Next</Text>
           <Feather name='chevron-right' size={19} color={'white'} />
 
         </View>
@@ -59,17 +60,17 @@ export default function GenericButton(props) {
     return(
       <TouchableOpacity onPress={props.onPress}>
         <View style={styles.buttonFlex}>
-          <Text>Confirm</Text>
+          <Text style={styles.text}>Confirm</Text>
           <Feather name='chevron-right' size={19} color={'white'} />
         </View>
       </TouchableOpacity>
     );
-  } else if (props.text === 'Report'){
+  } else if (props.text === 'Report Landing'){
     return(
       <TouchableOpacity onPress={props.onPress}>
         <View style={styles.buttonFlex}>
           <Octicons name='report' size={19} color={'white'} />
-          <Text>REPORT A BATHROOM</Text>
+          <Text style={styles.text}>REPORT A BATHROOM</Text>
         </View>
       </TouchableOpacity>
     );
@@ -93,6 +94,7 @@ const styles = StyleSheet.create({
   buttonFlex: {
     backgroundColor: '#FCC181',
     flexDirection: 'row',
+    justifyContent: 'space-between',
     margin: 10,
     borderRadius: 4,
     padding: 12,
@@ -108,6 +110,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   text: {
-    fontSize: 8.87
+    fontSize: 16,
+    color: 'white',
+    fontFamily: 'Helvetica-Bold'
   }
 });

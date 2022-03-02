@@ -9,7 +9,7 @@ export default function SavedButton(props) {
   return(
     <TouchableOpacity
         onPress={() => setSelected(!selected)}>
-        {selected ? <FontAwesome name='bookmark' size={24} color={'red'} /> : <FontAwesome name='bookmark-o' size={24} color={'black'} />}
+        {selected ? <FontAwesome name='bookmark' size={24} color={'#FF8984'} /> : <FontAwesome name='bookmark-o' size={24} color={'#FF8984'} />}
       </TouchableOpacity>
 
   );
