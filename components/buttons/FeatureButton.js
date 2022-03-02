@@ -5,9 +5,13 @@ import { useState } from "react";
 
 export default function FeatureButton(props) {
   const [selected, setSelected] = useState(false);
+  const SelectUpdate = () => {
+    setSelected(!selected);
+    props.onSelect(selected, props.tag);
+  };
   return(
     <TouchableOpacity
-        onPress={() => setSelected(!selected)}
+        onPress={() => SelectUpdate()}
         style={{ backgroundColor: selected ? "rgba(233, 167, 152, 100)" : "transparent", borderColor: selected ? '#E8A798': 'rgba(0, 0, 0, 0.5)', borderWidth: 1, borderRadius: 8, paddingVertical: 8,
         paddingHorizontal: 6, marginHorizontal: 4.43, height: 27, justifyContent: 'center' }}
       >

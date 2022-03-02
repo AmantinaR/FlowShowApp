@@ -14,8 +14,9 @@ import FeatureButton from '../buttons/FeatureButton';
 export default function FeatureButtonList(props) {
 
   const renderFeature = (feature) => {
+
     return(
-      <FeatureButton title={feature.item.title}
+      <FeatureButton title={feature.item.title} onSelect={props.onSelect} tag={feature.item.tag}
       />);
   }
 
