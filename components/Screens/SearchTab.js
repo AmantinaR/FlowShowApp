@@ -19,7 +19,7 @@ export default function SearchTab({ navigation }) {
   return (
     <SearchStack.Navigator>
       <SearchStack.Screen name="Landing" component={SearchLanding} options={{headerShown: false}}/>
-      <SearchStack.Screen name="Bathroom" component={Bathroom}/>
+      <SearchStack.Screen name="Bathroom" component={Bathroom} options={{headerBackTitle: 'Back', headerTitle: 'Bathroom Details'}}/>
       <SearchStack.Screen name="Rate" component={Rate}/>
     </SearchStack.Navigator>
   );
