@@ -11,6 +11,7 @@ import SearchBar from '../SearchBar';
 import SearchLanding from './SearchLanding';
 import Bathroom from './BathroomScreen';
 import Rate from './RateBathroom';
+import SavedButton from '../buttons/SavedButton';
 
 const SearchStack = createStackNavigator();
 
@@ -19,7 +20,10 @@ export default function SearchTab({ navigation }) {
   return (
     <SearchStack.Navigator>
       <SearchStack.Screen name="Landing" component={SearchLanding} options={{headerShown: false}}/>
-      <SearchStack.Screen name="Bathroom" component={Bathroom} options={{headerBackTitle: 'Back', headerTitle: 'Bathroom Details'}}/>
+      <SearchStack.Screen name="Bathroom" component={Bathroom} options={{
+        headerBackTitle: 'Back', headerTitle: 'Bathroom Details', headerRight: () => (
+            <SavedButton/>
+          ),}}/>
       <SearchStack.Screen name="Rate" component={Rate}/>
     </SearchStack.Navigator>
   );

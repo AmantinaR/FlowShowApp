@@ -18,10 +18,6 @@ export default function BathroomScreen({ navigation, route }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.saved}>
-        <SavedButton/>
-      </View>
-
       <ImageBackground source={params.source} style={styles.imagebkd} imageStyle={styles.image} >
         <View style={styles.titleCard}>
           <Text style={styles.nameText}>{params.name}</Text>
@@ -121,13 +117,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   blood: {
-    marginLeft: '-12%',
+    marginLeft: '-60%',
     justifyContent: 'flex-start'
   },
   titleCard: {
     marginBottom: '3%',
-    marginLeft: '3%',
-    backgroundColor: 'rgba(0, 0, 0, 0.40)',
+    //marginLeft: '3%',
+    backgroundColor: 'rgba(0, 0, 0, 0.50)',
+    padding: '3%',
+    width: '100%'
   },
   saved: {
     width: '80%',
