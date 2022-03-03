@@ -11,7 +11,7 @@ import RatingList from '../lists/RatingList';
 import RatingData from '../lists/data/DefaultRating';
 import GenericButton from '../buttons/GenericButton';
 
-export default function ReportTab({ navigation }) {
+export default function ProfileTab({ route, navigation }) {
   const [option, setOption] = useState(null);
   const data = [
     { value: "Women's" },
@@ -20,8 +20,8 @@ export default function ReportTab({ navigation }) {
   ];
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{marginBottom: '10%'}}>
-        <Text style={styles.header}>Amara25's Profile</Text>
+      <View style={{marginBottom: '10%', alignItems: 'center'}}>
+        <Text style={styles.header}>Profile</Text>
         <Text style={styles.manage}>You can manage your account info here</Text>
       </View>
       <StatusBar style="auto" />

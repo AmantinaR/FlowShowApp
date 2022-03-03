@@ -9,17 +9,21 @@ import SVGImg from '../../assets/saved-icon.svg';
 import GenericButton from '../buttons/GenericButton';
 
 
-export default function LandingScreen({ navigation }) {
+export default function LandingScreen({ route, navigation }) {
+
+  const name = route.params.user
   return (
     <SafeAreaView style={styles.container}>
       <Image source={require('../../assets/landing-blob.png')} style={styles.blob}/>
       <Image source={require("../../assets/logo-large.png")} style={styles.logo}/>
       <StatusBar style="auto" />
       <View style={styles.buttonsBox}>
-        <GenericButton text={'Find Bathroom'} onPress={() => navigation.navigate('Tabs', { screen: 'Search' })}/>
-        <GenericButton text={'Report Bathroom'} onPress={() => navigation.navigate('Tabs', { screen: 'Report' })}/>
-        <GenericButton text={'Saved Bathroom'} onPress={() => navigation.navigate('Tabs', { screen: 'Saved' })}/>
+        <GenericButton text={'Find Bathroom'} onPress={() => navigation.navigate('Tabs', { screen: 'Search', user: name})}/>
+        <GenericButton text={'Report Bathroom'} onPress={() => navigation.navigate('Tabs', { screen: 'Report', user: name })}/>
+        <GenericButton text={'Saved Bathroom'} onPress={() => navigation.navigate('Tabs', { screen: 'Saved', user: name })}/>
       </View>
+      <Text style={{fontSize: 20, color: 'black', position: 'absolute', top: '25%'}}> Welcome Back, {name}</Text>
+
     </SafeAreaView>
   );
 }

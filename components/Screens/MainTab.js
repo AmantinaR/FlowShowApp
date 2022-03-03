@@ -21,7 +21,7 @@ import { Octicons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
 
-export default function MainTab({ navigation }) {
+export default function MainTab({ route, navigation }) {
   return (
       <Tab.Navigator screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {

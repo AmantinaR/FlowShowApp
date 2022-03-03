@@ -11,10 +11,9 @@ export default function BloodRadio({data, onSelect}) {
   };
   return (
     <View style={styles.option}>
-      {data.map((item) => {
-        const key = item.value;
+      {data.map((item, index) => {
         return (
-          <Pressable onPress={() => selectHandler(item.value)}>
+          <Pressable key={index} onPress={() => selectHandler(item.value)}>
             <Blood color={item.value <= userOption? 'red' : '#D3D3D3'}/>
           </Pressable>
         );

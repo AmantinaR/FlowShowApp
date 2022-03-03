@@ -54,7 +54,6 @@ export default function AddScreenInput({ navigation }) {
           <Text>Additional Comments</Text>
           <TextInput style={styles.comments} placeholder={'Please write any comments here'}/>
           <GenericButton text={'Confirm'} onPress={() => navigation.navigate('Confirm')}/>
-          <Text>adfkjhakdfhjkahfkjshfhfhfhfhfjahsfjkhaksdfhkhffhjkahsdkfhaadfkjhakdfhjkahfkjshfhfhfhfhfjahsfjkhaksdfhkhffhjkahsdkfhaadfkjhakdfhjkahfkjshfhfhfhfhfjahsfjkhaksdfhkhffhjkahsdkfhaadfkjhakdfhjkahfkjshfhfhfhfhfjahsfjkhaksdfhkhffhjkahsdkfhaadfkjhakdfhjkahfkjshfhfhfhfhfjahsfjkhaksdfhkhffhjkahsdkfhaadfkjhakdfhjkahfkjshfhfhfhfhfjahsfjkhaksdfhkhffhjkahsdkfha</Text>
           <StatusBar style="auto" />
         </View>
       </ScrollView>

@@ -12,7 +12,11 @@ import SatisfactionRadio from '../buttons/SatisfactionRadio';
 import GenericButton from '../buttons/GenericButton';
 
 export default function ReportInput({ navigation, route }) {
+  const [building, setBuilding] = useState('');
+  const [room, setRoom] = useState('');
+  const [comment, setComment] = useState('');
   const [option, setOption] = useState(null);
+
   const data = [
     { value: "angry" },
     { value: "sad" },
@@ -20,31 +24,34 @@ export default function ReportInput({ navigation, route }) {
     { value: "smile" },
     { value: "happy" },
   ];
+
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Report Issue(s)</Text>
-      <Text>You tell us the issue(s), and we'll work with the building managers to solve them</Text>
+      <Text style={{color: 'rgba(0, 0, 0, 0.5)', fontFamily: 'Helvetica'}}>You tell us the issue(s), and we'll work with the building managers to solve them</Text>
       <View style={styles.textFlex}>
-        <Text>Bathroom Building</Text>
-        <TextInput style={styles.textBox} placeholder='Building Name' />
+        <Text style={styles.text}>Bathroom Building</Text>
+        <TextInput onChangeText={(building) => setBuilding(building)} style={styles.textBox} placeholder='Building Name' />
       </View>
       <View style={styles.textFlex}>
-        <Text>Bathroom Room #</Text>
-        <TextInput style={styles.textBox} placeholder='Room #'/>
+        <Text style={styles.text}>Bathroom Room #</Text>
+        <TextInput onChangeText={(room) => setRoom(room)} style={styles.textBox} placeholder='Room #'/>
       </View>
       <View style={styles.featuresFlex}>
-        <Text>Products Requested</Text>
+        <Text style={styles.text}>Products Requested (Optional)</Text>
         <ProductsRequested/>
       </View>
       <View style={styles.featuresFlex}>
-        <Text>Disposal Options Missing</Text>
+        <Text style={styles.text}>Disposal Options Missing (Optional)</Text>
         <Disposal/>
       </View>
       <View style={styles.featuresFlex}>
-        <Text>How satisfied are you with the cleanliness?</Text>
+        <Text style={styles.text}>How satisfied are you with the cleanliness?</Text>
         <SatisfactionRadio data={data} onSelect={(value) => setOption(value)}/>
       </View>
+      <TextInput onChangeText={(comment) => setComment(comment)} style={styles.comments} placeholder='Please write any comments (Optional)...'/>
+      <View style={styles.confirm}>
       <GenericButton text={"Confirm"} onPress={() => navigation.navigate('Confirm')}/>
+      </View>
       <StatusBar style="auto" />
     </SafeAreaView>
   );
@@ -55,7 +62,8 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
+    padding: 10
   },
   textFlex: {
     flexDirection: 'row',
@@ -63,14 +71,15 @@ const styles = StyleSheet.create({
   },
   textBox: {
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: 'rgba(0, 0, 0, 0.25)',
     height: 40,
     padding: 10,
     margin: 12,
-    width: 200
+    width: '40%',
+    borderRadius: 4
   },
   featuresFlex: {
-
+    marginTop: '3%'
   },
   satisfaction: {
     flexDirection: 'row',
@@ -78,5 +87,22 @@ const styles = StyleSheet.create({
     borderColor: '#E8A798',
     justifyContent: 'space-between',
     alignItems: 'center'
+  },
+  text: {
+    fontFamily: 'Helvetica'
+  },
+  comments: {
+    borderWidth: 1,
+    borderColor: 'rgba(0, 0, 0, 0.25)',
+    borderRadius: 4,
+    width: '84%',
+    height: '18%',
+    padding: 10,
+    marginTop: '5%'
+
+  },
+  confirm: {
+    marginTop: '2%',
+    marginBottom: '3%'
   }
 });
