@@ -243,13 +243,13 @@ const styles = StyleSheet.create({
   },
   map: {
     width: '100%',
-    height: '80%',
+    height: '70%',
     borderRadius: 14,
     //top: -100.66
   },
   container1: {
     width: '95%',
-    height: '100%',
+    height: '80%',
     position: 'absolute',
     top: 100,
     padding: '3%',
