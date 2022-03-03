@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     margin: 8,
-    top: -10
+    top: -15
   },
   mainContainer: {
     height: '10%',
