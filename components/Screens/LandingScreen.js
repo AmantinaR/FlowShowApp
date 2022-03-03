@@ -38,14 +38,14 @@ const styles = StyleSheet.create({
   },
   logo: {
     position: 'absolute',
-    width: 102.65,
-    height: 148,
-    top: 249,
+    width: '26%',
+    height: '19%',
+    top: '30%',
   },
   blob: {
     position: 'absolute',
-    width: 415,
-    height: 500,
+    width: '100%',
+    height: '70%',
     top: '40%',
   },
   buttonsBox: {
@@ -56,8 +56,8 @@ const styles = StyleSheet.create({
     padding: 0,
     position: 'absolute',
     width: '70%',
-    height: 184,
-    top: 439,
+    height: '30%',
+    top: '50%',
   },
   button: {
     marginTop: '10%',
