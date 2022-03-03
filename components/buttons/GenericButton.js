@@ -5,6 +5,9 @@ import { useState } from "react";
 import { Ionicons } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
+
 
 
 export default function GenericButton(props) {
@@ -65,12 +68,30 @@ export default function GenericButton(props) {
         </View>
       </TouchableOpacity>
     );
-  } else if (props.text === 'Report Landing'){
+  } else if (props.text === 'Report Bathroom'){
     return(
       <TouchableOpacity onPress={props.onPress}>
-        <View style={styles.buttonFlex}>
+        <View style={styles.landingFlex}>
           <Octicons name='report' size={19} color={'white'} />
-          <Text style={styles.text}>REPORT A BATHROOM</Text>
+          <Text style={styles.text}>  Report Bathroom       </Text>
+        </View>
+      </TouchableOpacity>
+    );
+  } else if (props.text === "Find Bathroom") {
+    return(
+      <TouchableOpacity onPress={props.onPress}>
+        <View style={styles.landingFlex}>
+          <FontAwesome5 name='search-location' size={19} color={'white'} />
+          <Text style={styles.text}>  Find Bathroom           </Text>
+        </View>
+      </TouchableOpacity>
+    );
+  } else if (props.text === "Saved Bathroom") {
+    return(
+      <TouchableOpacity onPress={props.onPress}>
+        <View style={styles.landingFlex}>
+          <FontAwesome name='bookmark-o' size={19} color={'white'} />
+          <Text style={styles.text}>   Saved Bathrooms      </Text>
         </View>
       </TouchableOpacity>
     );
@@ -113,5 +134,18 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: 'white',
     fontFamily: 'Helvetica-Bold'
-  }
+  },
+  landingFlex: {
+    backgroundColor: '#FCC181',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    margin: 10,
+    borderRadius: 4,
+    width: '80%',
+    padding: 12,
+    shadowColor: "#000",
+    shadowOffset: {
+	  width: 0,
+	  height: 2 }
+  },
 });

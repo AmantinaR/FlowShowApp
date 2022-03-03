@@ -32,19 +32,6 @@ export default function ReportLanding({ navigation }) {
       <Button title="Report Status" onPress={() => navigation.navigate('Status')}/>
       <GenericButton text={'Report'} onPress={() => navigation.navigate('Input')}/>
 
-      <View style={styles.container1}>
-      <BottomSheet
-
-        index={0}
-        snapPoints={snapPoints}
-        onChange={handleSheetChanges}
-      >
-        <View style={styles.contentContainer}>
-          <Text>Awesome 🎉</Text>
-        </View>
-      </BottomSheet>
-    </View>
-
       <StatusBar style="auto" />
     </SafeAreaView>
   );
