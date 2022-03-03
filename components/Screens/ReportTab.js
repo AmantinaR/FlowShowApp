@@ -17,7 +17,7 @@ export default function ReportTab({ navigation }) {
     <ReportStack.Navigator>
       <ReportStack.Screen name="ReportLanding" component={Landing} options={{headerShown: false}}/>
       <ReportStack.Screen name="Input" component={Input} options={{headerTitle: 'Report Issue(s)',
-      headerLeft: () => (<View style={{flexDirection: 'row'}}>
+      headerLeft: () => (<View style={{flexDirection: 'row', alignItems: 'center'}}>
         <Ionicons name={'ios-chevron-back'} size={33} color={'#0F77F0'}/>
         <Button title={'Back'} onPress={() => navigation.navigate("ReportLanding") } style={{marginLeft: 40}}/>
         </View>)}}/>

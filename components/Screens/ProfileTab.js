@@ -20,20 +20,20 @@ export default function ReportTab({ navigation }) {
   ];
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{marginTop: '10%'}}>
+      <View style={{marginBottom: '10%'}}>
         <Text style={styles.header}>Amara25's Profile</Text>
         <Text style={styles.manage}>You can manage your account info here</Text>
       </View>
       <StatusBar style="auto" />
-      <View style={{}}>
+      <View style={{marginTop: '10%'}}>
       <Text style = {styles.preferences_text}>Bathroom Gender Preference</Text>
       <GenderRadio  data={data} onSelect={(value) => setOption(value)}/>
       </View>
       <View style = {styles.needs}>
-      <Text style = {{fontSize:15}}>Accessibility Needs</Text>
+      <Text style = {{fontSize:15, marginBottom: '3%'}}>Accessibility Needs</Text>
       <Image source={require('../../assets/needs.png')}/>
       </View>
-      <View>
+      <View style= {{marginTop: '40%'}}>
         <GenericButton text={'Log Out'} onPress={() => navigation.navigate('Login')}/>
       </View>
     </SafeAreaView>
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 20
+    padding: 30
   },
   header: {
     fontWeight: 'bold',
