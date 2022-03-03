@@ -95,6 +95,14 @@ export default function GenericButton(props) {
         </View>
       </TouchableOpacity>
     );
+  } else if (props.text === "Log Out") {
+    return(
+      <TouchableOpacity onPress={props.onPress}>
+        <View style={styles.landingFlex}>
+          <Text style={styles.text}>Log Out</Text>
+        </View>
+      </TouchableOpacity>
+    );
   }
 
 
@@ -146,6 +154,8 @@ const styles = StyleSheet.create({
     shadowColor: "#000",
     shadowOffset: {
 	  width: 0,
-	  height: 2 }
+	  height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 2,
   },
 });

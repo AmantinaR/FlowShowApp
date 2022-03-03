@@ -3,6 +3,7 @@ import * as React from 'react';
 import {useState} from 'react';
 import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, Image, ImageBackground, TouchableOpacity, Linking } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import { StackActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import GenderRadio from '../buttons/GenderRadio';

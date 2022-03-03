@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Svg, { Circle } from 'react-native-svg';
 import SVGImg from '../../assets/saved-icon.svg';
+import GenericButton from '../buttons/GenericButton';
 
 
 export default function LandingScreen({ navigation }) {
@@ -15,15 +16,9 @@ export default function LandingScreen({ navigation }) {
       <Image source={require("../../assets/logo-large.png")} style={styles.logo}/>
       <StatusBar style="auto" />
       <View style={styles.buttonsBox}>
-        <TouchableOpacity onPress={() => navigation.navigate('Tabs', { screen: 'Search' })}>
-          <Image source={require('../../assets/find-bathroom.png')} style={styles.button}/>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('Tabs', { screen: 'Report' })}>
-          <Image source={require('../../assets/report-bathroom.png')} style={styles.button}/>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('Tabs', { screen: 'Saved' })}>
-          <Image source={require('../../assets/saved-bathrooms.png')} style={styles.button}/>
-        </TouchableOpacity>
+        <GenericButton text={'Find Bathroom'} onPress={() => navigation.navigate('Tabs', { screen: 'Search' })}/>
+        <GenericButton text={'Report Bathroom'} onPress={() => navigation.navigate('Tabs', { screen: 'Report' })}/>
+        <GenericButton text={'Saved Bathroom'} onPress={() => navigation.navigate('Tabs', { screen: 'Saved' })}/>
       </View>
     </SafeAreaView>
   );
