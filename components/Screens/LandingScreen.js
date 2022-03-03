@@ -40,14 +40,13 @@ const styles = StyleSheet.create({
     position: 'absolute',
     width: 102.65,
     height: 148,
-    left: 146,
     top: 249,
   },
   blob: {
     position: 'absolute',
-    //width: 545,
-    //height: 406,
-    top: 352,
+    width: 415,
+    height: 500,
+    top: '40%',
   },
   buttonsBox: {
     display: 'flex',
@@ -56,15 +55,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 0,
     position: 'absolute',
-    width: 238,
+    width: '70%',
     height: 184,
-    left: 76,
     top: 439,
-    //borderWidth: 1,
-    //borderColor: 'black'
   },
   button: {
-    marginTop: 10,
-    marginBottom: 0,
+    marginTop: '10%',
+    marginBottom: '0%',
   }
 });

@@ -37,20 +37,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   logo: {
-    position: 'absolute',
-    top: 90
+    padding: '5%'
   },
   login_header: {
     fontWeight: 'bold',
     fontSize: 20,
-    top: 20,
+    margin: '5%'
   },
   textBox: {
     borderWidth: 1,
     borderColor: 'black',
-    height: 50,
-    padding: 10,
-    margin: 12,
+    padding: '3%',
+    margin: '3%',
     width: '84%',
     borderRadius: 10
   },
@@ -60,9 +58,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     marginTop: '20%'
-
   },
-  new_here:{
+  bottom_bar:{
   },
   register: {
     fontSize: 18,
@@ -76,8 +73,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     textAlign: 'center',
     backgroundColor: '#fcc181',
-    height: 48,
-    width: 97,
+    height: '37%',
+    width: '30%',
     borderRadius: 4,
     padding: 12,
     shadowColor: "#000",
