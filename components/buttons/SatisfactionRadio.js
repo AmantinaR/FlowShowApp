@@ -10,9 +10,9 @@ export default function SatisfactionRadio({data, onSelect}) {
   };
   return (
     <View style={styles.option}>
-      {data.map((item) => {
+      {data.map((item, index) => {
         return (
-          <Satisfaction emotion={item.value} onPress={() => selectHandler(item.value)} selected={item.value === userOption ? true : false}/>
+          <Satisfaction key={index} emotion={item.value} onPress={() => selectHandler(item.value)} selected={item.value === userOption ? true : false}/>
         );
       })}
     </View>

@@ -34,9 +34,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     width: 240,
-    height: 190,
+    height: '90%',
     backgroundColor: 'white',
-    marginHorizontal: 10
+    marginHorizontal: 10,
+    padding: 10
 
   },
   shadow: {

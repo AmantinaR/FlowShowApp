@@ -39,13 +39,13 @@ export default function SearchLanding({ navigation }) {
 
 
   // variables
-  const snapPoints = useMemo(() => ['50%', '100%'], []);
+  const snapPoints = useMemo(() => ['45%', '100%'], []);
 
   // callbacks
   const handleSheetChanges = useCallback((index: number) => {
     console.log('handleSheetChanges', index);
     if (index === 0) {
-      let newHeight = '40%';
+      let newHeight = '37%';
       setHeight(newHeight);
     } else if (index === 1) {
       let newHeight = '87%';
@@ -209,10 +209,10 @@ export default function SearchLanding({ navigation }) {
           >
             <Marker coordinate={{latitude: 37.4295238646884, longitude: -122.16790117770296}}
             image={require('../../assets/current-location.png')}/>
-            {resultdata.map((item) => {
+            {resultdata.map((item, index) => {
               return(
                 <Marker coordinate = {{latitude: item.lat, longitude: item.lng}}
-                title={item.name}/>
+                title={item.name} key={index}/>
               );
             })}
           </MapView>
@@ -222,8 +222,9 @@ export default function SearchLanding({ navigation }) {
             snapPoints={snapPoints}
             onChange={handleSheetChanges}
           >
-          <FeatureButtonList data={featurenames} onSelect={(selected, feature) => updateFeatures(selected, feature)}/>
-          <ResultList data = {resultdata} feature={featurenames} height={listHeight}/>
+            <FeatureButtonList data={featurenames} onSelect={(selected, feature) => updateFeatures(selected, feature)}/>
+            <Text> Results For {text !== '' ? text : 'All Nearby'}</Text>
+            <ResultList data = {resultdata} feature={featurenames} height={listHeight}/>
 
           </BottomSheet>
       </View>
@@ -243,15 +244,15 @@ const styles = StyleSheet.create({
   },
   map: {
     width: '100%',
-    height: '70%',
+    height: '50%',
     borderRadius: 14,
-    //top: -100.66
+    marginTop: 20
   },
   container1: {
     width: '95%',
-    height: '80%',
+    height: '100%',
     position: 'absolute',
-    top: 100,
+    top: '10%',
     padding: '3%',
   },
   results: {

@@ -9,10 +9,10 @@ export default function GenderRadio({data, onSelect}) {
   };
   return (
     <View>
-      {data.map((item) => {
+      {data.map((item, index) => {
         return (
 
-          <View key={item.id} style = {styles.option}>
+          <View key={index} style = {styles.option}>
           <Pressable
             style={
               item.value === userOption ? styles.selected : styles.unselected

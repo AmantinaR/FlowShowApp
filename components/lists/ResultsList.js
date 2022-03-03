@@ -47,7 +47,7 @@ export default function ResultsList(props) {
         <FlatList
             data = {props.data}
             renderItem={(location) => renderLocation(location)}
-            keyExtractor={(location) => location.index}
+            keyExtractor={(location) => location.id}
         />
 
     </View>
