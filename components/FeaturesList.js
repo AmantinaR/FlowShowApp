@@ -36,6 +36,6 @@ const styles = StyleSheet.create({
     marginBottom: 8.86
   },
   list: {
-    marginTop: 8.86
+    marginTop: 20
   }
 });
