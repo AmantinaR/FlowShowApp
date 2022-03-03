@@ -10,7 +10,7 @@ export default function SearchBar(props) {
       <TextInput style={styles.textBox} placeholder='Enter a Location'
       onChangeText={(text) => props.setText(text)}/>
       <TouchableOpacity style={styles.search} onPress={props.onPress}>
-        <FontAwesome5 name='search-location' size={16} color='white' />
+        <FontAwesome5 name='search-location' size={30} color='white' />
       </TouchableOpacity>
     </View>
 
@@ -27,22 +27,22 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     borderColor: "#E5E5E5",
     borderWidth: 1,
-    width: 365,
-    margin: 9
+    width: '90%',
+    height: '7%',
+    margin: '1%'
   },
   textBox: {
     borderWidth: 1,
     borderColor: '#E5E5E5',
     borderRadius: 5,
-    height: 40,
-    padding: 10,
-    width: 308,
-    backgroundColor: 'white'
+    height: '80%',
+    padding: 5,
+    width: '80%',
+    backgroundColor: 'white',
+    fontSize: 18
   },
   search: {
-    paddingHorizontal: 20,
-    height: 40,
-    justifyContent: 'center'
+    paddingHorizontal: '4%',
     //width: 30
   }
 });

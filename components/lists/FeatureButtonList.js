@@ -24,6 +24,7 @@ export default function FeatureButtonList(props) {
     <View style={styles.mainContainer}>
       <FlatList
           horizontal
+          showsHorizontalScrollIndicator={false}
           data = {props.data}
           renderItem={(feature) => renderFeature(feature)}
           keyExtractor={(feature) => feature.id}
@@ -36,12 +37,14 @@ export default function FeatureButtonList(props) {
 const styles = StyleSheet.create({
   container: {
     //flex: 1,
-
     alignItems: 'center',
     justifyContent: 'center',
-    margin: 10,
+    margin: 15,
+    top: '-15%'
   },
   mainContainer: {
-    height: '5%'
+    height: '10%',
+    marginBottom: '-5%'
+
   }
 });

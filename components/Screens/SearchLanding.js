@@ -240,22 +240,22 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     //justifyContent: 'center',
-
   },
   map: {
-    width: 365,
-    height: 350,
+    width: '100%',
+    height: '80%',
     borderRadius: 14,
     //top: -100.66
   },
   container1: {
-    width: 365,
+    width: '95%',
     height: '100%',
     position: 'absolute',
     top: 100,
+    padding: '3%',
   },
   results: {
-    backgroundColor: 'purple',
+    backgroundColor: '#fff',
     //height: '40%'
   },
 });
