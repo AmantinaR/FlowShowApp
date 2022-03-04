@@ -103,6 +103,14 @@ export default function GenericButton(props) {
         </View>
       </TouchableOpacity>
     );
+  } else if (props.text === "Done") {
+    return(
+      <TouchableOpacity onPress={props.onPress}>
+        <View style={styles.buttonFlex}>
+          <Text style={styles.text}>Done</Text>
+        </View>
+      </TouchableOpacity>
+    );
   }
 
 
