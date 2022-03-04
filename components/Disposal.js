@@ -8,9 +8,8 @@ export default function ProductsRequested(props) {
   return(
     <View style={styles.list}>
       <View style={styles.container}>
-        <FeatureButton title='Napkin Bin'/>
-        <FeatureButton title='In-Stall Trash Can'/>
-        <FeatureButton title='Out-of-Stall Trash Can'/>
+        <FeatureButton title='In-Stall Trash Can' tag="inStall" onSelect={props.onSelect}/>
+        <FeatureButton title='Out-of-Stall Trash Can'tag='outStall'onSelect={props.onSelect}/>
       </View>
     </View>
 

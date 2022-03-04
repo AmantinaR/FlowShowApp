@@ -12,10 +12,64 @@ import SatisfactionRadio from '../buttons/SatisfactionRadio';
 import GenericButton from '../buttons/GenericButton';
 
 export default function ReportInput({ navigation, route }) {
+  const date = new Date().getDate();
+  const month = new Date().getMonth() + 1;
+  const year = new Date().getFullYear();
+  const fullDate = date + '-' + month + '-' + year;
   const [building, setBuilding] = useState('');
   const [room, setRoom] = useState('');
   const [comment, setComment] = useState('');
   const [option, setOption] = useState(null);
+  const productData = [
+    {pads:false,
+    tampons: false,
+    diapers: false,
+    condoms: false,
+    planb: false,
+    wipes: false,
+    tp: false,
+    soap: false
+  }
+  ];
+  const [products, setProducts] = useState(productData);
+  const updateProducts = (selected, product) => {
+    let newProduct = products;
+    if (product == 'pads') {
+      newProduct[0].pads = !selected;
+    } else if (product == 'pads') {
+      newProduct[0].pads = !selected;
+    } else if (product == 'tampons') {
+      newProduct[0].tampons = !selected;
+    } else if (product == 'wipes') {
+      newProduct[0].wipes = !selected;
+    } else if (product == 'condoms') {
+      newProduct[0].condoms = !selected;
+    } else if (product == 'planb') {
+      newProduct[0].planb = !selected;
+    } else if (product == 'diapers') {
+      newProduct[0].diapers = !selected;
+    } else if (product == 'tp') {
+      newProduct[0].tp = !selected;
+    } else if (product == 'soap') {
+      newProduct[0].soap = !selected;
+    }
+    setProducts(newProduct);
+  };
+
+  const disposalData = [
+    {inStall:false,
+    outStall: false,}
+  ];
+  const [disposal, setDisposal] = useState(disposalData);
+  const updateDisposal = (selected, option) => {
+    let newDisposal = disposal;
+    if (option == 'inStall') {
+      newDisposal[0].inStall = !selected;
+    } else if (option == 'outStall') {
+      newDisposal[0].outStall = !selected;
+    }
+    setDisposal(newDisposal);
+  };
 
   const data = [
     { value: "angry" },
@@ -24,6 +78,7 @@ export default function ReportInput({ navigation, route }) {
     { value: "smile" },
     { value: "happy" },
   ];
+
 
   return (
     <SafeAreaView style={styles.container}>
@@ -38,11 +93,11 @@ export default function ReportInput({ navigation, route }) {
       </View>
       <View style={styles.featuresFlex}>
         <Text style={styles.text}>Products Requested (Optional)</Text>
-        <ProductsRequested/>
+        <ProductsRequested onPress={(selected, product) => updateProducts(selected, product)}/>
       </View>
       <View style={styles.featuresFlex}>
         <Text style={styles.text}>Disposal Options Missing (Optional)</Text>
-        <Disposal/>
+        <Disposal onSelect={(selected, disposal) => updateDisposal(selected, disposal)}/>
       </View>
       <View style={styles.featuresFlex}>
         <Text style={styles.text}>How satisfied are you with the cleanliness?</Text>
@@ -50,7 +105,7 @@ export default function ReportInput({ navigation, route }) {
       </View>
       <TextInput onChangeText={(comment) => setComment(comment)} style={styles.comments} placeholder='Please write any comments (Optional)...'/>
       <View style={styles.confirm}>
-      <GenericButton text={"Confirm"} onPress={() => navigation.navigate('Confirm')}/>
+      <GenericButton text={"Confirm"} onPress={() => navigation.navigate('Confirm', {building: building, room: room, comment: comment, option: option, products: products, disposal: disposal, date: fullDate})}/>
       </View>
       <StatusBar style="auto" />
     </SafeAreaView>

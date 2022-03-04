@@ -21,7 +21,7 @@ export default function ReportTab({ navigation }) {
         <Ionicons name={'ios-chevron-back'} size={33} color={'#0F77F0'}/>
         <Button title={'Back'} onPress={() => navigation.navigate("ReportLanding") } style={{marginLeft: 40}}/>
         </View>)}}/>
-      <ReportStack.Screen name="Confirm" component={Confirm}/>
+      <ReportStack.Screen name="Confirm" component={Confirm} options={{headerTitle: 'Report Details',}}/>
       <ReportStack.Screen name="Status" component={Status}/>
     </ReportStack.Navigator>
   );
