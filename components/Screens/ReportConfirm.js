@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
-import { Text, View, StyleSheet, Button, SafeAreaView, TextInput } from 'react-native';
+import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -78,7 +78,8 @@ export default function ReportConfirm({ route, navigation }) {
       <Text>Products Requested: {productlist} </Text>
       <Text>Disposal Options Missing: {disposallist} </Text>
       <Text>Date Submitted: {params.date} </Text>
-      <Button title="Done" onPress={() => navigation.navigate('Landing')}/>
+      <TouchableOpacity></TouchableOpacity>
+      <Button title="Done" onPress={() => navigation.navigate('ReportLanding')}/>
       <StatusBar style="auto" />
       </View>
     </SafeAreaView>
@@ -92,5 +93,30 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20
+  },
+  button: {
+    color: '#ffffff',
+    fontSize: 15,
+    justifyContent: 'center',
+    alignItems: 'center',
+    textAlign: 'center',
+    backgroundColor: '#fcc181',
+    height: '37%',
+    width: '30%',
+    borderRadius: 4,
+    padding: 12,
+    shadowColor: "#000",
+    shadowOffset: {
+	  width: 0,
+	  height: 2,
+    },
+   shadowOpacity: 0.25,
+   shadowRadius: 2,
+ },
+  text: {
+    fontSize: 16,
+    color: 'white',
+    fontFamily: 'Helvetica-Bold'
+
   },
 });
