@@ -4,6 +4,7 @@ import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, Image } from '
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { useState} from 'react';
 
 import SearchTab from './SearchTab';
 import SavedTab from './SavedTab';
@@ -22,6 +23,7 @@ import { Octicons } from '@expo/vector-icons';
 const Tab = createBottomTabNavigator();
 
 export default function MainTab({ route, navigation }) {
+  
   return (
       <Tab.Navigator screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {

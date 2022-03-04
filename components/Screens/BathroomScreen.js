@@ -16,7 +16,6 @@ import SavedButton from '../buttons/SavedButton';
 
 export default function BathroomScreen({ navigation, route }) {
   const params = route.params;
-
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground source={params.source} style={styles.imagebkd} imageStyle={styles.image} >

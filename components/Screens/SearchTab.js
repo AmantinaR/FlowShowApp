@@ -12,19 +12,26 @@ import SearchLanding from './SearchLanding';
 import Bathroom from './BathroomScreen';
 import Rate from './RateBathroom';
 import SavedButton from '../buttons/SavedButton';
+import { useState } from 'react';
 
 const SearchStack = createStackNavigator();
 
 export default function SearchTab({ navigation }) {
 
+  const changeSaved = () => {
+    route.params.saved = !route.params.saved;
+    console.log(route.params.saved);
+  };
+
+
   return (
     <SearchStack.Navigator>
       <SearchStack.Screen name="Landing" component={SearchLanding} options={{headerShown: false}}/>
-      <SearchStack.Screen name="Bathroom" component={Bathroom} options={{
+      <SearchStack.Screen name="Bathroom" component={Bathroom} options={({ route, navigation }) =>({
         headerBackTitle: 'Back', headerTitle: 'Bathroom Details', headerRight: () => (
-            
-            <SavedButton/>
-          ),}}/>
+
+            <SavedButton onSave={() => { global.savedData[route.params.id].saved = !global.savedData[route.params.id].saved}} savedProp={route.params.saved}/>
+          ),})}/>
       <SearchStack.Screen name="Rate" component={Rate}/>
     </SearchStack.Navigator>
   );
