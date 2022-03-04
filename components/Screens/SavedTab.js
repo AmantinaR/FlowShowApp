@@ -9,9 +9,11 @@ import Default from '../lists/data/Default';
 import Location from '../Location';
 import Images from '../../assets/LocationImages';
 import SavedList from '../lists/SavedList';
+import stateFunction from '../lists/data/SavedData';
 
 export default function SavedTab({ navigation }) {
-  
+  console.log(stateFunction());
+
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.headerText}>Saved Tab, only one screen so create flatlist here</Text>

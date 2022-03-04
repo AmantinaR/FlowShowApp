@@ -33,6 +33,7 @@ export default function SearchLanding({ navigation }) {
   ];
   const [option, setOption] = useState(null);
   const [text, setText] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
   const [resultdata, setResultData] = useState(Default);
   const [listHeight, setHeight] = useState('40%');
   const [featureSelected, setFeature] = useState(featureData);
@@ -54,6 +55,7 @@ export default function SearchLanding({ navigation }) {
   }, []);
 
   const searchName = () => {
+    setSearchTerm(text);
     if (text !== '') {
       let newData = Default.filter(location => location.name === text);
       setResultData(newData);
@@ -196,7 +198,7 @@ export default function SearchLanding({ navigation }) {
   ];
   return (
     <SafeAreaView style={styles.container}>
-      <Search setText={setText} onPress={searchName}/>
+      <Search setText={setText} setSearchTerm={setSearchTerm} onPress={searchName}/>
       <StatusBar style="auto" />
       <View style={styles.container1}>
         <MapView
@@ -223,7 +225,7 @@ export default function SearchLanding({ navigation }) {
             onChange={handleSheetChanges}
           >
             <FeatureButtonList data={featurenames} onSelect={(selected, feature) => updateFeatures(selected, feature)}/>
-            <Text> Results For {text !== '' ? text : 'All Nearby'}</Text>
+            <Text> Results For {text !== '' ? searchTerm : 'All Nearby'}</Text>
             <ResultList data = {resultdata} feature={featurenames} height={listHeight}/>
 
           </BottomSheet>

@@ -5,10 +5,10 @@ import { useState } from "react";
 import { FontAwesome } from '@expo/vector-icons';
 
 export default function SavedButton(props) {
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState(props.savedProp);
   return(
     <TouchableOpacity
-        onPress={() => setSelected(!selected)} style={{marginRight: '18%'}}>
+        onPress={() => {setSelected(!selected); props.onSave()}} style={{marginRight: '18%'}}>
         {selected ? <FontAwesome name='bookmark' size={24} color={'#FF8984'} /> : <FontAwesome name='bookmark-o' size={24} color={'#FF8984'} />}
       </TouchableOpacity>
 

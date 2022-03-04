@@ -5,7 +5,7 @@ import Features from '../../../assets/Features';
 import Ratings from './DefaultRating';
 
 
-const Default = [
+let Default = [
   {
     id: 0,
     miles : '50 ft',
@@ -26,9 +26,11 @@ const Default = [
     planB: Images.False,
     wipes: Images.False,
     singleOcc: Images.False,
-    pads: true,
+    pads: Features.freePads,
     ratings: Ratings,
     locationRating: 4,
+    saved: false,
+
   },
   {
     id : 1,
@@ -40,7 +42,7 @@ const Default = [
     status : 'Open Now',
     lat: 37.4263874662526,
     lng: -122.16909536937837,
-    accessible: false,
+    accessible: Images.False,
     gNeutral: Features.gNeutral,
     freePads: Features.freePads,
     tampons: Features.tampons,
@@ -52,6 +54,7 @@ const Default = [
     pads: Images.False,
     ratings: Ratings,
     locationRating: 4.5,
+    saved: false,
   },
   {
     id : 2,
@@ -72,9 +75,10 @@ const Default = [
     condoms: Images.False,
     planB: Images.False,
     wipes: Images.False,
-    pads: true,
+    pads: Features.freePads,
     ratings: Ratings,
     locationRating: 4,
+    saved: false,
   },
   {
     id : 3,
@@ -95,9 +99,10 @@ const Default = [
     condoms: Images.False,
     planB: Images.False,
     wipes: Images.False,
-    pads: true,
+    pads: Features.freePads,
     ratings: Ratings,
     locationRating: 3.5,
+    saved: false,
 
   },
   {
@@ -119,9 +124,10 @@ const Default = [
     condoms: Images.False,
     planB: Images.False,
     wipes: Images.False,
-    pads: true,
+    pads: Features.freePads,
     ratings: Ratings,
     locationRating: 4,
+    saved: false,
   }
 ];
 

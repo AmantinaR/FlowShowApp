@@ -38,6 +38,7 @@ export default function ResultsList(props) {
         locationRating={location.item.locationRating}
         lat={location.item.lat}
         lng={location.item.lng}
+        saved={location.item.saved}
       />);
   }
 
