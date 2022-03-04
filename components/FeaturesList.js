@@ -12,11 +12,9 @@ export default function FeatureList(props) {
         <FeatureButton title='Free Pads'/>
         <FeatureButton title='Tampons'/>
         <FeatureButton title='Single occupancy'/>
-      </View>
-      <View style={styles.container}>
         <FeatureButton title='Wipes'/>
         <FeatureButton title='Condoms'/>
-        <FeatureButton title='Plan B'/>
+        <FeatureButton title='Emergency Contraception'/>
         <FeatureButton title='Diapers'/>
         <FeatureButton title='Accessible'/>
         <FeatureButton title='Clean'/>
@@ -33,7 +31,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
-    marginBottom: 8.86
+    marginBottom: 8.86,
+    flexWrap: 'wrap'
   },
   list: {
     marginTop: 8.86

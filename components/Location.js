@@ -21,7 +21,7 @@ export default function Location(props) {
         <View style={styles.detailsFlex}>
           <Text style={styles.text}>{props.name}</Text>
           <Text style={styles.text}>{props.address}</Text>
-          <Text style={styles.text}>{props.number}</Text>
+          <Text style={styles.text}>Floor {props.number}</Text>
           <Text style={styles.open}>{props.status}</Text>
         </View>
 

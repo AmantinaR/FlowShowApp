@@ -27,10 +27,11 @@ export default function AddScreenInput({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={{height: 1150, marginTop: '4%', padding: 7}} scrollToOverflowEnabled={true} showsVerticalScrollIndicator={true} maximumZoomScale={0}>
-        <View style={{height: 200, flex: 1, alignItems: 'center'}}>
-          <Text style = {styles.header}>Add a New Bathroom</Text>
-          <Text style = {styles.disclaimer}>By the way, we cross check your entry across our database to make sure there are no double entries</Text>
+      <ScrollView contentContainerStyle={{height: 900, marginTop: '4%'}} scrollToOverflowEnabled={true} showsVerticalScrollIndicator={true} maximumZoomScale={0}>
+        <View style={{flex: 1, alignItems: 'center', padding: 4}}>
+          <View style={{alignItems: 'center', paddingHorizontal: 4}}><Text style = {styles.disclaimer}>By the way, we cross check your entry across our database to make sure there are no double entries</Text>
+          </View>
+
           <View style={styles.textFlex}>
         <Text style={styles.text, {top: '1%'}}>Bathroom Building</Text>
         <TextInput style={styles.textBox} placeholder='Building Name' />
@@ -75,6 +76,7 @@ const styles = StyleSheet.create({
   disclaimer: {
     color: 'rgba(0, 0, 0, 0.5)',
     marginTop: '3%',
+    marginHorizontal: '2%',
     fontFamily: 'Helvetica'
   },
   ScrollView: {

@@ -23,8 +23,9 @@ import { Octicons } from '@expo/vector-icons';
 const Tab = createBottomTabNavigator();
 
 export default function MainTab({ route, navigation }) {
-  
-  return (
+  const user = route.params.user;
+  console.log(user);
+    return (
       <Tab.Navigator screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
@@ -45,11 +46,16 @@ export default function MainTab({ route, navigation }) {
           tabBarActiveTintColor: '#C10C0D',
           tabBarInactiveTintColor: 'black'})}>
 
-        <Tab.Screen name="Saved" component={SavedTab} options={{headerShown: false}}/>
-        <Tab.Screen name="Add" component={AddTab} options={{headerShown: false}}/>
+        <Tab.Screen name="Saved" component={SavedTab} options={{headerTitle: 'Your Saved Bathrooms'}}/>
+        <Tab.Screen name="Add" component={AddTab} options={{headerTitle: 'Add a New Bathroom'}}/>
         <Tab.Screen name="Search" component={SearchTab} options={{headerShown: false}}/>
-        <Tab.Screen name="Report" component={ReportTab} options={{headerShown: false}}/>
-        <Tab.Screen name="Profile" component={ProfileTab} options={{headerShown: false}}/>
+        <Tab.Screen name="Report" component={ReportTab} options={{headerTitle: 'Report a Bathroom',}}/>
+        <Tab.Screen name="Profile" options={{headerTitle: 'Profile', headerRight: () => (
+
+          <Image style= {{marginRight: '9%', marginTop: '2.5%'}}source={require('../../assets/settings.png')}/>
+          )}}>
+          {props => <ProfileTab user={user}/>}
+          </Tab.Screen>
       </Tab.Navigator>
   );
 }

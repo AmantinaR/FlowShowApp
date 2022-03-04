@@ -14,7 +14,6 @@ export default function SavedTab({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.headerText}>Your Saved Bathrooms</Text>
       <SavedList data = {Default}/>
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -26,7 +25,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    //justifyContent: 'center',
   },
   headerText: {
     fontSize: 24,

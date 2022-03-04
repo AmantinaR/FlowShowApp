@@ -13,7 +13,7 @@ export default function AddTab({ navigation }) {
   return (
     <AddStack.Navigator>
       <AddStack.Screen name = "Input" component={AddScreenInput} options={{headerShown: false}}/>
-      <AddStack.Screen name = "Confirm" component={AddScreenConfirm}/>
+      <AddStack.Screen name = "Confirm" component={AddScreenConfirm} options={{headerShown: false}}/>
     </AddStack.Navigator>
   );
 }

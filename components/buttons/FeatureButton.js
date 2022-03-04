@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     paddingVertical: 8,
     paddingHorizontal: 6,
+    marginBottom: 4
   },
   btnPressed: {
     backgroundColor: 'black',

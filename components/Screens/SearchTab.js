@@ -11,6 +11,7 @@ import SearchBar from '../SearchBar';
 import SearchLanding from './SearchLanding';
 import Bathroom from './BathroomScreen';
 import Rate from './RateBathroom';
+import RateConfirm from './RateConfirm';
 import SavedButton from '../buttons/SavedButton';
 import { useState } from 'react';
 
@@ -33,6 +34,7 @@ export default function SearchTab({ navigation }) {
             <SavedButton savedProp={route.params.saved}/>
           ),})}/>
       <SearchStack.Screen name="Rate" component={Rate}/>
+      <SearchStack.Screen name="RateConfirm" component={RateConfirm}/>
     </SearchStack.Navigator>
   );
 }

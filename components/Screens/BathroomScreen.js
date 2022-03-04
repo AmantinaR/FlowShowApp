@@ -21,7 +21,7 @@ export default function BathroomScreen({ navigation, route }) {
       <ImageBackground source={params.source} style={styles.imagebkd} imageStyle={styles.image} >
         <View style={styles.titleCard}>
           <Text style={styles.nameText}>{params.name}</Text>
-          <Text style={styles.numberText}>Bathroom {params.number}</Text>
+          <Text style={styles.numberText}>Floor {params.number}</Text>
           <View style={styles.blood}>
             <BloodRating number={params.locationRating}/>
           </View>

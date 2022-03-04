@@ -75,26 +75,30 @@ export default function ReportConfirm({ route, navigation }) {
       <Text style = {styles.thank_you}>Thank you for submitting a report! You can check the status of the report under the Report Tab.</Text>
       <Text style = {{margin: '5%'}}>report status bar will be here</Text>
       <StatusBar style="auto" />
-      <View style={styles.summary_body}> 
+      <View style={styles.summary_body}>
         <Text style = {{fontWeight: 'bold', fontSize: 18, marginBottom: '1%', fontFamily: 'Helvetica'}}>Summary of Report</Text>
         <View style={styles.summary_line}>
-          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Building:  </Text> 
+          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Building:  </Text>
           <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.building}  </Text>
          </View>
        <View style={styles.summary_line}>
-          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Bathroom #:  </Text> 
+          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Bathroom #:  </Text>
           <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.room}  </Text>
        </View>
        <View style={styles.summary_line}>
-          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Products Requested:  </Text> 
+          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Products Requested:  </Text>
           <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{productlist}  </Text>
        </View>
        <View style={styles.summary_line}>
-          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Disposal Options Missing:  </Text> 
+          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Disposal Options Missing:  </Text>
           <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{disposallist}  </Text>
        </View>
        <View style={styles.summary_line}>
-          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Date Submitted:  </Text> 
+          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Comments:  </Text>
+          <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.comment}  </Text>
+       </View>
+       <View style={styles.summary_line}>
+          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Date Submitted:  </Text>
           <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.date}  </Text>
        </View>
       </View>
