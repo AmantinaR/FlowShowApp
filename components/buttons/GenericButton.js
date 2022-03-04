@@ -99,7 +99,7 @@ export default function GenericButton(props) {
     return(
       <TouchableOpacity onPress={props.onPress}>
         <View style={styles.landingFlex}>
-          <Text style={styles.text}>Log Out</Text>
+          <Text style={styles.text}>Log Out </Text>
         </View>
       </TouchableOpacity>
     );

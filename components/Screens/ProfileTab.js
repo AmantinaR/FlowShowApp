@@ -21,8 +21,12 @@ export default function ProfileTab({ route, navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={{marginBottom: '10%', alignItems: 'center'}}>
+        <View style = {{flexDirection: 'row'}}>
         <Text style={styles.header}>Profile</Text>
+        <Image style= {{marginLeft: '3%', marginTop: '2.5%'}}source={require('../../assets/settings.png')}/>
+        </View>
         <Text style={styles.manage}>You can manage your account info here</Text>
+        
       </View>
       <StatusBar style="auto" />
       <View style={{marginTop: '10%'}}>
@@ -69,11 +73,12 @@ const styles = StyleSheet.create({
   preferences_text: {
     fontSize: 15,
     left: '-3%',
+    marginBottom: '3%'
   },
   needs: {
     //top: '10%',
     alignItems: 'center',
-    margin: "1%"
+    margin: "2%"
   }
 
 });
