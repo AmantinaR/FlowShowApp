@@ -73,29 +73,29 @@ export default function ReportConfirm({ route, navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <Text style = {styles.thank_you}>Thank you for submitting a report! You can check the status of the report under the Report Tab.</Text>
-      <Text style = {{margin: '5%'}}>report status bar here :) [have a good day Amantina and Yesenia!]</Text>
+      <Text style = {{margin: '5%'}}>report status bar will be here</Text>
       <StatusBar style="auto" />
       <View style={styles.summary_body}> 
-        <Text style = {{fontWeight: 'bold', fontSize: 18, marginBottom: '1%'}}>Summary of Report</Text>
+        <Text style = {{fontWeight: 'bold', fontSize: 18, marginBottom: '1%', fontFamily: 'Helvetica'}}>Summary of Report</Text>
         <View style={styles.summary_line}>
-          <Text style = {{fontWeight: 'bold'}}>Building:  </Text> 
-          <Text style = {{fontWeight: 'normal'}}>{params.building}  </Text>
+          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Building:  </Text> 
+          <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.building}  </Text>
          </View>
        <View style={styles.summary_line}>
-          <Text style = {{fontWeight: 'bold'}}>Bathroom #:  </Text> 
-          <Text style = {{fontWeight: 'normal'}}>{params.room}  </Text>
+          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Bathroom #:  </Text> 
+          <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.room}  </Text>
        </View>
        <View style={styles.summary_line}>
-          <Text style = {{fontWeight: 'bold'}}>Products Requested:  </Text> 
-          <Text style = {{fontWeight: 'normal'}}>{productlist}  </Text>
+          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Products Requested:  </Text> 
+          <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{productlist}  </Text>
        </View>
        <View style={styles.summary_line}>
-          <Text style = {{fontWeight: 'bold'}}>Disposal Options Missing:  </Text> 
-          <Text style = {{fontWeight: 'normal'}}>{disposallist}  </Text>
+          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Disposal Options Missing:  </Text> 
+          <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{disposallist}  </Text>
        </View>
        <View style={styles.summary_line}>
-          <Text style = {{fontWeight: 'bold'}}>Date Submitted:  </Text> 
-          <Text style = {{fontWeight: 'normal'}}>{params.date}  </Text>
+          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Date Submitted:  </Text> 
+          <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.date}  </Text>
        </View>
       </View>
         <GenericButton text={'Done'} onPress={() => navigation.navigate('ReportLanding')}/>
@@ -161,6 +161,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#ff8984',
     textDecorationLine: 'underline',
-    margin: '1%'
+    margin: '1%',
+    fontFamily: 'Helvetica'
   },
 });

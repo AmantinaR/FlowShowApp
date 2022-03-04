@@ -15,7 +15,7 @@ export default function FeatureButton(props) {
         style={{ backgroundColor: selected ? "rgba(233, 167, 152, 100)" : "transparent", borderColor: selected ? '#E8A798': 'rgba(0, 0, 0, 0.5)', borderWidth: 1, borderRadius: 8, paddingVertical: 8,
         paddingHorizontal: 3, marginHorizontal: 4.43, height: 35, justifyContent: 'center' }}
       >
-        <Text style={{color: selected ? "white" : "rgba(0, 0, 0, 0.5)", fontSize: 12}}>{props.title}</Text>
+        <Text style={{color: selected ? "white" : "rgba(0, 0, 0, 0.5)", fontSize: 12, fontFamily: 'Helvetica'}}>{props.title}</Text>
       </TouchableOpacity>
 
   );

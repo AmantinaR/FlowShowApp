@@ -55,11 +55,12 @@ const styles = StyleSheet.create({
   header: {
     fontWeight: 'bold',
     fontSize: 30,
-
+    fontFamily: 'Helvetica'
   },
   manage: {
     color: 'grey',
-    marginTop: '3%'
+    marginTop: '3%', 
+    fontFamily: 'Helvetica'
   },
   avatar: {
     top: '-5%',
@@ -73,10 +74,12 @@ const styles = StyleSheet.create({
   preferences_text: {
     fontSize: 15,
     left: '-3%',
-    marginBottom: '3%'
+    marginBottom: '3%',
+    fontFamily: 'Helvetica'
   },
   needs: {
     //top: '10%',
+    fontFamily: 'Helvetica',
     alignItems: 'center',
     margin: "2%"
   }
