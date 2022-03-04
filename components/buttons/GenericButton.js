@@ -64,7 +64,7 @@ export default function GenericButton(props) {
       <TouchableOpacity onPress={props.onPress}>
         <View style={styles.buttonFlex}>
           <Text style={styles.text}>Confirm</Text>
-          <Feather name='chevron-right' size={19} color={'white'} />
+          <Feather name='chevron-right' size={19} color={'white'}/>
         </View>
       </TouchableOpacity>
     );
