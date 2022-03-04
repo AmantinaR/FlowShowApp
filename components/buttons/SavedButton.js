@@ -5,7 +5,7 @@ import { useState } from "react";
 import { FontAwesome } from '@expo/vector-icons';
 
 export default function SavedButton(props) {
-  const [selected, setSelected] = useState(props.savedProp);
+  const [selected, setSelected] = useState(false);
   return(
     <TouchableOpacity
         onPress={() => {setSelected(!selected); props.onSave()}} style={{marginRight: '18%'}}>
