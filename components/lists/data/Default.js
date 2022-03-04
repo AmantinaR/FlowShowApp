@@ -29,7 +29,7 @@ let Default = [
     pads: Features.freePads,
     ratings: Ratings,
     locationRating: 4,
-    saved: false,
+    saved: true,
 
   },
   {
@@ -54,7 +54,7 @@ let Default = [
     pads: Images.False,
     ratings: Ratings,
     locationRating: 4.5,
-    saved: false,
+    saved: true,
   },
   {
     id : 2,

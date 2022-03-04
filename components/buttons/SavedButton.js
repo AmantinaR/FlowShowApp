@@ -8,8 +8,8 @@ export default function SavedButton(props) {
   const [selected, setSelected] = useState(false);
   return(
     <TouchableOpacity
-        onPress={() => {setSelected(!selected); props.onSave()}} style={{marginRight: '18%'}}>
-        {selected ? <FontAwesome name='bookmark' size={24} color={'#FF8984'} /> : <FontAwesome name='bookmark-o' size={24} color={'#FF8984'} />}
+         style={{marginRight: '18%'}}>
+        {props.savedProp ? <FontAwesome name='bookmark' size={24} color={'#FF8984'} /> : <FontAwesome name='bookmark-o' size={24} color={'#FF8984'} />}
       </TouchableOpacity>
 
   );

@@ -6,7 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Location from '../Location';
 import Images from '../../assets/LocationImages';
-import DataList from './data/Default';
+import DataList from './data/Saved';
 
 
 
@@ -30,7 +30,7 @@ export default function SavedList(props) {
   return (
     <View style={styles.container}>
     <FlatList
-        data = {props.data}
+        data = {DataList}
         renderItem={(location) => renderLocation(location)}
         keyExtractor={(location) => location.id}
 

@@ -30,7 +30,7 @@ export default function SearchTab({ navigation }) {
       <SearchStack.Screen name="Bathroom" component={Bathroom} options={({ route, navigation }) =>({
         headerBackTitle: 'Back', headerTitle: 'Bathroom Details', headerRight: () => (
 
-            <SavedButton onSave={() => { global.savedData[route.params.id].saved = !global.savedData[route.params.id].saved}} savedProp={route.params.saved}/>
+            <SavedButton savedProp={route.params.saved}/>
           ),})}/>
       <SearchStack.Screen name="Rate" component={Rate}/>
     </SearchStack.Navigator>
