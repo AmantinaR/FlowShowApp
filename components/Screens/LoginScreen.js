@@ -20,7 +20,7 @@ export default function LoginScreen({ navigation }) {
       <TextInput style={styles.textBox} placeholder='password' secureTextEntry={true}/>
       <View style = {styles.row}>
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
-          <Text style = {styles.new_here}>  New here?  </Text>
+          <Text style = {{fontFamily: 'Helvetica'}}>  New here?  </Text>
           <TouchableOpacity onPress={() => navigation.navigate('Register')}>
               <Text style = {styles.register}> Register</Text>
           </TouchableOpacity>
@@ -46,7 +46,8 @@ const styles = StyleSheet.create({
   login_header: {
     fontWeight: 'bold',
     fontSize: 20,
-    margin: '5%'
+    margin: '5%',
+    fontFamily: 'Helvetica'
   },
   textBox: {
     borderWidth: 1,
@@ -68,7 +69,8 @@ const styles = StyleSheet.create({
   register: {
     fontSize: 18,
     color: '#ff8984',
-    textDecorationLine: 'underline'
+    textDecorationLine: 'underline',
+    fontFamily: 'Helvetica'
   },
   button: {
     color: '#ffffff',

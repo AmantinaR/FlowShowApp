@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
     height: '10%',
-    marginBottom: '-5%'
-
+    marginBottom: '-5%',
+    fontFamily: 'Helvetica'
   }
 });

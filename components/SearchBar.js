@@ -42,7 +42,8 @@ const styles = StyleSheet.create({
     width: '80%',
     backgroundColor: 'white',
     fontSize: 18,
-    height: '100%'
+    height: '100%',
+    fontFamily: 'Helvetica'
   },
   search: {
     paddingHorizontal: '4%',

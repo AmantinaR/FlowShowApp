@@ -12,7 +12,7 @@ export default function Location(props) {
       <View style={styles.topRow}>
         <View style={styles.distanceTextFlex}>
           <Text style={styles.miles}>{props.miles}</Text>
-          <Text style={styles.text}>away from you</Text>
+          <Text style={styles.text}> away from you</Text>
         </View>
         <BloodRating number={props.locationRating} small={true}/>
       </View>
@@ -68,16 +68,18 @@ const styles = StyleSheet.create({
   },
   miles: {
     fontWeight: 'bold',
-    fontSize: 16
+    fontSize: 16,
+    fontFamily: 'Helvetica'
   },
   open: {
     fontWeight: 'bold',
-    color: '#FF8984'
+    color: '#FF8984',
+    fontFamily: 'Helvetica'
   },
   text: {
     fontSize: 14,
     fontFamily: 'Helvetica',
-    color: '#1D1F22'
+    color: '#1D1F22',
 
   },
   topRow: {

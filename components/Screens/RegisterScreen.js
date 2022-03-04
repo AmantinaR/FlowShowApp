@@ -60,13 +60,15 @@ row: {
 
 },
 already_member:{
-  top: 50
+  top: 50,
+  fontFamily: 'Helvetica'
 },
 login: {
   fontSize: 18,
   top: 45,
   color: '#ff8984',
-  textDecorationLine: 'underline'
+  textDecorationLine: 'underline',
+  fontFamily: 'Helvetica'
 },
 button: {
   color: '#ffffff',
@@ -93,6 +95,7 @@ button: {
  shadowRadius: 2,
 },
 text: {
-  color: 'white'
+  color: 'white',
+  fontFamily: 'Helvetica'
 }
 });
