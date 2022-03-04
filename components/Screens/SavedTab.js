@@ -29,6 +29,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   headerText: {
+    fontSize: 24,
+    fontFamily: 'Helvetica',
+    fontWeight: 'bold',
+    marginBottom: '10%',
+    marginTop: '-40%'
 
   }
 });

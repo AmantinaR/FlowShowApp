@@ -27,7 +27,7 @@ export default function AddScreenInput({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={{height: 1150, marginTop: '4%'}} scrollToOverflowEnabled={true} showsVerticalScrollIndicator={true} maximumZoomScale={0}>
+      <ScrollView contentContainerStyle={{height: 1150, marginTop: '4%', padding: 7}} scrollToOverflowEnabled={true} showsVerticalScrollIndicator={true} maximumZoomScale={0}>
         <View style={{height: 200, flex: 1, alignItems: 'center'}}>
           <Text style = {styles.header}>Add a New Bathroom</Text>
           <Text style = {styles.disclaimer}>By the way, we cross check your entry across our database to make sure there are no double entries</Text>
@@ -39,29 +39,18 @@ export default function AddScreenInput({ navigation }) {
         <Text style={styles.text, {top: '1%'}}>Bathroom Room #</Text>
         <TextInput style={styles.textBox} placeholder='Room #'/>
       </View>
-          <View style={{flexDirection: 'column', padding: 10}}>
-            <Text style = {styles.txt, {margin: 10}}>What gender is this bathroom?</Text>
+          <View style={{flexDirection: 'column', padding: 10, alignItems: 'center'}}>
+            <Text style = {styles.txt, {margin: 10}}>What gender is assigned to this bathroom?</Text>
             <GenderRadio data={data} onSelect={(value) => setOption(value)}/>
           </View>
-          <View style={{flexDirection: 'row', padding: 15}}>
+          <View style={{flexDirection: 'row', padding: 15, alignItems: 'center'}}>
             <Text style = {styles.txt}>Rate Bathroom: </Text>
             <BloodRadio data={dataRate} onSelect={(value) => setOption(value)}/>
           </View>
           <Text style = {styles.txt, {margin: 15}}>What features does this bathroom have?</Text>
           <FeaturesList/>
-          <Text style = {styles.txt, {margin: 15}}>Upload a Photo of Bathroom Assets</Text>
-          <View style={styles.photoSection}>
-            <View style={styles.photoHolder}>
-              <Image source={require("../../assets/add_photo_prompt.png")}/>
-              <Text style = {styles.txt}>No Image Uploaded</Text>
-            </View>
-            <View>
-              <GenericButton text={'Take Photo'}/>
-              <GenericButton text={'Upload Photo'}/>
-            </View>
-          </View>
           <Text style = {styles.text, {margin: 15}}>Additional Comments</Text>
-          <TextInput style={styles.comments} placeholder={'Please write any comments here'}/>
+          <TextInput style={styles.comments} placeholder={'Please write any comments here (Optional)'}/>
           <GenericButton text={'Confirm'} onPress={() => navigation.navigate('Confirm')}/>
           <StatusBar style="auto" />
         </View>
@@ -103,12 +92,12 @@ const styles = StyleSheet.create({
   },
   textBox: {
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: 'rgba(0, 0, 0, 0.25)',
     height: 40,
     padding: 10,
-    marginTop: 20,
-    margin: 8,
-    width: 200
+    margin: 12,
+    width: '40%',
+    borderRadius: 4
   },
   photoSection: {
     flexDirection: 'row',
@@ -128,10 +117,12 @@ const styles = StyleSheet.create({
   },
   comments: {
     borderWidth: 1,
-    borderColor: 'rgba(0, 0, 0, 0.5)',
-    width: '90%',
+    borderColor: 'rgba(0, 0, 0, 0.25)',
+    borderRadius: 4,
+    width: '84%',
     height: '18%',
     padding: 10,
-    alignItems: 'flex-end'
+    marginTop: '5%'
+
   },
 });
