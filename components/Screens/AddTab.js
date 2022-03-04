@@ -10,6 +10,7 @@ import AddScreenConfirm from './AddScreenConfirm';
 const AddStack = createStackNavigator();
 
 export default function AddTab({ navigation }) {
+  console.log(navigation);
   return (
     <AddStack.Navigator>
       <AddStack.Screen name = "Input" component={AddScreenInput} options={{headerShown: false}}/>

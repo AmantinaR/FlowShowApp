@@ -24,7 +24,6 @@ const Tab = createBottomTabNavigator();
 
 export default function MainTab({ route, navigation }) {
   const user = route.params.user;
-  console.log(user);
     return (
       <Tab.Navigator screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
@@ -50,7 +49,7 @@ export default function MainTab({ route, navigation }) {
         <Tab.Screen name="Add" component={AddTab} options={{headerTitle: 'Add a New Bathroom'}}/>
         <Tab.Screen name="Search" component={SearchTab} options={{headerShown: false}}/>
         <Tab.Screen name="Report" component={ReportTab} options={{headerTitle: 'Report a Bathroom',}}/>
-        <Tab.Screen name="Profile" options={{headerTitle: 'Profile', headerRight: () => (
+        <Tab.Screen name="Profile" options={{headerTitle: user+"'s Profile", headerRight: () => (
 
           <Image style= {{marginRight: '9%', marginTop: '2.5%'}}source={require('../../assets/settings.png')}/>
           )}}>

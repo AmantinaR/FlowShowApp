@@ -11,7 +11,8 @@ import RatingList from '../lists/RatingList';
 import RatingData from '../lists/data/DefaultRating';
 import GenericButton from '../buttons/GenericButton';
 
-export default function ProfileTab({ route, navigation }) {
+export default function ProfileTab({ route, navigation, user }) {
+  console.log(navigation)
   const [option, setOption] = useState(null);
   const data = [
     { value: "Women's" },
@@ -36,7 +37,7 @@ export default function ProfileTab({ route, navigation }) {
       <Image source={require('../../assets/needs.png')}/>
       </View>
       <View style= {{marginTop: '40%'}}>
-        <GenericButton text={'Log Out'} onPress={() => navigation.navigate('Login')}/>
+        <GenericButton text={'Log Out'} onPress={() => navigation.navigate('Landing')}/>
       </View>
     </SafeAreaView>
   );
