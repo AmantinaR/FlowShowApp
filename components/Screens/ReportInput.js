@@ -25,7 +25,7 @@ export default function ReportInput({ navigation, route }) {
     tampons: false,
     diapers: false,
     condoms: false,
-    planb: false,
+    emcon: false,
     wipes: false,
     tp: false,
     soap: false
@@ -44,8 +44,8 @@ export default function ReportInput({ navigation, route }) {
       newProduct[0].wipes = !selected;
     } else if (product == 'condoms') {
       newProduct[0].condoms = !selected;
-    } else if (product == 'planb') {
-      newProduct[0].planb = !selected;
+    } else if (product == 'emcon') {
+      newProduct[0].emcon = !selected;
     } else if (product == 'diapers') {
       newProduct[0].diapers = !selected;
     } else if (product == 'tp') {
@@ -82,6 +82,7 @@ export default function ReportInput({ navigation, route }) {
 
   return (
     <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <Text style={{color: 'rgba(0, 0, 0, 0.5)', fontFamily: 'Helvetica'}}>You tell us the issue(s), and we'll work with the building managers to solve them</Text>
       <View style={styles.textFlex}>
         <Text style={styles.text}>Bathroom Building</Text>
@@ -99,7 +100,7 @@ export default function ReportInput({ navigation, route }) {
         <Text style={styles.text}>Disposal Options Missing (Optional)</Text>
         <Disposal onSelect={(selected, disposal) => updateDisposal(selected, disposal)}/>
       </View>
-      <View style={styles.featuresFlex}>
+      <View style={{marginTop: '4%'}}>
         <Text style={styles.text}>How satisfied are you with the cleanliness?</Text>
         <SatisfactionRadio data={data} onSelect={(value) => setOption(value)}/>
       </View>
@@ -108,6 +109,7 @@ export default function ReportInput({ navigation, route }) {
       <GenericButton text={"Confirm"} onPress={() => navigation.navigate('Confirm', {building: building, room: room, comment: comment, option: option, products: products, disposal: disposal, date: fullDate})}/>
       </View>
       <StatusBar style="auto" />
+    </View>
     </SafeAreaView>
   );
 }
@@ -134,7 +136,8 @@ const styles = StyleSheet.create({
     borderRadius: 4
   },
   featuresFlex: {
-    marginTop: '3%'
+    marginTop: '3%',
+    alignItems: 'center'
   },
   satisfaction: {
     flexDirection: 'row',
@@ -150,7 +153,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'rgba(0, 0, 0, 0.25)',
     borderRadius: 4,
-    width: '84%',
+    width: 300,
     height: '18%',
     padding: 10,
     marginTop: '5%'

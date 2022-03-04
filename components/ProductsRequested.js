@@ -11,7 +11,7 @@ export default function ProductsRequested(props) {
         <FeatureButton title='Pads' onSelect={props.onPress} tag="pads"/>
         <FeatureButton title='Tampons' onSelect={props.onPress} tag="tampons"/>
         <FeatureButton title='Condoms' onSelect={props.onPress} tag="condoms"/>
-        <FeatureButton title='Plan B' onSelect={props.onPress}tag="planb"/>
+        <FeatureButton title='Emergency Contraception' onSelect={props.onPress}tag="emcon"/>
         <FeatureButton title='Diapers' onSelect={props.onPress}tag="diapers"/>
         <FeatureButton title='Wipes' onSelect={props.onPress}tag="wipes"/>
         <FeatureButton title='Toilet Paper' onSelect={props.onPress}tag="tp"/>

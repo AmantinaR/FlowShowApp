@@ -29,11 +29,11 @@ export default function ReportConfirm({ route, navigation }) {
     } else {
       productlist = productlist + ', condoms'
     }
-  } if (params.products[0].planb === true) {
+  } if (params.products[0].emcon === true) {
     if (productlist === ''){
-      productlist = productlist + 'Plan B'
+      productlist = productlist + 'Emergency Contraception'
     } else {
-      productlist = productlist + ', Plan B'
+      productlist = productlist + ', Emergency Contraception'
     }
   } if (params.products[0].diapers === true) {
     if (productlist === ''){
@@ -75,32 +75,36 @@ export default function ReportConfirm({ route, navigation }) {
       <Text style = {styles.thank_you}>Thank you for submitting a report! You can check the status of the report under the Report Tab.</Text>
       <Text style = {{margin: '5%'}}>report status bar here :) [have a good day Amantina and Yesenia!]</Text>
       <StatusBar style="auto" />
-      <View style={styles.summary_body}> 
+      <View style={styles.summary_body}>
         <Text style = {{fontWeight: 'bold', fontSize: 18, marginBottom: '1%'}}>Summary of Report</Text>
         <View style={styles.summary_line}>
-          <Text style = {{fontWeight: 'bold'}}>Building:  </Text> 
+          <Text style = {{fontWeight: 'bold'}}>Building:  </Text>
           <Text style = {{fontWeight: 'normal'}}>{params.building}  </Text>
          </View>
        <View style={styles.summary_line}>
-          <Text style = {{fontWeight: 'bold'}}>Bathroom #:  </Text> 
+          <Text style = {{fontWeight: 'bold'}}>Bathroom #:  </Text>
           <Text style = {{fontWeight: 'normal'}}>{params.room}  </Text>
        </View>
        <View style={styles.summary_line}>
-          <Text style = {{fontWeight: 'bold'}}>Products Requested:  </Text> 
+          <Text style = {{fontWeight: 'bold'}}>Products Requested:  </Text>
           <Text style = {{fontWeight: 'normal'}}>{productlist}  </Text>
        </View>
        <View style={styles.summary_line}>
-          <Text style = {{fontWeight: 'bold'}}>Disposal Options Missing:  </Text> 
+          <Text style = {{fontWeight: 'bold'}}>Disposal Options Missing:  </Text>
           <Text style = {{fontWeight: 'normal'}}>{disposallist}  </Text>
        </View>
        <View style={styles.summary_line}>
-          <Text style = {{fontWeight: 'bold'}}>Date Submitted:  </Text> 
+          <Text style = {{fontWeight: 'bold'}}>Comment:  </Text>
+          <Text style = {{fontWeight: 'normal'}}>{params.comment}  </Text>
+       </View>
+       <View style={styles.summary_line}>
+          <Text style = {{fontWeight: 'bold'}}>Date Submitted:  </Text>
           <Text style = {{fontWeight: 'normal'}}>{params.date}  </Text>
        </View>
       </View>
         <GenericButton text={'Done'} onPress={() => navigation.navigate('ReportLanding')}/>
         <TouchableOpacity onPress={() => navigation.navigate('Input')}>
-        <Text style = {styles.another_report}>Submit Another Report</Text>  
+        <Text style = {styles.another_report}>Submit Another Report</Text>
         </TouchableOpacity>
     </SafeAreaView>
   );

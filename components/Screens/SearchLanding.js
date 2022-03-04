@@ -28,7 +28,7 @@ export default function SearchLanding({ navigation }) {
     clean: false,
     diapers: false,
     condoms: false,
-    planB: false,
+    emcon: false,
     wipes: false,}
   ];
   const [option, setOption] = useState(null);
@@ -83,8 +83,8 @@ export default function SearchLanding({ navigation }) {
       newFeature[0].wipes = !selected;
     } else if (feature == 'condoms') {
       newFeature[0].condoms = !selected;
-    } else if (feature == 'planB') {
-      newFeature[0].planB = !selected;
+    } else if (feature == 'emcon') {
+      newFeature[0].emcon = !selected;
     } else if (feature == 'diapers') {
       newFeature[0].diapers = !selected;
     } else if (feature == 'clean') {
@@ -118,7 +118,7 @@ export default function SearchLanding({ navigation }) {
       if (featureSelected[0].condoms === true && location.condoms === Images.False) {
         return(false);
       }
-      if (featureSelected[0].planB === true && location.planB === Images.False) {
+      if (featureSelected[0].emcon === true && location.emcon === Images.False) {
         return(false);
       }
       if (featureSelected[0].diapers === true && location.diapers === Images.False) {
@@ -172,8 +172,8 @@ export default function SearchLanding({ navigation }) {
     },
     {
       id : 6,
-      title:'Plan B',
-      tag: 'planB'
+      title:'Emergency Contraception',
+      tag: 'emcon'
     },
     {
       id : 7,

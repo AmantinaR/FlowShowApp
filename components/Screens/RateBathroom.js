@@ -35,17 +35,6 @@ export default function RateScreen({ navigation, route }) {
       <BloodRadio data={data} onSelect={(value) => setOption(value)}/>
       <Text>Features</Text>
       <FeaturesList/>
-      <Text>Upload a Photo of Bathroom Assets</Text>
-      <View style={styles.photoSection}>
-        <View style={styles.photoHolder}>
-          <Text>No Image Uploaded</Text>
-        </View>
-        <View>
-          <GenericButton text="Take Photo"/>
-          <GenericButton text="Upload Photo"/>
-        </View>
-
-      </View>
       <TextInput style={styles.comments} placeholder={'Please write any comments here'}/>
       <Text> done button here, take to confirm page?</Text>
     </SafeAreaView>
