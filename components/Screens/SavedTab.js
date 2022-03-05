@@ -11,7 +11,6 @@ import Images from '../../assets/LocationImages';
 import SavedList from '../lists/SavedList';
 
 export default function SavedTab({ navigation, route }) {
-  console.log(route);
   return (
     <SafeAreaView style={styles.container}>
       <SavedList data = {Default}/>

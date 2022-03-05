@@ -14,9 +14,9 @@ import { Ionicons } from '@expo/vector-icons';
 import GenericButton from '../buttons/GenericButton';
 import SavedButton from '../buttons/SavedButton';
 
-export default function BathroomScreen({ navigation, route}, ratings) {
+export default function BathroomScreen({ navigation, route, ratings}) {
   const params = route.params;
-  console.log(params);
+  console.log(route);
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground source={params.source} style={styles.imagebkd} imageStyle={styles.image} >
@@ -24,7 +24,7 @@ export default function BathroomScreen({ navigation, route}, ratings) {
           <Text style={styles.nameText}>{params.name}</Text>
           <Text style={styles.numberText}>Floor {params.number}</Text>
           <View style={styles.blood}>
-            <BloodRating number={params.locationRating}/>
+            <BloodRating number={params.locationRating} small={false}/>
           </View>
         </View>
 

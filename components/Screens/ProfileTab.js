@@ -11,8 +11,10 @@ import RatingList from '../lists/RatingList';
 import RatingData from '../lists/data/DefaultRating';
 import GenericButton from '../buttons/GenericButton';
 
-export default function ProfileTab({ route, navigation, user }) {
-  console.log(navigation)
+export default function ProfileTab({ route, navigation, user, ratings }) {
+  console.log(navigation);
+  console.log(route);
+  console.log(ratings);
   const [option, setOption] = useState(null);
   const data = [
     { value: "Women's" },
