@@ -119,6 +119,22 @@ export default function GenericButton(props) {
         </View>
       </TouchableOpacity>
     );
+  } else if (props.text === "Login") {
+    return(
+      <TouchableOpacity onPress={props.onPress}>
+        <View style={styles.buttonFlex}>
+          <Text style={styles.text}>Login</Text>
+        </View>
+      </TouchableOpacity>
+    );
+  }else if (props.text === "Register") {
+    return(
+      <TouchableOpacity onPress={props.onPress}>
+        <View style={styles.buttonFlex}>
+          <Text style={styles.text}>Register</Text>
+        </View>
+      </TouchableOpacity>
+    );
   }
 
 

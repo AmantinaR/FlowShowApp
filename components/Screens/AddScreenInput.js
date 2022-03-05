@@ -90,20 +90,20 @@ export default function AddScreenInput({ navigation }) {
         <TextInput onChangeText={(text) => setName(text)} style={styles.textBox} placeholder='Building Name' />
       </View>
       <View style={styles.textFlex}>
-        <Text style={styles.text, {top: '1%'}}>Bathroom Floor #</Text>
+        <Text style={[styles.text, {top: '1%'}]}>Bathroom Floor #</Text>
         <TextInput onChangeText={(text) => setRoom(text)} style={styles.textBox} placeholder='Floor #'/>
       </View>
           <View style={{flexDirection: 'column', padding: 10, alignItems: 'center'}}>
-            <Text style = {styles.txt, {margin: 10}}>What gender is assigned to this bathroom?</Text>
+            <Text style = {[styles.txt, {margin: 10}]}>What gender is assigned to this bathroom?</Text>
             <GenderRadio data={data} onSelect={(value) => setGender(value)}/>
           </View>
           <View style={{flexDirection: 'row', padding: 15, alignItems: 'center'}}>
             <Text style = {styles.txt}>Rate Bathroom: </Text>
             <BloodRadio data={dataRate} onSelect={(value) => setOption(value)}/>
           </View>
-          <Text style = {styles.txt, {margin: 15}}>What features does this bathroom have?</Text>
+          <Text style = {[styles.txt, {margin: 15}]}>What features does this bathroom have?</Text>
           <FeaturesList onSelect={(selected, product) => updateProducts(selected, product)}/>
-          <Text style = {styles.text, {margin: 15}}>Additional Comments</Text>
+          <Text style = {[styles.text, {margin: 15}]}>Additional Comments</Text>
           <TextInput onChangeText={(text) => setComment(text)} multiline style={styles.comments} placeholder={'Please write any comments here (Optional)'}/>
           <GenericButton text={'Confirm'} onPress={() => navigation.navigate('Confirm', {name: name, room: room, locationRating: option, gender: gender, products: products, comments: comment})}/>
           <StatusBar style="auto" />

@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { shadowColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
+import GenericButton from '../buttons/GenericButton';
 
 export default function LoginScreen({ navigation }) {
 
@@ -25,9 +26,7 @@ export default function LoginScreen({ navigation }) {
               <Text style = {styles.register}> Register</Text>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity onPress={() => navigation.navigate('Landing', {user: text})} style={styles.button}>
-          <Text style={styles.text}>Login</Text>
-        </TouchableOpacity>
+        <GenericButton text={'Login'} onPress={() => navigation.navigate('Landing', {user: text})} style={styles.button}/>
       </View>
     </SafeAreaView>
   );
@@ -72,25 +71,6 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
     fontFamily: 'Helvetica'
   },
-  button: {
-    color: '#ffffff',
-    fontSize: 15,
-    justifyContent: 'center',
-    alignItems: 'center',
-    textAlign: 'center',
-    backgroundColor: '#fcc181',
-    height: '37%',
-    width: '30%',
-    borderRadius: 4,
-    padding: 12,
-    shadowColor: "#000",
-    shadowOffset: {
-	  width: 0,
-	  height: 2,
-    },
-   shadowOpacity: 0.25,
-   shadowRadius: 2,
- },
   text: {
     fontSize: 16,
     color: 'white',

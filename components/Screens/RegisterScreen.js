@@ -4,6 +4,7 @@ import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, TouchableOpaci
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import GenericButton from '../buttons/GenericButton';
 
 export default function RegisterScreen({ navigation }) {
   return (
@@ -14,16 +15,12 @@ export default function RegisterScreen({ navigation }) {
       <TextInput style={styles.textBox} placeholder='username' autoCorrect={false}/>
       <TextInput style={styles.textBox} placeholder='email' autoCorrect={false}/>
       <TextInput style={styles.textBox} placeholder='password' secureTextEntry={true}/>
-      <TouchableOpacity onPress={() => navigation.navigate('Landing')} style={styles.button}>
-      <View>
-        <Text style = {styles.text}>Register</Text>
-        </View>
-      </TouchableOpacity>
       <View style = {styles.row}>
-      <Text style = {styles.already_member}>  Already a member?  </Text>
-      <TouchableOpacity onPress={() => navigation.navigate('Login')}>
-          <Text style = {styles.login}> Login</Text>
-      </TouchableOpacity>
+        <Text style = {styles.already_member}>  Already a member?  </Text>
+          <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+             <Text style = {styles.login}> Login</Text>
+         </TouchableOpacity>
+         <GenericButton text={'Register'} onPress={() => navigation.navigate('Landing')}/>
       </View>
     </SafeAreaView>
   );
@@ -37,62 +34,38 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 logo: {
-  position: 'absolute',
-  top: 90
+  padding: '5%'
 },
 register_header: {
   fontWeight: 'bold',
   fontSize: 20,
-  top: 20,
+  margin: '5%',
+  fontFamily: 'Helvetica'
 },
 textBox: {
   borderWidth: 1,
+  borderRadius: 10,
   borderColor: 'black',
-  height: 50,
-  padding: 10,
-  margin: 12,
-  width: 230,
-  top: 40
+  padding: '3%',
+  margin: '3%',
+  width: '84%'
 },
 row: {
   flexDirection: "row",
-  left: -75,
+  width: '84%',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  marginTop: '20%'
 
 },
 already_member:{
-  top: 50,
   fontFamily: 'Helvetica'
 },
 login: {
   fontSize: 18,
-  top: 45,
   color: '#ff8984',
   textDecorationLine: 'underline',
   fontFamily: 'Helvetica'
-},
-button: {
-  color: '#ffffff',
-  fontSize: 15,
-  justifyContent: 'center',
-  alignItems: 'center',
-  textAlign: 'center',
-  backgroundColor: '#fcc181',
-  top: 80,
-  left: 100,
-  marginTop: 10,
-  marginBottom: 0,
-  height: 48,
-  margin: 12,
-  width: 97,
-  borderRadius: 4,
-  padding: 12,
-  shadowColor: "#000",
-  shadowOffset: {
-  width: 0,
-  height: 2,
-  },
- shadowOpacity: 0.25,
- shadowRadius: 2,
 },
 text: {
   color: 'white',
