@@ -11,6 +11,7 @@ import SlidingUpPanel from 'rn-sliding-up-panel';
 import Modal from "react-native-modalbox";
 import { useCallback, useMemo, useRef } from 'react';
 import BottomSheet from '@gorhom/bottom-sheet';
+import ReportStatusBar from '../ReportStatusBar';
 
 
 
@@ -18,21 +19,19 @@ import BottomSheet from '@gorhom/bottom-sheet';
 export default function ReportLanding({ navigation }) {
   const bottomSheetRef = useRef<BottomSheet>(null);
 
-  // variables
-  const snapPoints = useMemo(() => ['25%', '50%'], []);
 
-  // callbacks
-  const handleSheetChanges = useCallback((index: number) => {
-    console.log('handleSheetChanges', index);
-  }, []);
-  const data = [{me: 'you'},{me: 'me'}];
   return (
     <SafeAreaView style={styles.container}>
       <Button title="Report Status" onPress={() => navigation.navigate('Status')}/>
       <View style={{}}>
         <Text style={styles.text}>Status of Bathroom Reports</Text>
       </View>
-      <View style={styles.list}></View>
+      <View style={styles.list}>
+        <ReportStatusBar step={1}/>
+        <ReportStatusBar step={2}/>
+        <ReportStatusBar step={3}/>
+        <ReportStatusBar step={4}/>
+      </View>
       <GenericButton text={'Report Bathroom'} onPress={() => navigation.navigate('Input')}/>
       <StatusBar style="auto" />
     </SafeAreaView>

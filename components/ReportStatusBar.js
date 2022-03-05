@@ -9,28 +9,124 @@ import { FontAwesome } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 
-export default function ReportStatusBar(props) {
-  if(props.step == 1) {
-  return(
-    <View style={styles.container}>
-      <View style={styles.status}>
-        <FontAwesome name={'check-circle'} size={25} color={'#FCC181'}/>
-        <Text style={styles.text}>Report Submitted</Text>
-      </View>
-      <View style={styles.status}>
-        <FontAwesome name={'circle-thin'} size={25} color={'rgba(0, 0, 0, 0.25)'}/>
-        <Text style={styles.text}>Manager Review</Text>
+export default function ReportStatusBar({step, small}) {
+  const size = small===true ? 3 : 8;
+  if(step == 1) {
+    return(
+      <View style={styles.container}>
 
+        <View style={[styles.status, { marginHorizontal: size }]}>
+          <FontAwesome name={'check-circle'} size={25} color={'#FCC181'}/>
+          <Text style={styles.text}>Report</Text>
+          <Text style={styles.text}>Submitted</Text>
+        </View>
+        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)', width: '12%', position: 'absolute', top: '25%', left: '25%'}}></View>
+        <View style={[styles.status, { marginHorizontal: size }]}>
+          <FontAwesome name={'circle-o'} size={25} color={'#E8A798'}/>
+          <Text style={styles.text}>Manager</Text>
+          <Text style={styles.text}>Review</Text>
+        </View>
+        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)',width: '13%', position: 'absolute', top: '25%'}}></View>
+        <View style={[styles.status, { marginHorizontal: size }]}>
+          <FontAwesome name={'circle-thin'} size={25} color={'rgba(0, 0, 0, 0.25)'}/>
+          <Text style={styles.text}>Decision</Text>
+          <Text style={styles.text}>Made</Text>
+        </View>
+        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)',width: '13%', position: 'absolute', top: '25%', left: '62%'}}></View>
+
+        <View style={[styles.status, { marginHorizontal: size }]}>
+          <FontAwesome name={'circle-thin'} size={25} color={'rgba(0, 0, 0, 0.25)'}/>
+          <Text style={styles.text}>Results</Text>
+          <Text style={styles.text}>Posted</Text>
+        </View>
       </View>
-      <View style={styles.status}>
-        <FontAwesome name={'circle-thin'} size={25} color={'rgba(0, 0, 0, 0.25)'}/>
-        <Text style={styles.text}>Decision Made</Text>
+  );} else if(step == 2) {
+    return(
+      <View style={styles.container}>
+
+        <View style={[styles.status, { marginHorizontal: size }]}>
+          <FontAwesome name={'check-circle'} size={25} color={'#FCC181'}/>
+          <Text style={styles.text}>Report</Text>
+          <Text style={styles.text}>Submitted</Text>
+        </View>
+        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)', width: '12%', position: 'absolute', top: '25%', left: '25%'}}></View>
+        <View style={[styles.status, { marginHorizontal: size }]}>
+          <FontAwesome name={'check-circle'} size={25} color={'#FCC181'}/>
+          <Text style={styles.text}>Manager</Text>
+          <Text style={styles.text}>Review</Text>
+        </View>
+        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)',width: '13%', position: 'absolute', top: '25%'}}></View>
+        <View style={[styles.status, { marginHorizontal: size }]}>
+          <FontAwesome name={'circle-o'} size={25} color={'#E8A798'}/>
+          <Text style={styles.text}>Decision</Text>
+          <Text style={styles.text}>Made</Text>
+        </View>
+        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)',width: '13%', position: 'absolute', top: '25%', left: '62%'}}></View>
+
+        <View style={[styles.status, { marginHorizontal: size }]}>
+          <FontAwesome name={'circle-thin'} size={25} color={'rgba(0, 0, 0, 0.25)'}/>
+          <Text style={styles.text}>Results</Text>
+          <Text style={styles.text}>Posted</Text>
+        </View>
       </View>
-      <View style={styles.status}>
-        <FontAwesome name={'circle-thin'} size={25} color={'rgba(0, 0, 0, 0.25)'}/>
-        <Text style={styles.text}>Results Posted</Text>
+  );} else if(step == 3) {
+    return(
+      <View style={styles.container}>
+
+        <View style={[styles.status, { marginHorizontal: size }]}>
+          <FontAwesome name={'check-circle'} size={25} color={'#FCC181'}/>
+          <Text style={styles.text}>Report</Text>
+          <Text style={styles.text}>Submitted</Text>
+        </View>
+        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)', width: '12%', position: 'absolute', top: '25%', left: '25%'}}></View>
+        <View style={[styles.status, { marginHorizontal: size }]}>
+          <FontAwesome name={'check-circle'} size={25} color={'#FCC181'}/>
+          <Text style={styles.text}>Manager</Text>
+          <Text style={styles.text}>Review</Text>
+        </View>
+        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)',width: '13%', position: 'absolute', top: '25%'}}></View>
+        <View style={[styles.status, { marginHorizontal: size }]}>
+          <FontAwesome name={'check-circle'} size={25} color={'#FCC181'}/>
+          <Text style={styles.text}>Decision</Text>
+          <Text style={styles.text}>Made</Text>
+        </View>
+        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)',width: '13%', position: 'absolute', top: '25%', left: '62%'}}></View>
+
+        <View style={[styles.status, { marginHorizontal: size }]}>
+          <FontAwesome name={'circle-o'} size={25} color={'#E8A798'}/>
+          <Text style={styles.text}>Results</Text>
+          <Text style={styles.text}>Posted</Text>
+        </View>
       </View>
-    </View>
+  );} else if(step == 4) {
+    return(
+      <View style={styles.container}>
+
+        <View style={[styles.status, { marginHorizontal: size }]}>
+          <FontAwesome name={'check-circle'} size={25} color={'#FCC181'}/>
+          <Text style={styles.text}>Report</Text>
+          <Text style={styles.text}>Submitted</Text>
+        </View>
+        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)', width: '12%', position: 'absolute', top: '25%', left: '25%'}}></View>
+        <View style={[styles.status, { marginHorizontal: size }]}>
+          <FontAwesome name={'check-circle'} size={25} color={'#FCC181'}/>
+          <Text style={styles.text}>Manager</Text>
+          <Text style={styles.text}>Review</Text>
+        </View>
+        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)',width: '13%', position: 'absolute', top: '25%'}}></View>
+        <View style={[styles.status, { marginHorizontal: size }]}>
+          <FontAwesome name={'check-circle'} size={25} color={'#FCC181'}/>
+          <Text style={styles.text}>Decision</Text>
+          <Text style={styles.text}>Made</Text>
+        </View>
+        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)',width: '13%', position: 'absolute', top: '25%', left: '62%'}}></View>
+
+        <View style={[styles.status, { marginHorizontal: size }]}>
+          <FontAwesome name={'check-circle'} size={25} color={'#FCC181'}/>
+          <Text style={styles.text}>Results</Text>
+          <Text style={styles.text}>Posted</Text>
+        </View>
+      </View>
   );}
 }
 const styles = StyleSheet.create({
@@ -42,11 +138,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   status: {
-    alignItems: 'center',x
+    alignItems: 'center',
     justifyContent: 'center',
+    width: 46,
   },
   text: {
     fontFamily: 'Helvetica',
-    fontSize: 10
+    fontSize: 10,
+
   }
 });
