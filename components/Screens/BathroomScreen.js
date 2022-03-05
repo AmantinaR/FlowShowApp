@@ -56,7 +56,7 @@ export default function BathroomScreen({ navigation, route, ratings}) {
         {params.planB !== Images.False ? <Image source={params.planB}/> : undefined}
         {params.wipes !== Images.False ? <Image source={params.wipes}/> : undefined}
       </View>
-      <RatingList data={params.ratings}/>
+      <RatingList data={ratings[params.id]}/>
       <View style={styles.lowerButtons}>
         <GenericButton text={"Rate"} params={params} onPress={() => navigation.navigate('Rate', params)}/>
         <GenericButton text={"Report"} params={params} onPress={() => navigation.navigate('Report', { screen: 'Input' })}/>
