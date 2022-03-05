@@ -70,7 +70,8 @@ export default function MainTab({ route, navigation }) {
         <Tab.Screen name="Search" options={{headerShown: false}}>
           {props => <SearchTab {...props} user={user} ratings={ratings} changeRatings={(date, number, title, description, order) => changeRatings(date, number, title, description, order)}/>}
         </Tab.Screen>
-        <Tab.Screen name="Report" component={ReportTab} options={{headerShown: false,}}/>
+        <Tab.Screen name="Report" component={ReportTab} options={{headerShown: false,}}>
+        </Tab.Screen>
         <Tab.Screen name="Profile" options={{headerTitle: user+"'s Profile", headerRight: () => (
 
           <Image style= {{marginRight: '9%', marginTop: '2.5%'}}source={require('../../assets/settings.png')}/>
