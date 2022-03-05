@@ -9,7 +9,7 @@ import GenericButton from '../buttons/GenericButton';
 import BloodRating from '../bloodStatic/BloodRating';
 
 
-export default function RateConfirm({ route, navigation }) {
+export default function RateConfirm({ route, navigation, user, changeRatings }) {
   const [option, setOption] = useState(null);
   const params = route.params;
 

@@ -17,24 +17,29 @@ import { useState } from 'react';
 
 const SearchStack = createStackNavigator();
 
-export default function SearchTab({ navigation }) {
+export default function SearchTab({ navigation, user, ratings, changeRatings }) {
 
   const changeSaved = () => {
     route.params.saved = !route.params.saved;
     console.log(route.params.saved);
   };
 
-
+  // user={user} ratings={ratings}
+  // changeRatings={(date, number, title, description) => changeRatings(date, number, title, description)}
   return (
     <SearchStack.Navigator>
       <SearchStack.Screen name="Landing" component={SearchLanding} options={{headerShown: false}}/>
-      <SearchStack.Screen name="Bathroom" component={Bathroom} options={({ route, navigation }) =>({
+      <SearchStack.Screen name="Bathroom" options={({ route, navigation }) =>({
         headerBackTitle: 'Back', headerTitle: 'Bathroom Details', headerRight: () => (
 
             <SavedButton savedProp={route.params.saved}/>
-          ),})}/>
+          ),})}>
+          {props => <Bathroom ratings={ratings} route navigation/>}
+      </SearchStack.Screen>
       <SearchStack.Screen name="Rate" component={Rate}/>
-      <SearchStack.Screen name="RateConfirm" component={RateConfirm} options={{headerTitle: "Rating Confirmation"}}/>
+      <SearchStack.Screen name="RateConfirm" options={{headerTitle: "Rating Confirmation"}}>
+        {props => <RateConfirm user={user} changeRatings={changeRatings}/>}
+      </SearchStack.Screen>
     </SearchStack.Navigator>
   );
 }

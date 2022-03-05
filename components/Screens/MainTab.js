@@ -19,13 +19,23 @@ import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons';
 
+import Ratings from '../lists/data/DefaultRating';
+
 
 const Tab = createBottomTabNavigator();
 
 export default function MainTab({ route, navigation }) {
   const user = route.params.user;
+  const [ratings, setRatings] = useState(Ratings);
+
+  const changeRatings = (date, number, title, description, id) => {
+    let newRatings = [...ratings];
+    let rating = {date: date, number: number, title: title, description: description, user: user}
+    newRatings[id].unshift(rating);
+    setRatings(newRatings);
+  };
     return (
-      <Tab.Navigator screenOptions={({ route }) => ({
+      <Tab.Navigator screenProps ={{ratings: ratings}} screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
 
@@ -47,7 +57,9 @@ export default function MainTab({ route, navigation }) {
 
         <Tab.Screen name="Saved" component={SavedTab} options={{headerTitle: 'Your Saved Bathrooms'}}/>
         <Tab.Screen name="Add" component={AddTab} options={{headerTitle: 'Add a New Bathroom'}}/>
-        <Tab.Screen name="Search" component={SearchTab} options={{headerShown: false}}/>
+        <Tab.Screen name="Search" options={{headerShown: false}}>
+          {props => <SearchTab user={user} ratings={ratings} changeRatings={(date, number, title, description) => changeRatings(date, number, title, description)}/>}
+        </Tab.Screen>
         <Tab.Screen name="Report" component={ReportTab} options={{headerShown: false,}}/>
         <Tab.Screen name="Profile" options={{headerTitle: user+"'s Profile", headerRight: () => (
 

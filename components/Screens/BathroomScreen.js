@@ -14,8 +14,9 @@ import { Ionicons } from '@expo/vector-icons';
 import GenericButton from '../buttons/GenericButton';
 import SavedButton from '../buttons/SavedButton';
 
-export default function BathroomScreen({ navigation, route }) {
+export default function BathroomScreen({ navigation, route}, ratings) {
   const params = route.params;
+  console.log(params);
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground source={params.source} style={styles.imagebkd} imageStyle={styles.image} >

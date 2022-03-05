@@ -25,12 +25,11 @@ export default function ReportLanding({ navigation }) {
   const handleSheetChanges = useCallback((index: number) => {
     console.log('handleSheetChanges', index);
   }, []);
-
+  const data = [{me: 'you'},{me: 'me'}];
   return (
     <SafeAreaView style={styles.container}>
       <Button title="Report Status" onPress={() => navigation.navigate('Status')}/>
       <GenericButton text={'Report'} onPress={() => navigation.navigate('Input')}/>
-
       <StatusBar style="auto" />
     </SafeAreaView>
   );
