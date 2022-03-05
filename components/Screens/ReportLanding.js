@@ -29,8 +29,11 @@ export default function ReportLanding({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <Button title="Report Status" onPress={() => navigation.navigate('Status')}/>
-      <Text></Text>
-      <GenericButton text={'Report'} onPress={() => navigation.navigate('Input')}/>
+      <View style={{}}>
+        <Text style={styles.text}>Status of Bathroom Reports</Text>
+      </View>
+      <View style={styles.list}></View>
+      <GenericButton text={'Report Bathroom'} onPress={() => navigation.navigate('Input')}/>
       <StatusBar style="auto" />
     </SafeAreaView>
   );
@@ -55,5 +58,14 @@ const styles = StyleSheet.create({
     backgroundColor: 'purple',
     alignItems: 'center',
   },
+  text: {
+    fontFamily: 'Helvetica',
+    fontSize: 16
+  },
+  list: {
+    borderWidth: 1,
+    width:'85%',
+    height: '50%'
+  }
 
 });
