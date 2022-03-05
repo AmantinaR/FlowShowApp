@@ -89,8 +89,8 @@ export default function ReportInput({ navigation, route }) {
         <TextInput onChangeText={(building) => setBuilding(building)} style={styles.textBox} placeholder='Building Name' />
       </View>
       <View style={styles.textFlex}>
-        <Text style={styles.text}>Bathroom Room #</Text>
-        <TextInput onChangeText={(room) => setRoom(room)} style={styles.textBox} placeholder='Room #'/>
+        <Text style={styles.text}>Bathroom Floor #</Text>
+        <TextInput onChangeText={(room) => setRoom(room)} style={styles.textBox} placeholder='Floor #'/>
       </View>
       <View style={styles.featuresFlex}>
         <Text style={styles.text}>Products Requested (Optional)</Text>
@@ -156,7 +156,8 @@ const styles = StyleSheet.create({
     width: 300,
     height: '18%',
     padding: 10,
-    marginTop: '5%'
+    marginTop: '5%',
+    maxWidth: 360
 
   },
   confirm: {

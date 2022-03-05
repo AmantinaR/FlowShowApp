@@ -8,16 +8,16 @@ export default function FeatureList(props) {
   return(
     <View style={styles.list}>
       <View style={styles.container}>
-        <FeatureButton title='Pads' onSelect={props.onSelect}/>
-        <FeatureButton title='Free Pads'onSelect={props.onSelect}/>
-        <FeatureButton title='Tampons'onSelect={props.onSelect}/>
-        <FeatureButton title='Single occupancy'onSelect={props.onSelect}/>
-        <FeatureButton title='Wipes'onSelect={props.onSelect}/>
-        <FeatureButton title='Condoms'onSelect={props.onSelect}/>
-        <FeatureButton title='Emergency Contraception'onSelect={props.onSelect}/>
-        <FeatureButton title='Diapers'onSelect={props.onSelect}/>
-        <FeatureButton title='Accessible'onSelect={props.onSelect}/>
-        <FeatureButton title='Clean'onSelect={props.onSelect}/>
+        <FeatureButton title='Pads' onSelect={props.onSelect} tag='pads'/>
+        <FeatureButton title='Free Pads'onSelect={props.onSelect} tag='freepads'/>
+        <FeatureButton title='Tampons'onSelect={props.onSelect} tag='tampons'/>
+        <FeatureButton title='Single occupancy'onSelect={props.onSelect} tag='singleOcc'/>
+        <FeatureButton title='Wipes'onSelect={props.onSelect} tag='wipes'/>
+        <FeatureButton title='Condoms'onSelect={props.onSelect} tag='condoms'/>
+        <FeatureButton title='Emergency Contraception'onSelect={props.onSelect} tag='emcon'/>
+        <FeatureButton title='Diapers'onSelect={props.onSelect} tag='diapers'/>
+        <FeatureButton title='Accessible'onSelect={props.onSelect} tag='accessible'/>
+        <FeatureButton title='Clean'onSelect={props.onSelect} tag='clean'/>
       </View>
     </View>
 

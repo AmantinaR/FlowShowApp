@@ -77,7 +77,8 @@ const styles = StyleSheet.create({
   summary_line: {
     flexDirection: 'row',
     padding: '2%',
-    alignItems: 'center'
+    alignItems: 'center',
+    flexWrap: 'wrap'
   },
   button: {
     color: '#ffffff',

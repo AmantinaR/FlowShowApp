@@ -58,7 +58,7 @@ export default function MainTab({ route, navigation }) {
           tabBarInactiveTintColor: 'black'})}>
 
         <Tab.Screen name="Saved" component={SavedTab} options={{headerTitle: 'Your Saved Bathrooms'}}/>
-        <Tab.Screen name="Add" component={AddTab} options={{headerTitle: 'Add a New Bathroom'}}/>
+        <Tab.Screen name="Add" component={AddTab} options={{headerShown: false}}/>
         <Tab.Screen name="Search" options={{headerShown: false}}>
           {props => <SearchTab {...props} user={user} ratings={ratings} changeRatings={(date, number, title, description, order) => changeRatings(date, number, title, description, order)}/>}
         </Tab.Screen>

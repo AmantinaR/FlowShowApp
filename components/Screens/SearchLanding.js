@@ -40,7 +40,7 @@ export default function SearchLanding({ navigation }) {
 
 
   // variables
-  const snapPoints = useMemo(() => ['45%', '100%'], []);
+  const snapPoints = useMemo(() => ['45%', '97%'], []);
 
   // callbacks
   const handleSheetChanges = useCallback((index: number) => {

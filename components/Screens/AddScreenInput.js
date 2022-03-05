@@ -11,7 +11,11 @@ import GenericButton from '../buttons/GenericButton';
 import BloodRadio from '../buttons/BloodRadio';
 
 export default function AddScreenInput({ navigation }) {
+  const [name, setName] = useState('');
+  const [room, setRoom] = useState('');
+  const [comment, setComment] = useState('');
   const [option, setOption] = useState(null);
+  const [gender, setGender] = useState(null);
   const dataRate = [
     { value: 1 },
     { value: 2 },
@@ -25,6 +29,54 @@ export default function AddScreenInput({ navigation }) {
     { value: "Men's" },
   ];
 
+  const productData = [
+    {pads:false,
+    freepads: false,
+    singleOcc: false,
+    clean: false,
+    tampons: false,
+    diapers: false,
+    condoms: false,
+    emcon: false,
+    wipes: false,
+    tp: false,
+    soap: false,
+    accessible: false
+  }
+  ];
+  const [products, setProducts] = useState(productData);
+  const updateProducts = (selected, product) => {
+    let newProduct = products;
+    if (product == 'pads') {
+      newProduct[0].pads = !selected;
+    } else if (product == 'pads') {
+      newProduct[0].pads = !selected;
+    } else if (product == 'tampons') {
+      newProduct[0].tampons = !selected;
+    } else if (product == 'wipes') {
+      newProduct[0].wipes = !selected;
+    } else if (product == 'condoms') {
+      newProduct[0].condoms = !selected;
+    } else if (product == 'emcon') {
+      newProduct[0].emcon = !selected;
+    } else if (product == 'diapers') {
+      newProduct[0].diapers = !selected;
+    } else if (product == 'tp') {
+      newProduct[0].tp = !selected;
+    } else if (product == 'soap') {
+      newProduct[0].soap = !selected;
+    } else if (product == 'freepads') {
+      newProduct[0].freepads = !selected;
+    } else if (product == 'singleOcc') {
+      newProduct[0].singleOcc = !selected;
+    } else if (product == 'clean') {
+      newProduct[0].clean = !selected;
+    } else if (product == 'accessible') {
+      newProduct[0].accessible = !selected;
+    }
+    setProducts(newProduct);
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={{height: 900, marginTop: '4%'}} scrollToOverflowEnabled={true} showsVerticalScrollIndicator={true} maximumZoomScale={0}>
@@ -34,25 +86,25 @@ export default function AddScreenInput({ navigation }) {
 
           <View style={styles.textFlex}>
         <Text style={styles.text, {top: '1%'}}>Bathroom Building</Text>
-        <TextInput style={styles.textBox} placeholder='Building Name' />
+        <TextInput onChangeText={(text) => setName(text)} style={styles.textBox} placeholder='Building Name' />
       </View>
       <View style={styles.textFlex}>
-        <Text style={styles.text, {top: '1%'}}>Bathroom Room #</Text>
-        <TextInput style={styles.textBox} placeholder='Room #'/>
+        <Text style={styles.text, {top: '1%'}}>Bathroom Floor #</Text>
+        <TextInput onChangeText={(text) => setRoom(text)} style={styles.textBox} placeholder='Floor #'/>
       </View>
           <View style={{flexDirection: 'column', padding: 10, alignItems: 'center'}}>
             <Text style = {styles.txt, {margin: 10}}>What gender is assigned to this bathroom?</Text>
-            <GenderRadio data={data} onSelect={(value) => setOption(value)}/>
+            <GenderRadio data={data} onSelect={(value) => setGender(value)}/>
           </View>
           <View style={{flexDirection: 'row', padding: 15, alignItems: 'center'}}>
             <Text style = {styles.txt}>Rate Bathroom: </Text>
             <BloodRadio data={dataRate} onSelect={(value) => setOption(value)}/>
           </View>
           <Text style = {styles.txt, {margin: 15}}>What features does this bathroom have?</Text>
-          <FeaturesList/>
+          <FeaturesList onSelect={(selected, product) => updateProducts(selected, product)}/>
           <Text style = {styles.text, {margin: 15}}>Additional Comments</Text>
-          <TextInput style={styles.comments} placeholder={'Please write any comments here (Optional)'}/>
-          <GenericButton text={'Confirm'} onPress={() => navigation.navigate('Confirm')}/>
+          <TextInput onChangeText={(text) => setComment(text)} multiline style={styles.comments} placeholder={'Please write any comments here (Optional)'}/>
+          <GenericButton text={'Confirm'} onPress={() => navigation.navigate('Confirm', {name: name, room: room, locationRating: option, gender: gender, products: products, comments: comment})}/>
           <StatusBar style="auto" />
         </View>
       </ScrollView>
@@ -124,7 +176,8 @@ const styles = StyleSheet.create({
     width: '84%',
     height: '18%',
     padding: 10,
-    marginTop: '5%'
+    marginTop: '0%',
+    maxWidth: 360
 
   },
 });

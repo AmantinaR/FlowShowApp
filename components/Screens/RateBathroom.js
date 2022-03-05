@@ -54,7 +54,7 @@ export default function RateScreen({ navigation, route }) {
       <View style={{flexDirection: 'row', justifyContent: 'flex-start', width: '80%', marginTop: '5%'}}>
       <Text>Rating Description (Optional)</Text>
       </View>
-      <TextInput style={styles.comments} placeholder={'Please write any comments here (Optional)'} onChangeText={(descr) => setDescription(descr)}/>
+      <TextInput multiline maxLength={100} style={styles.comments} placeholder={'Please write any comments here (Optional)'} onChangeText={(descr) => setDescription(descr)}/>
       <GenericButton text={'Confirm'} onPress={() => {navigation.navigate('RateConfirm', {building: params, rating: option, title: title, description: description, date: fullDate, order: order})}}/>
     </ScrollView>
     </SafeAreaView>
@@ -113,7 +113,8 @@ const styles = StyleSheet.create({
     height: '18%',
     padding: 10,
     marginTop: '1%',
-    marginBottom: '3%'
+    marginBottom: '3%',
+    maxWidth: 360
 
   },
   photoSection: {
