@@ -34,7 +34,7 @@ export default function SearchTab({ navigation }) {
             <SavedButton savedProp={route.params.saved}/>
           ),})}/>
       <SearchStack.Screen name="Rate" component={Rate}/>
-      <SearchStack.Screen name="RateConfirm" component={RateConfirm}/>
+      <SearchStack.Screen name="RateConfirm" component={RateConfirm} options={{headerTitle: "Rating Confirmation"}}/>
     </SearchStack.Navigator>
   );
 }

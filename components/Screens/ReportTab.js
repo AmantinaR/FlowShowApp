@@ -15,7 +15,7 @@ const ReportStack = createStackNavigator();
 export default function ReportTab({ navigation }) {
   return (
     <ReportStack.Navigator>
-      <ReportStack.Screen name="ReportLanding" component={Landing} options={{headerShown: false}}/>
+      <ReportStack.Screen name="ReportLanding" component={Landing} options={{headerTitle: 'Report a Bathroom', headerLeft: () =>(<View></View>)}}/>
       <ReportStack.Screen name="Input" component={Input} options={{headerTitle: 'Report Issue(s)',
       headerLeft: () => (<View style={{flexDirection: 'row', alignItems: 'center'}}>
         <Ionicons name={'ios-chevron-back'} size={33} color={'#0F77F0'}/>

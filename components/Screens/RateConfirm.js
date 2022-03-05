@@ -6,6 +6,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import GenericButton from '../buttons/GenericButton';
+import BloodRating from '../bloodStatic/BloodRating';
+
 
 export default function RateConfirm({ route, navigation }) {
   const [option, setOption] = useState(null);
@@ -25,7 +27,8 @@ export default function RateConfirm({ route, navigation }) {
       <View style={styles.summary_body}>
         <Text style = {{fontWeight: 'bold', fontSize: 18, marginBottom: '1%', fontFamily: 'Helvetica'}}>Rating Details</Text>
         <View style={styles.summary_line}>
-          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Rating:  </Text>
+          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Rating: </Text>
+          <BloodRating number={params.rating} small={true}/>
          </View>
        <View style={styles.summary_line}>
           <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Rating Title:  </Text>
@@ -66,7 +69,8 @@ const styles = StyleSheet.create({
   },
   summary_line: {
     flexDirection: 'row',
-    padding: '2%'
+    padding: '2%',
+    alignItems: 'center'
   },
   button: {
     color: '#ffffff',

@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 import {useState} from 'react';
-import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, Image, ImageBackground } from 'react-native';
+import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, Image, ImageBackground, ScrollView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -30,6 +30,7 @@ export default function RateScreen({ navigation, route }) {
   ];
   return (
     <SafeAreaView style={styles.container}>
+    <ScrollView contentContainerStyle={styles.scrollView}>
       <ImageBackground source={params.source} style={styles.imagebkd} imageStyle={styles.image} >
         <View style={styles.titleCard}>
           <Text style={styles.nameText}>{params.name}</Text>
@@ -38,11 +39,13 @@ export default function RateScreen({ navigation, route }) {
 
       </ImageBackground>
       <View style={{flexDirection: 'row', padding: 15, alignItems: 'center'}}>
-      <Text style={styles.text}>Rate Bathroom:  </Text>
+      <Text style={styles.text}>Rate Bathroom(required):  </Text>
       <BloodRadio data={data} onSelect={(value) => setOption(value)}/>
       </View>
-      <View style={{flexDirection: 'row', alignItems: 'center',}}>
-        <Text style={styles.text, {top: '1%'}}>Rating Title: </Text>
+      <Text style={styles.text}>What features does this bathroom have?</Text>
+      <FeaturesList onSelect={(selected, tag) => console.log(tag)}/>
+      <View style={{flexDirection: 'row', alignItems: 'center', width: '100%', justifyContent: 'center'}}>
+        <Text style={styles.text, {top: '1%', }}>Rating Title(required): </Text>
         <TextInput style={styles.textBox} placeholder='' onChangeText={(text) => setTitle(text)}/>
       </View>
       <View style={{flexDirection: 'row', justifyContent: 'flex-start', width: '80%', marginTop: '5%'}}>
@@ -50,6 +53,7 @@ export default function RateScreen({ navigation, route }) {
       </View>
       <TextInput style={styles.comments} placeholder={'Please write any comments here (Optional)'} onChangeText={(descr) => setDescription(descr)}/>
       <GenericButton text={'Confirm'} onPress={() => {navigation.navigate('RateConfirm', {building: params, rating: option, title: title, description: description, date: fullDate})}}/>
+    </ScrollView>
     </SafeAreaView>
   );
 }
@@ -61,9 +65,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  scrollView: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 900,
+    padding: 10
+  },
   imagebkd: {
-    height: '33%',
-    width: '92%',
+    height: '26%',
+    width: '100%',
     alignItems: 'flex-start',
     justifyContent: 'flex-end',
     borderRadius: 5
@@ -129,7 +139,7 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(0, 0, 0, 0.25)',
     height: 40,
     padding: 10,
-    margin: 12,
+    margin: 10,
     width: '50%',
     borderRadius: 4
   },

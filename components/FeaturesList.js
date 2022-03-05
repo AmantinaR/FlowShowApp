@@ -8,16 +8,16 @@ export default function FeatureList(props) {
   return(
     <View style={styles.list}>
       <View style={styles.container}>
-        <FeatureButton title='Pads'/>
-        <FeatureButton title='Free Pads'/>
-        <FeatureButton title='Tampons'/>
-        <FeatureButton title='Single occupancy'/>
-        <FeatureButton title='Wipes'/>
-        <FeatureButton title='Condoms'/>
-        <FeatureButton title='Emergency Contraception'/>
-        <FeatureButton title='Diapers'/>
-        <FeatureButton title='Accessible'/>
-        <FeatureButton title='Clean'/>
+        <FeatureButton title='Pads' onSelect={props.onSelect}/>
+        <FeatureButton title='Free Pads'onSelect={props.onSelect}/>
+        <FeatureButton title='Tampons'onSelect={props.onSelect}/>
+        <FeatureButton title='Single occupancy'onSelect={props.onSelect}/>
+        <FeatureButton title='Wipes'onSelect={props.onSelect}/>
+        <FeatureButton title='Condoms'onSelect={props.onSelect}/>
+        <FeatureButton title='Emergency Contraception'onSelect={props.onSelect}/>
+        <FeatureButton title='Diapers'onSelect={props.onSelect}/>
+        <FeatureButton title='Accessible'onSelect={props.onSelect}/>
+        <FeatureButton title='Clean'onSelect={props.onSelect}/>
       </View>
     </View>
 
@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
     marginBottom: 8.86,
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    width: '100%'
   },
   list: {
     marginTop: 8.86

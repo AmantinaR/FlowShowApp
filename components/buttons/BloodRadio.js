@@ -14,7 +14,7 @@ export default function BloodRadio({data, onSelect}) {
       {data.map((item, index) => {
         return (
           <Pressable key={index} onPress={() => selectHandler(item.value)}>
-            <Blood color={item.value <= userOption? 'red' : '#D3D3D3'}/>
+            <Blood color={item.value <= userOption? '#C10C0D' : '#D3D3D3'}/>
           </Pressable>
         );
       })}
