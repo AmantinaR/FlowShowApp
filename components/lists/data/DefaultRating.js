@@ -1,7 +1,7 @@
 const DefaultRating = [
   [{
     id: 0,
-    date: '1 day ago',
+    date: '3-3-2022',
     number: 5,
     title: 'Best on Campus',
     description: 'Clean, free period products, great bathroom!',
@@ -10,7 +10,7 @@ const DefaultRating = [
   },
   {
     id: 1,
-    date: '2 days ago',
+    date: '3-2-2022',
     number: 5,
     title: 'Great Bathroom',
     description: 'I go here every day after Math 51! Super accessible.',
@@ -19,7 +19,7 @@ const DefaultRating = [
   },
   {
     id: 2,
-    date: '3 days ago',
+    date: '3-1-2022',
     number: 2.5,
     title: 'Needs some work',
     description: 'There is a period product dispenser but they were all out of pads',
@@ -28,7 +28,7 @@ const DefaultRating = [
   },
   {
     id: 3,
-    date: '4 days ago',
+    date: '2-28-2022',
     number: 5,
     title: 'Trans Male Friendly!',
     description: "Was super relieved to see pads and tampons in the men's bathroom",
@@ -37,7 +37,7 @@ const DefaultRating = [
   },
   {
     id: 4,
-    date: '5 days ago',
+    date: '2-27-2022',
     number: 3.5,
     title: "It's okay",
     description: "The stall I used didn't have a bag in the small disposal bin",
@@ -46,7 +46,7 @@ const DefaultRating = [
   },],
   [{
     id: 0,
-    date: '1 day ago',
+    date: '3-3-2022',
     number: 5,
     title: 'Best on Campus',
     description: 'Clean, free period products, great bathroom!',
@@ -55,7 +55,7 @@ const DefaultRating = [
   },
   {
     id: 1,
-    date: '2 days ago',
+    date: '3-2-2022',
     number: 5,
     title: 'Great Bathroom',
     description: 'I go here every day after Math 51! Super accessible.',
@@ -64,7 +64,7 @@ const DefaultRating = [
   },
   {
     id: 2,
-    date: '3 days ago',
+    date: '3-1-2022',
     number: 2.5,
     title: 'Needs some work',
     description: 'There is a period product dispenser but they were all out of pads',
@@ -73,7 +73,7 @@ const DefaultRating = [
   },
   {
     id: 3,
-    date: '4 days ago',
+    date: '2-28-2022',
     number: 5,
     title: 'Trans Male Friendly!',
     description: "Was super relieved to see pads and tampons in the men's bathroom",
@@ -82,7 +82,7 @@ const DefaultRating = [
   },
   {
     id: 4,
-    date: '5 days ago',
+    date: '2-27-2022',
     number: 3.5,
     title: "It's okay",
     description: "The stall I used didn't have a bag in the small disposal bin",
@@ -91,7 +91,7 @@ const DefaultRating = [
   },],
   [{
     id: 0,
-    date: '1 day ago',
+    date: '3-3-2022',
     number: 5,
     title: 'Best on Campus',
     description: 'Clean, free period products, great bathroom!',
@@ -100,7 +100,7 @@ const DefaultRating = [
   },
   {
     id: 1,
-    date: '2 days ago',
+    date: '3-2-2022',
     number: 5,
     title: 'Great Bathroom',
     description: 'I go here every day after Math 51! Super accessible.',
@@ -109,7 +109,7 @@ const DefaultRating = [
   },
   {
     id: 2,
-    date: '3 days ago',
+    date: '3-1-2022',
     number: 2.5,
     title: 'Needs some work',
     description: 'There is a period product dispenser but they were all out of pads',
@@ -118,7 +118,7 @@ const DefaultRating = [
   },
   {
     id: 3,
-    date: '4 days ago',
+    date: '2-28-2022',
     number: 5,
     title: 'Trans Male Friendly!',
     description: "Was super relieved to see pads and tampons in the men's bathroom",
@@ -127,7 +127,7 @@ const DefaultRating = [
   },
   {
     id: 4,
-    date: '5 days ago',
+    date: '2-27-2022',
     number: 3.5,
     title: "It's okay",
     description: "The stall I used didn't have a bag in the small disposal bin",
@@ -136,7 +136,7 @@ const DefaultRating = [
   },],
   [{
     id: 0,
-    date: '1 day ago',
+    date: '3-3-2022',
     number: 5,
     title: 'Best on Campus',
     description: 'Clean, free period products, great bathroom!',
@@ -145,7 +145,7 @@ const DefaultRating = [
   },
   {
     id: 1,
-    date: '2 days ago',
+    date: '3-2-2022',
     number: 5,
     title: 'Great Bathroom',
     description: 'I go here every day after Math 51! Super accessible.',
@@ -154,7 +154,7 @@ const DefaultRating = [
   },
   {
     id: 2,
-    date: '3 days ago',
+    date: '3-1-2022',
     number: 2.5,
     title: 'Needs some work',
     description: 'There is a period product dispenser but they were all out of pads',
@@ -163,7 +163,7 @@ const DefaultRating = [
   },
   {
     id: 3,
-    date: '4 days ago',
+    date: '2-28-2022',
     number: 5,
     title: 'Trans Male Friendly!',
     description: "Was super relieved to see pads and tampons in the men's bathroom",
@@ -172,7 +172,7 @@ const DefaultRating = [
   },
   {
     id: 4,
-    date: '5 days ago',
+    date: '2-27-2022',
     number: 3.5,
     title: "It's okay",
     description: "The stall I used didn't have a bag in the small disposal bin",
@@ -181,7 +181,7 @@ const DefaultRating = [
   },],
   [{
     id: 0,
-    date: '1 day ago',
+    date: '3-3-2022',
     number: 5,
     title: 'Best on Campus',
     description: 'Clean, free period products, great bathroom!',
@@ -190,7 +190,7 @@ const DefaultRating = [
   },
   {
     id: 1,
-    date: '2 days ago',
+    date: '3-2-2022',
     number: 5,
     title: 'Great Bathroom',
     description: 'I go here every day after Math 51! Super accessible.',
@@ -199,7 +199,7 @@ const DefaultRating = [
   },
   {
     id: 2,
-    date: '3 days ago',
+    date: '3-1-2022',
     number: 2.5,
     title: 'Needs some work',
     description: 'There is a period product dispenser but they were all out of pads',
@@ -208,7 +208,7 @@ const DefaultRating = [
   },
   {
     id: 3,
-    date: '4 days ago',
+    date: '2-28-2022',
     number: 5,
     title: 'Trans Male Friendly!',
     description: "Was super relieved to see pads and tampons in the men's bathroom",
@@ -217,7 +217,7 @@ const DefaultRating = [
   },
   {
     id: 4,
-    date: '5 days ago',
+    date: '2-27-2022',
     number: 3.5,
     title: "It's okay",
     description: "The stall I used didn't have a bag in the small disposal bin",

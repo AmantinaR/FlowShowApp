@@ -12,6 +12,13 @@ import BloodRating from '../bloodStatic/BloodRating';
 export default function RateConfirm({ route, navigation, user, changeRatings }) {
   const [option, setOption] = useState(null);
   const params = route.params;
+  console.log(route);
+  console.log(params.order);
+  const index = params.building.id
+  const RatePress = () => {
+    changeRatings(params.date, params.rating, params.title, params.description, params.order);
+    navigation.navigate('Bathroom', params.building);
+  };
 
 
   return (
@@ -43,7 +50,7 @@ export default function RateConfirm({ route, navigation, user, changeRatings }) 
           <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.date}  </Text>
        </View>
       </View>
-        <GenericButton text={'Done'} onPress={() => navigation.navigate('Bathroom', params.building)}/>
+        <GenericButton text={'Done'} onPress={() => RatePress()}/>
     </SafeAreaView>
   );
 }

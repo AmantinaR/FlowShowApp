@@ -14,13 +14,16 @@ import BloodRadio from '../buttons/BloodRadio';
 
 export default function RateScreen({ navigation, route }) {
   const params = route.params;
+
+  const order = params.id;
+  console.log(order);
   const [option, setOption] = useState(null);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const date = new Date().getDate();
   const month = new Date().getMonth() + 1;
   const year = new Date().getFullYear();
-  const fullDate = date + '-' + month + '-' + year;
+  const fullDate = month + '-' + date + '-' + year;
   const data = [
     { value: 1 },
     { value: 2 },
@@ -52,7 +55,7 @@ export default function RateScreen({ navigation, route }) {
       <Text>Rating Description (Optional)</Text>
       </View>
       <TextInput style={styles.comments} placeholder={'Please write any comments here (Optional)'} onChangeText={(descr) => setDescription(descr)}/>
-      <GenericButton text={'Confirm'} onPress={() => {navigation.navigate('RateConfirm', {building: params, rating: option, title: title, description: description, date: fullDate})}}/>
+      <GenericButton text={'Confirm'} onPress={() => {navigation.navigate('RateConfirm', {building: params, rating: option, title: title, description: description, date: fullDate, order: order})}}/>
     </ScrollView>
     </SafeAreaView>
   );

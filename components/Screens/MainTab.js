@@ -28,10 +28,12 @@ export default function MainTab({ route, navigation }) {
   const user = route.params.user;
   const [ratings, setRatings] = useState(Ratings);
 
-  const changeRatings = (date, number, title, description, id) => {
+  const changeRatings = (date, number, title, description, order) => {
     let newRatings = [...ratings];
     let rating = {date: date, number: number, title: title, description: description, user: user}
-    newRatings[id].unshift(rating);
+    console.log(rating);
+    console.log("title:", title);
+    newRatings[order].unshift(rating);
     setRatings(newRatings);
   };
     return (
@@ -58,7 +60,7 @@ export default function MainTab({ route, navigation }) {
         <Tab.Screen name="Saved" component={SavedTab} options={{headerTitle: 'Your Saved Bathrooms'}}/>
         <Tab.Screen name="Add" component={AddTab} options={{headerTitle: 'Add a New Bathroom'}}/>
         <Tab.Screen name="Search" options={{headerShown: false}}>
-          {props => <SearchTab {...props} user={user} ratings={ratings} changeRatings={(date, number, title, description) => changeRatings(date, number, title, description)}/>}
+          {props => <SearchTab {...props} user={user} ratings={ratings} changeRatings={(date, number, title, description, order) => changeRatings(date, number, title, description, order)}/>}
         </Tab.Screen>
         <Tab.Screen name="Report" component={ReportTab} options={{headerShown: false,}}/>
         <Tab.Screen name="Profile" options={{headerTitle: user+"'s Profile", headerRight: () => (

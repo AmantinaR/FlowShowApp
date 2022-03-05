@@ -15,7 +15,7 @@ export default function ReportInput({ navigation, route }) {
   const date = new Date().getDate();
   const month = new Date().getMonth() + 1;
   const year = new Date().getFullYear();
-  const fullDate = date + '-' + month + '-' + year;
+  const fullDate = month + '-' + date + '-' + year;
   const [building, setBuilding] = useState('');
   const [room, setRoom] = useState('');
   const [comment, setComment] = useState('');
