@@ -9,7 +9,6 @@ import { FontAwesome } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 
 
-
 export default function GenericButton(props) {
   if (props.text === 'Rate'){
     return(
@@ -108,6 +107,15 @@ export default function GenericButton(props) {
       <TouchableOpacity onPress={props.onPress}>
         <View style={styles.buttonFlex}>
           <Text style={styles.text}>Done</Text>
+        </View>
+      </TouchableOpacity>
+    );
+  } else if (props.text === "Add Another Bathroom") {
+    return(
+      <TouchableOpacity onPress={props.onPress}>
+        <View style={styles.buttonFlex}>
+          <FontAwesome name='plus-circle' size={19} color={'white'}/>
+          <Text style={styles.text}> Add Another Bathroom</Text>
         </View>
       </TouchableOpacity>
     );

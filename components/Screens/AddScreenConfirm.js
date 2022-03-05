@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
-import { Text, View, StyleSheet, Button, SafeAreaView, TextInput } from 'react-native';
+import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -86,9 +86,9 @@ export default function AddScreenConfirm({ navigation, route  }) {
   }
   return (
     <SafeAreaView style={styles.container}>
-    <StatusBar style="auto" />
+     <Text style = {styles.thank_you}>Thank you for adding a bathroom to our database!</Text>
     <View style={styles.summary_body}>
-      <Text style = {{fontWeight: 'bold', fontSize: 18, marginBottom: '1%', fontFamily: 'Helvetica'}}>Bathroom Details</Text>
+      <Text style = {{fontWeight: 'bold', fontSize: 18, marginBottom: '5%', fontFamily: 'Helvetica'}}>Bathroom Details</Text>
       <View style={styles.summary_line}>
          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Bathroom Name:  </Text>
          <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.name}  </Text>
@@ -106,7 +106,7 @@ export default function AddScreenConfirm({ navigation, route  }) {
         <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.gender}  </Text>
      </View>
      <View style={styles.summary_line}>
-        <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>products:  </Text>
+        <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Products:  </Text>
         <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{productlist}  </Text>
      </View>
      <View style={styles.summary_line}>
@@ -114,7 +114,10 @@ export default function AddScreenConfirm({ navigation, route  }) {
         <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.comments}</Text>
      </View>
     </View>
-    <GenericButton text={'Done'} onPress={() => navigation.navigate('Tabs', {screen: 'Search'})}/>
+    <GenericButton text={'Add Another Bathroom'} onPress={() => navigation.navigate('Input')}/>
+        <TouchableOpacity onPress={() => navigation.navigate('Search')}>
+        <Text style = {styles.im_good}>No, I'm Good</Text>
+        </TouchableOpacity>
 
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -129,10 +132,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 20
   },
+  header: {
+    fontWeight: 'bold',
+    fontSize: 30,
+    fontFamily: 'Helvetica'
+  },
   thank_you: {
     color: 'rgba(0, 0, 0, 0.5)',
-    marginHorizontal: '5%',
-    marginTop: '-20%',
+    marginHorizontal: '3%',
+    marginTop: '-15%',
     fontFamily: 'Helvetica'
   },
   summary_body:{
@@ -172,9 +180,9 @@ const styles = StyleSheet.create({
 
   },
   bottom_buttons: {
-    padding: '3%'
+    padding: '3%',
   },
-  another_report: {
+  im_good: {
     fontSize: 16,
     color: '#ff8984',
     textDecorationLine: 'underline',
