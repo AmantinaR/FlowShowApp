@@ -36,15 +36,18 @@ export default function HalfBlood({small}) {
 const styles = StyleSheet.create({
   container: {
     //flex: 1,
-    backgroundColor: '#C10C0D',
+    backgroundColor: '#DA4949',
     alignItems: 'center',
     justifyContent: 'center',
-    margin: 2
+    margin: 2,
+    borderRadius: 4
   },
   grey: {
     backgroundColor: '#D3D3D3',
     position: 'relative',
-    left: 6
+    left: 6,
+    borderTopRightRadius: 4,
+    borderBottomRightRadius: 4
   },
   icon: {
     position: 'absolute',

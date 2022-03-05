@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
     //flex: 1
     alignItems: 'center',
     justifyContent: 'center',
-    margin: 2
+    margin: 2,
+    borderRadius: 4
   },
 
 });
