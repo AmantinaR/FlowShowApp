@@ -41,7 +41,8 @@ export default function AddScreenInput({ navigation }) {
     wipes: false,
     tp: false,
     soap: false,
-    accessible: false
+    accessible: false,
+    diapers: false
   }
   ];
   const [products, setProducts] = useState(productData);

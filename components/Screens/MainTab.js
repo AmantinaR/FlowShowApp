@@ -36,6 +36,14 @@ export default function MainTab({ route, navigation }) {
     newRatings[order].unshift(rating);
     setRatings(newRatings);
   };
+
+  const [reports, setReports] = useState([]);
+  const changeReports = (date, name, floor, products, disposal, comments, status) => {
+    let newReports = [...reports];
+    let report = {date: date, name: name, floor: floor, products: products, comments: comments, status: status}
+    newReports.unshift(report);
+    setReports(newReports);
+  };
     return (
       <Tab.Navigator screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
