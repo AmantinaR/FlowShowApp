@@ -29,6 +29,7 @@ export default function ReportLanding({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <Button title="Report Status" onPress={() => navigation.navigate('Status')}/>
+      <Text></Text>
       <GenericButton text={'Report'} onPress={() => navigation.navigate('Input')}/>
       <StatusBar style="auto" />
     </SafeAreaView>
