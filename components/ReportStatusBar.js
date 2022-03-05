@@ -10,23 +10,28 @@ import { FontAwesome5 } from '@expo/vector-icons';
 
 
 export default function ReportStatusBar(props) {
+  if(props.step == 1) {
   return(
     <View style={styles.container}>
       <View style={styles.status}>
-        <Text style={styles.text}>Report Submitted</Text>
         <FontAwesome name={'check-circle'} size={25} color={'#FCC181'}/>
+        <Text style={styles.text}>Report Submitted</Text>
       </View>
       <View style={styles.status}>
+        <FontAwesome name={'circle-thin'} size={25} color={'rgba(0, 0, 0, 0.25)'}/>
         <Text style={styles.text}>Manager Review</Text>
+
       </View>
       <View style={styles.status}>
+        <FontAwesome name={'circle-thin'} size={25} color={'rgba(0, 0, 0, 0.25)'}/>
         <Text style={styles.text}>Decision Made</Text>
       </View>
       <View style={styles.status}>
+        <FontAwesome name={'circle-thin'} size={25} color={'rgba(0, 0, 0, 0.25)'}/>
         <Text style={styles.text}>Results Posted</Text>
       </View>
     </View>
-  );
+  );}
 }
 const styles = StyleSheet.create({
   container: {
