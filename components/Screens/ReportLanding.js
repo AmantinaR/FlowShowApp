@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   list: {
     //borderWidth: 1,
     marginTop: '-10%',
-    width:'85%',
+    marginHorizontal: '10%',
     height: '50%'
   }
 

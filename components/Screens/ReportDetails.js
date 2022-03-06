@@ -43,10 +43,6 @@ export default function ReportDetails({ route, navigation }) {
           <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Date Submitted:  </Text>
           <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.date}  </Text>
        </View>
-       <View style={styles.summary_line}>
-          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Date Submitted:  </Text>
-          <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.date}  </Text>
-       </View>
       </View>
         
     </SafeAreaView>

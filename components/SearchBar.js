@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     flexDirection: 'row',
-    borderRadius: 5,
+    borderRadius: 10,
     borderColor: "#E5E5E5",
     borderWidth: 1,
     width: '90%',
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   textBox: {
     borderWidth: 1,
     borderColor: '#E5E5E5',
-    borderRadius: 5,
+    borderRadius: 10,
     height: '80%',
     padding: 5,
     width: '80%',

@@ -5,6 +5,8 @@ import { useState } from "react";
 import { useNavigation } from '@react-navigation/native';
 import BloodRating from './bloodStatic/BloodRating';
 import ReportStatusBar from './ReportStatusBar';
+import { SimpleLineIcons } from '@expo/vector-icons';
+import { patchWebProps } from 'react-native-elements/dist/helpers';
 
 export default function Report(props) {
   console.log(props);
@@ -59,8 +61,22 @@ export default function Report(props) {
       <View style={styles.mainFlex}>
         <Image style={styles.picture} source={props.source}/>
         <View style={styles.detailsFlex}>
-          <Text style={styles.text}>{props.name}-{props.floor}, {props.gender}</Text>
-          <Text style={styles.text}>Request-{productlist}</Text>
+          <View style= {styles.topRow}>
+            <SimpleLineIcons name='speech' size={19} color={'grey'} />
+            <Text style = {styles.feedback}>Feedback left by manager</Text>
+          </View>
+          <View style= {[styles.topRow, {left: '-25%'}]}>
+            <Text>
+              <Text style = {[styles.text, {fontWeight: 'bold', fontFamily: 'Helvetica'}]}>{props.name}: </Text>
+              <Text style = {[styles.text, {fontWeight: 'normal', fontFamily: 'Helvetica'}]}>Floor {props.floor}</Text>
+            </Text>
+          </View>
+          <View style= {[styles.topRow, {left: '-6%'}]}>
+            <Text>
+              <Text style = {[styles.text, {fontWeight: 'bold', fontFamily: 'Helvetica'}]}>Request: </Text>
+              <Text style = {[styles.text, {fontWeight: 'normal', fontFamily: 'Helvetica'}]}>{productlist}</Text>
+            </Text>
+          </View>
           <ReportStatusBar step={props.step} small={true}/>
         </View>
 
@@ -80,6 +96,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#F1F2F3',
     paddingVertical: 5,
     borderBottomWidth: 3,
+    marginHorizontal: '13%'
     //borderWidth:1
   },
   distanceTextFlex: {
@@ -89,7 +106,6 @@ const styles = StyleSheet.create({
     marginRight: '8%',
     marginLeft: '-3%',
     width: '45%'
-
   },
   mainFlex: {
     flex: 1,
@@ -102,14 +118,13 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     width: 90,
     height: 90,
-    marginRight: '2%'
   },
   detailsFlex: {
-    alignItems: 'flex-start',
+    alignItems: 'flex-start'
   },
   miles: {
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: 12,
     fontFamily: 'Helvetica'
   },
   open: {
@@ -118,10 +133,16 @@ const styles = StyleSheet.create({
     fontFamily: 'Helvetica'
   },
   text: {
-    fontSize: 14,
+    fontSize: 12,
     fontFamily: 'Helvetica',
     color: '#1D1F22',
-
+  },
+  feedback: {
+    fontSize: 12,
+    fontWeight: 'bold',
+    color: '#ff8984',
+    fontFamily: 'Helvetica',
+    left: '-90%'
   },
   topRow: {
     flexDirection: 'row',

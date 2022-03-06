@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 17,
-    width: 325,
+    width: 375,
     paddingVertical: '5%',
 
 
