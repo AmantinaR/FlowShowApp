@@ -12,25 +12,22 @@ import Modal from "react-native-modalbox";
 import { useCallback, useMemo, useRef } from 'react';
 import BottomSheet from '@gorhom/bottom-sheet';
 import ReportStatusBar from '../ReportStatusBar';
+import ReportsList from '../lists/ReportsList';
 
 
 
 
-export default function ReportLanding({ navigation }) {
+export default function ReportLanding({ navigation, reports }) {
   const bottomSheetRef = useRef<BottomSheet>(null);
-
+  console.log(reports);
 
   return (
     <SafeAreaView style={styles.container}>
-      <Button title="Report Status" onPress={() => navigation.navigate('Status')}/>
-      <View style={{}}>
+      <View style={{flexDirection: 'row', justifyContent: 'flex-start', width: '85%', marginBottom: '-10%'}}>
         <Text style={styles.text}>Status of Bathroom Reports</Text>
       </View>
       <View style={styles.list}>
-        <ReportStatusBar step={1}/>
-        <ReportStatusBar step={2}/>
-        <ReportStatusBar step={3}/>
-        <ReportStatusBar step={4}/>
+        <ReportsList data={reports}/>
       </View>
       <GenericButton text={'Report Bathroom'} onPress={() => navigation.navigate('Input')}/>
       <StatusBar style="auto" />
@@ -43,7 +40,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
   },
   container1: {
     width: 300,
@@ -62,7 +59,8 @@ const styles = StyleSheet.create({
     fontSize: 16
   },
   list: {
-    borderWidth: 1,
+    //borderWidth: 1,
+    marginTop: '-10%',
     width:'85%',
     height: '50%'
   }

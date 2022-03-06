@@ -8,105 +8,47 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import GenericButton from '../buttons/GenericButton';
 import ReportStatusBar from '../ReportStatusBar';
 
-export default function ReportConfirm({ route, navigation }) {
+export default function ReportDetails({ route, navigation }) {
   const [option, setOption] = useState(null);
   const params = route.params;
-  let productlist = '';
-  if (params.products[0].pads === true) {
-    if (productlist === ''){
-      productlist = productlist + 'pads'
-    } else {
-      productlist = productlist + ', pads'
-    }
-  } if (params.products[0].tampons === true) {
-    if (productlist === ''){
-      productlist = productlist + 'tampons'
-    } else {
-      productlist = productlist + ', tampons'
-    }
-  } if (params.products[0].condoms === true) {
-    if (productlist === ''){
-      productlist = productlist + 'condoms'
-    } else {
-      productlist = productlist + ', condoms'
-    }
-  } if (params.products[0].emcon === true) {
-    if (productlist === ''){
-      productlist = productlist + 'Emergency Contraception'
-    } else {
-      productlist = productlist + ', Emergency Contraception'
-    }
-  } if (params.products[0].diapers === true) {
-    if (productlist === ''){
-      productlist = productlist + 'wipes'
-    } else {
-      productlist = productlist + ', wipes'
-    }
-  } if (params.products[0].tp === true) {
-    if (productlist === ''){
-      productlist = productlist + 'toilet paper'
-    } else {
-      productlist = productlist + ', toilet paper'
-    }
-  } if (params.products[0].soap === true) {
-    if (productlist === ''){
-      productlist = productlist + 'soap'
-    } else {
-      productlist = productlist + ', soap'
-    }
-  }
-
-  let disposallist = '';
-  if (params.disposal[0].inStall === true) {
-    if (disposallist === ''){
-      disposallist = disposallist + 'In-Stall Trash Can'
-    } else {
-      disposallist = disposallist + ', In-Stall Trash Can'
-    }
-  } if (params.disposal[0].outStall === true) {
-    if (disposallist === ''){
-      disposallist = disposallist + 'Out-Of-Stall Trash Can'
-    } else {
-      disposallist = disposallist + ', Out-Of-Stall Trash Can'
-    }
-  }
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style = {styles.thank_you}>Thank you for submitting a report! You can check the status of the report under the Report Tab.</Text>
+      <Text style = {styles.thank_you}>You told us the issue and we worked with building managers to get a response</Text>
       <ReportStatusBar step={params.step} small={false}/>
       <StatusBar style="auto" />
       <View style={styles.summary_body}>
         <Text style = {{fontWeight: 'bold', fontSize: 18, marginBottom: '1%', fontFamily: 'Helvetica'}}>Summary of Report</Text>
         <View style={styles.summary_line}>
           <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Building:  </Text>
-          <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.building}  </Text>
+          <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.name}  </Text>
          </View>
        <View style={styles.summary_line}>
           <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Bathroom #:  </Text>
-          <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.room}  </Text>
+          <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.floor}  </Text>
        </View>
        <View style={styles.summary_line}>
           <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Products Requested:  </Text>
-          <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{productlist}  </Text>
+          <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.productlist}  </Text>
        </View>
        <View style={styles.summary_line}>
           <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Disposal Options Missing:  </Text>
-          <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{disposallist}  </Text>
+          <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}> </Text>
        </View>
        <View style={styles.summary_line}>
           <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Comments:  </Text>
-          <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.comment}  </Text>
+          <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.comments}  </Text>
+       </View>
+       <View style={styles.summary_line}>
+          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Date Submitted:  </Text>
+          <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.date}  </Text>
        </View>
        <View style={styles.summary_line}>
           <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Date Submitted:  </Text>
           <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.date}  </Text>
        </View>
       </View>
-        <GenericButton text={'Done'} onPress={() => navigation.navigate('ReportLanding')}/>
-        <TouchableOpacity onPress={() => navigation.navigate('Input')}>
-        <Text style = {styles.another_report}>Submit Another Report</Text>
-        </TouchableOpacity>
+        
     </SafeAreaView>
   );
 }

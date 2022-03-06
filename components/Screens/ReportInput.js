@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 import {useState} from 'react';
-import { Text, View, StyleSheet, Button, SafeAreaView, TextInput } from 'react-native';
+import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, ScrollView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -10,8 +10,9 @@ import Disposal from '../Disposal';
 import Satisfaction from '../buttons/Satisfaction';
 import SatisfactionRadio from '../buttons/SatisfactionRadio';
 import GenericButton from '../buttons/GenericButton';
+import GenderRadio from '../buttons/GenderRadio';
 
-export default function ReportInput({ navigation, route }) {
+export default function ReportInput({ navigation, route, changeReports }) {
   const date = new Date().getDate();
   const month = new Date().getMonth() + 1;
   const year = new Date().getFullYear();
@@ -79,37 +80,52 @@ export default function ReportInput({ navigation, route }) {
     { value: "happy" },
   ];
 
+  const dataGender = [
+    { value: "Women's" },
+    { value: "Gender Neutral" },
+    { value: "Men's" },
+  ];
+
+  const pressConfirm = () => {
+    navigation.navigate('Confirm', {building: building, room: room, comment: comment, option: option, products: products, disposal: disposal, date: fullDate, step: 1});
+    changeReports(fullDate, building.name, building.floor, products, disposal, comment, 1, gender);
+  };
+
 
   return (
     <SafeAreaView style={styles.container}>
-    <View style={styles.container}>
-      <Text style={{color: 'rgba(0, 0, 0, 0.5)', fontFamily: 'Helvetica'}}>You tell us the issue(s), and we'll work with the building managers to solve them</Text>
-      <View style={styles.textFlex}>
-        <Text style={styles.text}>Bathroom Building</Text>
-        <TextInput onChangeText={(building) => setBuilding(building)} style={styles.textBox} placeholder='Building Name' />
-      </View>
-      <View style={styles.textFlex}>
-        <Text style={styles.text}>Bathroom Floor #</Text>
-        <TextInput onChangeText={(room) => setRoom(room)} style={styles.textBox} placeholder='Floor #'/>
-      </View>
-      <View style={styles.featuresFlex}>
-        <Text style={styles.text}>Products Requested (Optional)</Text>
-        <ProductsRequested onPress={(selected, product) => updateProducts(selected, product)}/>
-      </View>
-      <View style={styles.featuresFlex}>
-        <Text style={styles.text}>Disposal Options Missing (Optional)</Text>
-        <Disposal onSelect={(selected, disposal) => updateDisposal(selected, disposal)}/>
-      </View>
-      <View style={{marginTop: '4%'}}>
-        <Text style={styles.text}>How satisfied are you with the cleanliness?</Text>
-        <SatisfactionRadio data={data} onSelect={(value) => setOption(value)}/>
-      </View>
-      <TextInput onChangeText={(comment) => setComment(comment)} style={styles.comments} placeholder='Please write any comments (Optional)...'/>
-      <View style={styles.confirm}>
-      <GenericButton text={"Confirm"} onPress={() => navigation.navigate('Confirm', {building: building, room: room, comment: comment, option: option, products: products, disposal: disposal, date: fullDate})}/>
-      </View>
-      <StatusBar style="auto" />
-    </View>
+      <ScrollView contentContainerStyle={styles.scroll} scrollToOverflowEnabled={true} showsVerticalScrollIndicator={true} maximumZoomScale={0}>
+        <Text style={{color: 'rgba(0, 0, 0, 0.5)', fontFamily: 'Helvetica'}}>You tell us the issue(s), and we'll work with the building managers to solve them</Text>
+        <View style={styles.textFlex}>
+          <Text style={styles.text}>Bathroom Building</Text>
+          <TextInput onChangeText={(building) => setBuilding(building)} style={styles.textBox} placeholder='Building Name' />
+        </View>
+        <View style={styles.textFlex}>
+          <Text style={styles.text}>Bathroom Floor #</Text>
+          <TextInput onChangeText={(room) => setRoom(room)} style={styles.textBox} placeholder='Floor #'/>
+        </View>
+        <View style={{flexDirection: 'column', padding: 10, alignItems: 'center'}}>
+          <Text style = {[styles.text, {margin: 10}]}>What gender is assigned to this bathroom?</Text>
+          <GenderRadio data={dataGender} onSelect={(value) => setGender(value)}/>
+        </View>
+        <View style={styles.featuresFlex}>
+          <Text style={styles.text}>Products Requested (Optional)</Text>
+          <ProductsRequested onPress={(selected, product) => updateProducts(selected, product)}/>
+        </View>
+        <View style={styles.featuresFlex}>
+          <Text style={styles.text}>Disposal Options Missing (Optional)</Text>
+          <Disposal onSelect={(selected, disposal) => updateDisposal(selected, disposal)}/>
+        </View>
+        <View style={{marginTop: '4%'}}>
+          <Text style={styles.text}>How satisfied are you with the cleanliness?</Text>
+          <SatisfactionRadio data={data} onSelect={(value) => setOption(value)}/>
+        </View>
+        <TextInput onChangeText={(comment) => setComment(comment)} style={styles.comments} placeholder='Please write any comments (Optional)...'/>
+        <View style={styles.confirm}>
+        <GenericButton text={"Confirm"} onPress={() => pressConfirm()}/>
+        </View>
+        <StatusBar style="auto" />
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -120,8 +136,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 10
   },
+  scroll: {
+  flex: 1,
+  backgroundColor: '#fff',
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: 15,
+  height: 1000,
+  marginTop: 10
+},
   textFlex: {
     flexDirection: 'row',
     alignItems: 'center'

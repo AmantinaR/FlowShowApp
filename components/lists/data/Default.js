@@ -108,7 +108,7 @@ let Default = [
   {
     id : 4,
     miles : '50 ft',
-    source : Images.Lathrop,
+    source : Images.History,
     name : 'History Corner',
     address : '564-570 Lasuen Mall',
     number : '1, Gender Neutral',
@@ -126,7 +126,7 @@ let Default = [
     wipes: Images.False,
     pads: Features.freePads,
     ratings: Ratings,
-    locationRating: 4,
+    locationRating: 2.5,
     saved: false,
   }
 ];

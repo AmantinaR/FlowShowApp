@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useState} from 'react';
+import Images from '../../assets/LocationImages';
 
 import SearchTab from './SearchTab';
 import SavedTab from './SavedTab';
@@ -36,11 +37,34 @@ export default function MainTab({ route, navigation }) {
     newRatings[order].unshift(rating);
     setRatings(newRatings);
   };
-
-  const [reports, setReports] = useState([]);
-  const changeReports = (date, name, floor, products, disposal, comments, status) => {
+  const reportStart = [
+    {
+      date: '2-22-2022',
+      name: 'History Corner',
+      floor: 1,
+      gender: 'Gender Neutral',
+      products: {
+        pads:true,
+        tampons: true,
+        diapers: false,
+        condoms: false,
+        emcon: false,
+        wipes: false,
+        tp: false,
+        soap: true
+      },
+      disposal: {
+        inStall:false,
+        outStall: false,},
+      comments: 'This bathroom really needs period products!',
+      step: 3,
+      source: Images.History
+    },
+  ];
+  const [reports, setReports] = useState(reportStart);
+  const changeReports = (date, name, floor, products, disposal, comments, step, gender) => {
     let newReports = [...reports];
-    let report = {date: date, name: name, floor: floor, products: products, comments: comments, status: status}
+    let report = {date: date, name: name, gender: gender, floor: floor, products: products, comments: comments, step: step, source:Images.Generic}
     newReports.unshift(report);
     setReports(newReports);
   };
@@ -70,7 +94,8 @@ export default function MainTab({ route, navigation }) {
         <Tab.Screen name="Search" options={{headerShown: false}}>
           {props => <SearchTab {...props} user={user} ratings={ratings} changeRatings={(date, number, title, description, order) => changeRatings(date, number, title, description, order)}/>}
         </Tab.Screen>
-        <Tab.Screen name="Report" component={ReportTab} options={{headerShown: false,}}>
+        <Tab.Screen name="Report" options={{headerShown: false,}}>
+          {props => <ReportTab {...props} reports={reports} changeReports={(date, name, floor, products, disposal, comments, step, gender) => changeReports(date, name, floor, products, disposal, comments, step, gender)}/>}
         </Tab.Screen>
         <Tab.Screen name="Profile" options={{headerTitle: user+"'s Profile", headerRight: () => (
 
