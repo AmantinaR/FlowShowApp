@@ -12,10 +12,10 @@ export default function FeatureButton(props) {
   return(
     <TouchableOpacity
         onPress={() => SelectUpdate()}
-        style={{ backgroundColor: selected ? "rgba(233, 167, 152, 100)" : "transparent", borderColor: selected ? '#E8A798': 'rgba(0, 0, 0, 0.5)', borderWidth: 1, borderRadius: 8, paddingVertical: 8,
+        style={{ backgroundColor: selected ? "rgba(233, 167, 152, 100)" : 'rgba(0, 0, 0, 0.10)', borderRadius: 8, paddingVertical: 8,
         paddingHorizontal: 3, marginHorizontal: 4.43, height: 35, justifyContent: 'center' , marginBottom: '3%'}}
       >
-        <Text style={{color: selected ? "white" : "rgba(0, 0, 0, 0.5)", fontSize: 12, fontFamily: 'Helvetica'}}>{props.title}</Text>
+        <Text style={{color: selected ? "white" : "black", fontSize: 12, fontFamily: 'Helvetica'}}>{props.title}</Text>
       </TouchableOpacity>
 
   );
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
   },
   btnIdle: {
-    backgroundColor: 'white',
+    backgroundColor: 'grey',
   },
   text: {
     fontSize: 8.87
