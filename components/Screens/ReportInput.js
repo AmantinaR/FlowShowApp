@@ -21,6 +21,7 @@ export default function ReportInput({ navigation, route, changeReports }) {
   const [room, setRoom] = useState('');
   const [comment, setComment] = useState('');
   const [option, setOption] = useState(null);
+  const [gender, setGender] = useState(null);
   const productData = [
     {pads:false,
     tampons: false,
@@ -94,7 +95,8 @@ export default function ReportInput({ navigation, route, changeReports }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scroll} scrollToOverflowEnabled={true} showsVerticalScrollIndicator={true} maximumZoomScale={0}>
+      <ScrollView contentContainerStyle={{height: 900, marginTop: '4%'}} scrollToOverflowEnabled={true} showsVerticalScrollIndicator={true} maximumZoomScale={0}>
+        <View style={{flex: 1, alignItems: 'center', padding: 4}}>
         <Text style={{color: 'rgba(0, 0, 0, 0.5)', fontFamily: 'Helvetica'}}>You tell us the issue(s), and we'll work with the building managers to solve them</Text>
         <View style={styles.textFlex}>
           <Text style={styles.text}>Bathroom Building</Text>
@@ -125,6 +127,7 @@ export default function ReportInput({ navigation, route, changeReports }) {
         <GenericButton text={"Confirm"} onPress={() => pressConfirm()}/>
         </View>
         <StatusBar style="auto" />
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -138,13 +141,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   scroll: {
-  flex: 1,
-  backgroundColor: '#fff',
-  alignItems: 'center',
-  justifyContent: 'center',
-  padding: 15,
-  height: 1000,
-  marginTop: 10
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 15,
+    height: 1200,
+    marginTop: 10
 },
   textFlex: {
     flexDirection: 'row',
