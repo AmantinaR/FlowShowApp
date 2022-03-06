@@ -80,7 +80,7 @@ export default function MainTab({ route, navigation }) {
             } else if (route.name === 'Profile') {
               return <MaterialCommunityIcons name='account-circle-outline' size={size} color={color} />;
             } else if (route.name == 'Add') {
-              return <Ionicons name='add-circle' size={size} color={color} />;
+              return <FontAwesome name='plus-square-o' size={size} color={color}/>;
             } else if (route.name == 'Report') {
               return <Octicons name='report' size={size} color={color} />;
             }
