@@ -42,8 +42,9 @@ export default function BathroomScreen({ navigation, route, ratings}) {
           <Text style={styles.distanceText}>Open Now</Text>
         </View>
       </View>
-      <View style={{width: '92%', flexDirection: 'row', justifyContent: 'flex-start', marginTop: '3%', marginBottom: '2%'}}>
+      <View style={{width: '92%', flexDirection: 'column', justifyContent: 'flex-start', marginTop: '3%', marginBottom: '2%'}}>
         <Text style={[styles.text, {textAlign: 'left'}]}>Features</Text>
+        <Text style={[styles.clarify, {textAlign: 'left', marginTop: '0.5%'}]}>Displayed features based on aggregated ratings</Text>
       </View>
       <View style={styles.features}>
         {params.accessible !== Images.False ? <Image source={params.accessible}/> : undefined}
@@ -55,6 +56,9 @@ export default function BathroomScreen({ navigation, route, ratings}) {
         {params.condoms !== Images.False ? <Image source={params.condoms}/> : undefined}
         {params.planB !== Images.False ? <Image source={params.planB}/> : undefined}
         {params.wipes !== Images.False ? <Image source={params.wipes}/> : undefined}
+      </View>
+      <View style={{width: '92%', flexDirection: 'column', justifyContent: 'flex-start', marginTop: '0.03%', marginBottom: '0.03%'}}>
+        <Text style={[styles.clarify, {textAlign: 'left', marginTop: '0.5%'}]}>Swipe through previous ratings!</Text>
       </View>
       <RatingList data={ratings[params.id]}/>
       <View style={styles.lowerButtons}>
@@ -79,14 +83,11 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     justifyContent: 'flex-end',
     borderRadius: 5
-
-
   },
   image: {
     height: '100%',
     width: '100%',
     borderRadius: 5
-
   },
   nameText: {
 
@@ -101,12 +102,18 @@ const styles = StyleSheet.create({
     fontSize: 16
 
   },
+  clarify: {
+    color: 'grey',
+    marginTop: '3%',
+    fontFamily: 'Helvetica',
+    fontSize: 12,
+  },
   features: {
     flexDirection: 'row',
     width: '98%',
     justifyContent: 'space-around',
     flexWrap: 'wrap',
-    marginBottom: '3%'
+    marginBottom: '1%'
   },
   buttonFlex: {
     backgroundColor: '#FCC181',
@@ -115,7 +122,9 @@ const styles = StyleSheet.create({
     width: 101
   },
   lowerButtons: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginTop: '-4%',
+    marginBottom: '5%'
   },
   blood: {
     marginLeft: '-60%',
