@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
     width: '95%',
     height: '100%',
     position: 'absolute',
-    top: '10%',
+    top: '11%',
     padding: '3%',
   },
   results: {
