@@ -219,7 +219,6 @@ export default function SearchLanding({ navigation }) {
             })}
           </MapView>
           <BottomSheet
-
             index={0}
             snapPoints={snapPoints}
             onChange={handleSheetChanges}
@@ -240,12 +239,13 @@ export default function SearchLanding({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#F9F9F9',
     alignItems: 'center',
     //justifyContent: 'center',
   },
   map: {
-    width: '100%',
+    left: '-3%',
+    width: '106%',
     height: '50%',
     borderRadius: 14,
     marginTop: 20
