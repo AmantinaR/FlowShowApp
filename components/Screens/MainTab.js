@@ -58,15 +58,17 @@ export default function MainTab({ route, navigation }) {
         outStall: false,},
       comments: 'This bathroom really needs period products!',
       step: 3,
-      source: Images.History
+      source: Images.History,
+      feedback: "We have reviewed the request and are in the process of ordering those tampon dispensers, supply chain shortage means that they’ll take some time to get here and installed. We’ll notify FlowShow when this request is completed."
     },
   ];
   const [reports, setReports] = useState(reportStart);
-  const changeReports = (date, name, floor, products, disposal, comments, step, gender) => {
+  const changeReports = ({date, name, floor, products, disposal, comments, step, gender}) => {
     let newReports = [...reports];
-    let report = {date: date, name: name, gender: gender, floor: floor, products: products, comments: comments, step: step, source:Images.Generic}
+    let report = {date: date, name: name, gender: gender, floor: floor, products: products, comments: comments, step: step, source:Images.Generic, disposal: disposal, feedback: ''}
     newReports.unshift(report);
     setReports(newReports);
+    console.log(reports);
   };
     return (
       <Tab.Navigator screenOptions={({ route }) => ({

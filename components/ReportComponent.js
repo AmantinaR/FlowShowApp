@@ -56,15 +56,30 @@ export default function Report(props) {
     }
   }
 
+  let disposallist = '';
+  if (props.disposal.inStall === true) {
+    if (disposallist === ''){
+      disposallist = disposallist + 'In-Stall Trash Can'
+    } else {
+      disposallist = disposallist + ', In-Stall Trash Can'
+    }
+  } if (props.disposal.outStall === true) {
+    if (disposallist === ''){
+      disposallist = disposallist + 'Out-Of-Stall Trash Can'
+    } else {
+      disposallist = disposallist + ', Out-Of-Stall Trash Can'
+    }
+  }
+
   return(
-    <TouchableOpacity style={styles.container} onPress={()=>navigation.navigate('Details', {name: props.name, floor: props.floor, productlist: productlist, gender: props.gender, step: props.step, date: props.date})}>
+    <TouchableOpacity style={styles.container} onPress={()=>navigation.navigate('Details', {name: props.name, floor: props.floor, productlist: productlist, gender: props.gender, step: props.step, date: props.date, comments: props.comments, disposallist: disposallist, feedback: props.feedback})}>
       <View style={styles.mainFlex}>
         <Image style={styles.picture} source={props.source}/>
         <View style={styles.detailsFlex}>
-          <View style= {styles.topRow}>
+          {props.feedback !== '' ? <View style= {styles.topRow}>
             <SimpleLineIcons name='speech' size={19} color={'grey'} />
             <Text style = {styles.feedback}>Feedback left by manager</Text>
-          </View>
+          </View> : <View></View>}
           <View style= {[styles.topRow, {left: '-25%'}]}>
             <Text>
               <Text style = {[styles.text, {fontWeight: 'bold', fontFamily: 'Helvetica'}]}>{props.name}: </Text>

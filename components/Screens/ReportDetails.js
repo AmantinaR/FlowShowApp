@@ -24,8 +24,12 @@ export default function ReportDetails({ route, navigation }) {
           <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.name}  </Text>
          </View>
        <View style={styles.summary_line}>
-          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Bathroom #:  </Text>
+          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Floor #:  </Text>
           <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.floor}  </Text>
+       </View>
+       <View style={styles.summary_line}>
+          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Assigned Gender:  </Text>
+          <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.gender}  </Text>
        </View>
        <View style={styles.summary_line}>
           <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Products Requested:  </Text>
@@ -33,7 +37,7 @@ export default function ReportDetails({ route, navigation }) {
        </View>
        <View style={styles.summary_line}>
           <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Disposal Options Missing:  </Text>
-          <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}> </Text>
+          <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.disposallist} </Text>
        </View>
        <View style={styles.summary_line}>
           <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Comments:  </Text>
@@ -44,7 +48,10 @@ export default function ReportDetails({ route, navigation }) {
           <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.date}  </Text>
        </View>
       </View>
-        
+      <View>
+        <Text>{params.feedback}</Text>
+      </View>
+
     </SafeAreaView>
   );
 }
@@ -68,11 +75,13 @@ const styles = StyleSheet.create({
   summary_body:{
     margin: '10%',
     flexDirection: 'column',
-    padding: '3%'
+    padding: '3%',
+
   },
   summary_line: {
     flexDirection: 'row',
-    padding: '2%'
+    padding: '2%',
+    flexWrap: 'wrap'
   },
   button: {
     color: '#ffffff',

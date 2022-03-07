@@ -28,6 +28,8 @@ export default function ReportsList(props) {
         step= {report.item.step}
         gender = {report.item.gender}
         source={report.item.source}
+        disposal={report.item.disposal}
+        feedback={report.item.feedback}
       />);
   }
 

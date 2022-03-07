@@ -20,19 +20,16 @@ export default function ReportStatusBar({step, small}) {
           <Text style={styles.text}>Report</Text>
           <Text style={styles.text}>Submitted</Text>
         </View>
-        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)', width: 45, position: 'absolute', top: '25%', left: 40}}></View>
         <View style={[styles.status, { marginHorizontal: size }]}>
           <FontAwesome name={'circle-o'} size={25} color={'#E8A798'}/>
           <Text style={styles.textStep}>Manager</Text>
           <Text style={styles.textStep}>Review</Text>
         </View>
-        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)',width: 43, position: 'absolute', top: '25%'}}></View>
         <View style={[styles.status, { marginHorizontal: size }]}>
           <FontAwesome name={'circle-thin'} size={25} color={'rgba(0, 0, 0, 0.25)'}/>
           <Text style={styles.text}>Decision</Text>
           <Text style={styles.text}>Pending</Text>
         </View>
-        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)',width: 43, position: 'absolute', top: '25%', left: 165}}></View>
 
         <View style={[styles.status, { marginHorizontal: size }]}>
           <FontAwesome name={'circle-thin'} size={25} color={'rgba(0, 0, 0, 0.25)'}/>
@@ -49,19 +46,17 @@ export default function ReportStatusBar({step, small}) {
           <Text style={styles.text}>Report</Text>
           <Text style={styles.text}>Submitted</Text>
         </View>
-        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)', width: '12%', position: 'absolute', top: '25%', left: '25%'}}></View>
         <View style={[styles.status, { marginHorizontal: size }]}>
           <FontAwesome name={'check-circle'} size={25} color={'#FCC181'}/>
           <Text style={styles.text}>Manager</Text>
           <Text style={styles.text}>Review</Text>
         </View>
-        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)',width: '13%', position: 'absolute', top: '25%'}}></View>
         <View style={[styles.status, { marginHorizontal: size }]}>
           <FontAwesome name={'circle-o'} size={25} color={'#E8A798'}/>
           <Text style={styles.textStep}>Decision</Text>
           <Text style={styles.textStep}>Pending</Text>
         </View>
-        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)',width: '13%', position: 'absolute', top: '25%', left: '62%'}}></View>
+
 
         <View style={[styles.status, { marginHorizontal: size }]}>
           <FontAwesome name={'circle-thin'} size={25} color={'rgba(0, 0, 0, 0.25)'}/>
@@ -78,20 +73,16 @@ export default function ReportStatusBar({step, small}) {
           <Text style={styles.text}>Report</Text>
           <Text style={styles.text}>Submitted</Text>
         </View>
-        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)', width: '12%', position: 'absolute', top: '25%', left: '25%'}}></View>
         <View style={[styles.status, { marginHorizontal: size }]}>
           <FontAwesome name={'check-circle'} size={25} color={'#FCC181'}/>
           <Text style={styles.text}>Manager</Text>
           <Text style={styles.text}>Review</Text>
         </View>
-        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)',width: '13%', position: 'absolute', top: '25%'}}></View>
         <View style={[styles.status, { marginHorizontal: size }]}>
           <FontAwesome name={'check-circle'} size={25} color={'#FCC181'}/>
           <Text style={styles.text}>Decision</Text>
           <Text style={styles.text}>Pending</Text>
         </View>
-        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)',width: '13%', position: 'absolute', top: '25%', left: '62%'}}></View>
-
         <View style={[styles.status, { marginHorizontal: size }]}>
           <FontAwesome name={'circle-o'} size={25} color={'#E8A798'}/>
           <Text style={styles.textStep}>Results</Text>
@@ -107,19 +98,19 @@ export default function ReportStatusBar({step, small}) {
           <Text style={styles.text}>Report</Text>
           <Text style={styles.text}>Submitted</Text>
         </View>
-        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)', width: '12%', position: 'absolute', top: '25%', left: '25%'}}></View>
+
         <View style={[styles.status, { marginHorizontal: size }]}>
           <FontAwesome name={'check-circle'} size={25} color={'#FCC181'}/>
           <Text style={styles.text}>Manager</Text>
           <Text style={styles.text}>Review</Text>
         </View>
-        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)',width: '13%', position: 'absolute', top: '25%'}}></View>
+
         <View style={[styles.status, { marginHorizontal: size }]}>
           <FontAwesome name={'check-circle'} size={25} color={'#FCC181'}/>
           <Text style={styles.text}>Decision</Text>
           <Text style={styles.text}>Pending</Text>
         </View>
-        <View style={{borderBottomWidth:3, borderBottomColor:'rgba(0, 0, 0, 0.25)',width: '13%', position: 'absolute', top: '25%', left: '62%'}}></View>
+        
 
         <View style={[styles.status, { marginHorizontal: size }]}>
           <FontAwesome name={'check-circle'} size={25} color={'#FCC181'}/>
