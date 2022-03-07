@@ -70,6 +70,12 @@ export default function MainTab({ route, navigation }) {
     setReports(newReports);
     console.log(reports);
   };
+
+
+  const changeSaved = (bathroom) => {
+    bathroom.saved = !bathroom.saved;
+    console.log(bathroom.saved);
+  };
     return (
       <Tab.Navigator screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
@@ -99,7 +105,7 @@ export default function MainTab({ route, navigation }) {
         </Tab.Screen>
         <Tab.Screen name="Add" component={AddTab} options={{headerShown: false}}/>
         <Tab.Screen name="Search" options={{headerShown: false}}>
-          {props => <SearchTab {...props} user={user} ratings={ratings} changeRatings={(date, number, title, description, order) => changeRatings(date, number, title, description, order)}/>}
+          {props => <SearchTab {...props} user={user} ratings={ratings} changeSaved = {(bathroom) => changeSaved(bathroom)} changeRatings={(date, number, title, description, order) => changeRatings(date, number, title, description, order)}/>}
         </Tab.Screen>
         <Tab.Screen name="Report" options={{headerShown: false,}}>
           {props => <ReportTab {...props} reports={reports} changeReports={(date, name, floor, products, disposal, comments, step, gender) => changeReports(date, name, floor, products, disposal, comments, step, gender)}/>}

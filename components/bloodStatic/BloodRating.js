@@ -9,8 +9,16 @@ import HalfBlood from './HalfBlood';
 
 
 export default function BloodRating({number, small}) {
-  if (number === 0) {
-
+  console.log(number);
+  if (number == null) {
+    return(
+    <View style={styles.container}>
+      <Blood color='#D3D3D3'small={small}/>
+      <Blood color='#D3D3D3' small={small}/>
+      <Blood color='#D3D3D3' small={small}/>
+      <Blood color='#D3D3D3' small={small}/>
+      <Blood color='#D3D3D3' small={small}/>
+    </View> );
   } else if (number === 0.5) {
     return(
       <View style={styles.container}>

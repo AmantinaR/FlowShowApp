@@ -6,10 +6,15 @@ import { FontAwesome } from '@expo/vector-icons';
 
 export default function SavedButton(props) {
   const [selected, setSelected] = useState(false);
+
+  const SelectUpdate = () => {
+    setSelected(!selected);
+    props.changeSaved(props.bathroom);
+  };
   return(
     <TouchableOpacity
-         style={{marginRight: '18%'}}>
-        {props.savedProp ? <FontAwesome name='bookmark' size={24} color={'#FF8984'} /> : <FontAwesome name='bookmark-o' size={24} color={'#FF8984'} />}
+         style={{marginRight: '18%'}} onPress={()=> SelectUpdate()}>
+        {selected ? <FontAwesome name='bookmark' size={24} color={'#FF8984'} /> : <FontAwesome name='bookmark-o' size={24} color={'#FF8984'} />}
       </TouchableOpacity>
 
   );
