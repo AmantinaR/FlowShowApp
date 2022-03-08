@@ -86,7 +86,7 @@ export default function AddScreenInput({ navigation }) {
           </View>
 
           <View style={styles.textFlex}>
-        <Text style={styles.text}>Bathroom Building</Text>
+        <View style={{alignItems: 'center'}}><Text style={styles.text}>What building is this </Text><Text style={styles.text}>bathroom in?</Text></View>
         <TextInput onChangeText={(text) => setName(text)} style={styles.textBox} placeholder='Building Name' />
       </View>
       <View style={styles.textFlex}>
