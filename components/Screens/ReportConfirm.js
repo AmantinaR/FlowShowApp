@@ -77,7 +77,7 @@ export default function ReportConfirm({ route, navigation }) {
       <ReportStatusBar step={params.step} small={false}/>
       <StatusBar style="auto" />
       <View style={styles.summary_body}>
-        <Text style = {{fontWeight: 'bold', fontSize: 18, marginBottom: '1%', fontFamily: 'Helvetica'}}>Summary of Report</Text>
+        <Text style = {{fontWeight: 'bold', fontSize: 18, marginBottom: '5%', fontFamily: 'Helvetica'}}>Summary of Report</Text>
         <View style={styles.summary_line}>
           <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Building:  </Text>
           <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.building}  </Text>
