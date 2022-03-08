@@ -59,17 +59,20 @@ export default function MainTab({ route, navigation }) {
       comments: 'This bathroom really needs period products!',
       step: 3,
       source: Images.History,
+      emotion: "sad",
       feedback: "We have reviewed the request and are in the process of ordering those tampon dispensers. Supply chain shortages mean that the products will take some time to arrive and be installed. We’ll notify FlowShow when this request is completed."
     },
   ];
   const [reports, setReports] = useState(reportStart);
-  const changeReports = ({date, name, floor, products, disposal, comments, step, gender}) => {
+  const changeReports = ({date, name, floor, products, disposal, comments, step, gender, emotion}) => {
     let newReports = [...reports];
-    let report = {date: date, name: name, gender: gender, floor: floor, products: products, comments: comments, step: step,source:Images.Generic, disposal: disposal, feedback: ''}
+    let report = {date: date, name: name, gender: gender, floor: floor, products: products, comments: comments, step: step, source:Images.Generic, disposal: disposal, feedback: '', emotion: emotion}
     newReports.unshift(report);
     setReports(newReports);
     console.log(reports);
   };
+
+
 
 
   const changeSaved = (bathroom) => {

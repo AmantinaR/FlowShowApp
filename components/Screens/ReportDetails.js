@@ -43,7 +43,7 @@ export default function ReportDetails({ route, navigation }) {
        <View style={styles.summary_line}>
           <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Satisfaction:  </Text>
           <View style={{marginTop: '-2%'}}>
-            <Satisfaction emotion={params.option} onPress={null} selected={true}/>
+            <Satisfaction emotion={params.emotion} onPress={null} selected={true}/>
           </View>
        </View>
        <View style={styles.summary_line}>

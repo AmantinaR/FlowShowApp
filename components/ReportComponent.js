@@ -72,7 +72,7 @@ export default function Report(props) {
   }
 
   return(
-    <TouchableOpacity style={styles.container} onPress={()=>navigation.navigate('Details', {name: props.name, floor: props.floor, productlist: productlist, gender: props.gender, step: props.step, date: props.date, comments: props.comments, disposallist: disposallist, feedback: props.feedback})}>
+    <TouchableOpacity style={styles.container} onPress={()=>navigation.navigate('Details', {name: props.name, floor: props.floor, productlist: productlist, gender: props.gender, step: props.step, date: props.date, comments: props.comments, disposallist: disposallist, feedback: props.feedback, emotion: props.emotion})}>
       <View style={styles.mainFlex}>
         <Image style={styles.picture} source={props.source}/>
         <View style={styles.detailsFlex}>

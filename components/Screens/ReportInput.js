@@ -89,7 +89,7 @@ export default function ReportInput({ navigation, route, changeReports }) {
 
   const pressConfirm = () => {
     navigation.navigate('Confirm', {building: building, room: room, comment: comment, option: option, products: products, disposal: disposal, date: fullDate, step: 1});
-    changeReports({date: fullDate, name: building, floor: room, products: products[0], disposal: disposal[0], comments: comment, step: 1, gender: gender});
+    changeReports({date: fullDate, name: building, floor: room, products: products[0], disposal: disposal[0], comments: comment, step: 1, gender: gender, emotion: option});
   };
 
 

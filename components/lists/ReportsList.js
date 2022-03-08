@@ -30,6 +30,7 @@ export default function ReportsList(props) {
         source={report.item.source}
         disposal={report.item.disposal}
         feedback={report.item.feedback}
+        emotion={report.item.emotion}
       />);
   }
 
