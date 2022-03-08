@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 import {useState} from 'react';
-import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, Image, ImageBackground, TouchableOpacity, Linking } from 'react-native';
+import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, Image, ImageBackground, TouchableOpacity, Linking, ScrollView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { StackActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -13,11 +13,15 @@ import { Octicons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import GenericButton from '../buttons/GenericButton';
 import SavedButton from '../buttons/SavedButton';
+import { Dimensions } from 'react-native';
 
 export default function BathroomScreen({ navigation, route, ratings}) {
+  const windowWidth = Dimensions.get('window').width;
   const params = route.params;
   return (
     <SafeAreaView style={styles.container}>
+    <ScrollView contentContainerStyle={{height: 900, marginTop: '4%', maxWidth: windowWidth}} showsVerticalScrollIndicator={true} >
+    <View style={{flex: 1, alignItems: 'center', padding: 4}}>
       <ImageBackground source={params.source} style={styles.imagebkd} imageStyle={styles.image} >
         <View style={styles.titleCard}>
           <Text style={styles.nameText}>{params.name}</Text>
@@ -41,7 +45,7 @@ export default function BathroomScreen({ navigation, route, ratings}) {
           <Text style={styles.distanceText}>Open Now</Text>
         </View>
       </View>
-      <View style={{width: '92%', flexDirection: 'column', justifyContent: 'flex-start', marginTop: '3%', marginBottom: '2%'}}>
+      <View style={{width: '92%', flexDirection: 'column', justifyContent: 'flex-start', marginTop: '10%', marginBottom: '2%'}}>
         <Text style={[styles.text, {textAlign: 'left'}]}>Features</Text>
         <Text style={[styles.clarify, {textAlign: 'left', marginTop: '0.5%'}]}>Displayed features based on aggregated ratings</Text>
       </View>
@@ -57,7 +61,7 @@ export default function BathroomScreen({ navigation, route, ratings}) {
         {params.wipes !== Images.False ? <Image source={params.wipes}/> : undefined}
         {params.pads !== Images.False ? <Image source={params.pads}/> : undefined}
       </View>
-      <View style={{width: '92%', flexDirection: 'column', justifyContent: 'flex-start', marginTop: '0.03%', marginBottom: '0.03%'}}>
+      <View style={{width: '92%', flexDirection: 'column', justifyContent: 'flex-start', marginTop: '10%', marginBottom: '3%'}}>
         <Text style={[styles.clarify, {textAlign: 'left', marginTop: '0.5%'}]}>Swipe through previous ratings!</Text>
       </View>
       {console.log(ratings[params.id])}
@@ -67,8 +71,9 @@ export default function BathroomScreen({ navigation, route, ratings}) {
       <View style={styles.lowerButtons}>
         <GenericButton text={"Rate"} params={params} onPress={() => navigation.navigate('Rate', params)}/>
         <GenericButton text={"Report"} params={params} onPress={() => navigation.navigate('Report', { screen: 'Input' })}/>
-
       </View>
+    </View>
+    </ScrollView>
     </SafeAreaView>
   );
 }
@@ -81,7 +86,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   imagebkd: {
-    height: '33%',
+    height: '27%',
     width: '92%',
     alignItems: 'flex-start',
     justifyContent: 'flex-end',
@@ -126,7 +131,7 @@ const styles = StyleSheet.create({
   },
   lowerButtons: {
     flexDirection: 'row',
-    marginTop: '-4%',
+    marginTop: '-10%',
     marginBottom: '5%'
   },
   blood: {
