@@ -44,7 +44,7 @@ export default function SavedList(props) {
   return (
     <View style={styles.container}>
     <FlatList
-        data = {DataList}
+        data = {props.data}
         renderItem={(location) => renderLocation(location)}
         keyExtractor={(location) => location.id}
 

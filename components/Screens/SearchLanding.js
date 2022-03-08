@@ -18,7 +18,7 @@ import { useState } from 'react';
 import { useCallback, useMemo, useRef } from 'react';
 import BottomSheet from '@gorhom/bottom-sheet';
 
-export default function SearchLanding({ navigation }) {
+export default function SearchLanding({ navigation, bathrooms }) {
   const featureData = [
     {accessible:false,
     pads: false,
@@ -34,7 +34,7 @@ export default function SearchLanding({ navigation }) {
   const [option, setOption] = useState(null);
   const [text, setText] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
-  const [resultdata, setResultData] = useState(Default);
+  const [resultdata, setResultData] = useState(bathrooms);
   const [listHeight, setHeight] = useState('40%');
   const [featureSelected, setFeature] = useState(featureData);
 
@@ -57,10 +57,10 @@ export default function SearchLanding({ navigation }) {
   const searchName = () => {
     setSearchTerm(text);
     if (text !== '') {
-      let newData = Default.filter(location => location.name === text);
+      let newData = bathrooms.filter(location => location.name === text);
       setResultData(newData);
     } else {
-      setResultData(Default);
+      setResultData(bathrooms);
     }
     console.log(text);
 
@@ -99,8 +99,7 @@ export default function SearchLanding({ navigation }) {
         return(false);
       }
       if (featureSelected[0].pads === true && location.pads === Images.False) {
-        console.log(featureSelected[0].pads);
-        console.log(location.pads);
+
         return(false);
       }
       if (featureSelected[0].freePads === true && location.freePads === Images.False) {
@@ -134,7 +133,7 @@ export default function SearchLanding({ navigation }) {
       return(true);
     }
 
-    let newFeatureData = Default.filter(featureFilter);
+    let newFeatureData = bathrooms.filter(featureFilter);
     setResultData(newFeatureData);
 
     console.log(newFeatureData);

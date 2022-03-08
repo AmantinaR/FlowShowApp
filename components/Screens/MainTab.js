@@ -106,11 +106,12 @@ export default function MainTab({ route, navigation }) {
           tabBarActiveTintColor: '#C10C0D',
           tabBarInactiveTintColor: 'black'})}>
 
-        <Tab.Screen name="Saved" component={SavedTab} options={{headerTitle: 'Your Saved Bathrooms', headerRight: () => (
+        <Tab.Screen name="Saved" options={{headerTitle: 'Your Saved Bathrooms', headerRight: () => (
              <View style = {{marginRight: '23%', marginTop: '1.3%'}}>
              <FontAwesome name='bookmark' size={24} color={'#FF8984'}/>
              </View>
               )}}>
+              {props => <SavedTab {...props} bathrooms={bathrooms}/>}
         </Tab.Screen>
         <Tab.Screen name="Add" component={AddTab} options={{headerShown: false}}/>
         <Tab.Screen name="Search" options={{headerShown: false}}>

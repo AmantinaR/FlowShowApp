@@ -10,10 +10,17 @@ import Location from '../Location';
 import Images from '../../assets/LocationImages';
 import SavedList from '../lists/SavedList';
 
-export default function SavedTab({ navigation, route }) {
+export default function SavedTab({ navigation, route, bathrooms }) {
+  function savedFilter(location) {
+    if (location.saved === true) {
+      return(true);
+    }else {
+      return(false);
+    }
+  };
   return (
     <SafeAreaView style={styles.container}>
-      <SavedList data = {Default}/>
+      <SavedList data = {bathrooms.filter(savedFilter)}/>
       <StatusBar style="auto" />
     </SafeAreaView>
   );
