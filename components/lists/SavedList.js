@@ -16,14 +16,28 @@ export default function SavedList(props) {
   const renderLocation = (location) => {
     return(
       <Location
-        miles = {location.item.miles}
-        source = {location.item.source}
-        name = {location.item.name}
-        address = {location.item.address}
-        number = {location.item.number}
-        status = {location.item.status}
-        list = {'Saved'}
-        locationRating = {location.item.locationRating}
+      miles = {location.item.miles}
+      source = {location.item.source}
+      name = {location.item.name}
+      address = {location.item.address}
+      number = {location.item.number}
+      status = {location.item.status}
+      list = {'Bathroom'}
+      accessible= {location.item.accessible}
+      gNeutral= {location.item.gNeutral}
+      freePads= {location.item.freePads}
+      tampons= {location.item.tampons}
+      clean= {location.item.clean}
+      diapers= {location.item.diapers}
+      condoms= {location.item.condoms}
+      planB= {location.item.planB}
+      wipes= {location.item.wipes}
+      ratings={location.item.ratings}
+      locationRating={location.item.locationRating}
+      lat={location.item.lat}
+      lng={location.item.lng}
+      saved={location.item.saved}
+      id={location.item.id}
       />);
   }
 

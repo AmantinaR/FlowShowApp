@@ -9,7 +9,9 @@ export default function SavedButton(props) {
 
   const SelectUpdate = () => {
     setSelected(!selected);
-    props.changeSaved(props.bathroom);
+    console.log(props.bathroom.id + 'bathroom id');
+    props.changeSaved({index: props.bathroom.id});
+
   };
   return(
     <TouchableOpacity

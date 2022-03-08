@@ -21,6 +21,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons';
 
 import Ratings from '../lists/data/DefaultRating';
+import Default from '../lists/data/Default';
 
 
 const Tab = createBottomTabNavigator();
@@ -72,13 +73,18 @@ export default function MainTab({ route, navigation }) {
     console.log(reports);
   };
 
+  const [bathrooms, setBathrooms] = useState(Default);
+  const changeBathrooms = () => {
+    let newBathrooms = [...bathrooms];
 
-
-
-  const changeSaved = (bathroom) => {
-    bathroom.saved = !bathroom.saved;
-    console.log(bathroom.saved);
   };
+  const changeSaved = ({index}) => {
+    let newBathrooms = [...bathrooms];
+    newBathrooms[index].saved = !newBathrooms[index].saved;
+    setBathrooms(newBathrooms);
+  };
+
+
     return (
       <Tab.Navigator screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
@@ -108,7 +114,7 @@ export default function MainTab({ route, navigation }) {
         </Tab.Screen>
         <Tab.Screen name="Add" component={AddTab} options={{headerShown: false}}/>
         <Tab.Screen name="Search" options={{headerShown: false}}>
-          {props => <SearchTab {...props} user={user} ratings={ratings} changeSaved = {(bathroom) => changeSaved(bathroom)} changeRatings={(date, number, title, description, order) => changeRatings(date, number, title, description, order)}/>}
+          {props => <SearchTab {...props} user={user} bathrooms={bathrooms} ratings={ratings} changeSaved = {(bathroom) => changeSaved(bathroom)} changeRatings={(date, number, title, description, order) => changeRatings(date, number, title, description, order)}/>}
         </Tab.Screen>
         <Tab.Screen name="Report" options={{headerShown: false,}}>
           {props => <ReportTab {...props} reports={reports} changeReports={(date, name, floor, products, disposal, comments, step, gender) => changeReports(date, name, floor, products, disposal, comments, step, gender)}/>}
