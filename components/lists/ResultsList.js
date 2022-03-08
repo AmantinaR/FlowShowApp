@@ -33,7 +33,7 @@ export default function ResultsList(props) {
         clean= {location.item.clean}
         diapers= {location.item.diapers}
         condoms= {location.item.condoms}
-        planB= {location.item.planB}
+        emcon= {location.item.emcon}
         wipes= {location.item.wipes}
         ratings={location.item.ratings}
         locationRating={location.item.locationRating}

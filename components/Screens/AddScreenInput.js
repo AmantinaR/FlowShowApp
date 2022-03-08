@@ -38,7 +38,7 @@ export default function AddScreenInput({ navigation, changeAddBathroom }) {
 
   const productData = [
     {pads:false,
-    freepads: false,
+    freePads: false,
     singleOcc: false,
     clean: false,
     tampons: false,
@@ -49,7 +49,7 @@ export default function AddScreenInput({ navigation, changeAddBathroom }) {
     tp: false,
     soap: false,
     accessible: false,
-    diapers: false
+    diapers: false,
   }
   ];
   const [products, setProducts] = useState(productData);
@@ -73,8 +73,8 @@ export default function AddScreenInput({ navigation, changeAddBathroom }) {
       newProduct[0].tp = !selected;
     } else if (product == 'soap') {
       newProduct[0].soap = !selected;
-    } else if (product == 'freepads') {
-      newProduct[0].freepads = !selected;
+    } else if (product == 'freePads') {
+      newProduct[0].freePads = !selected;
     } else if (product == 'singleOcc') {
       newProduct[0].singleOcc = !selected;
     } else if (product == 'clean') {
@@ -86,8 +86,10 @@ export default function AddScreenInput({ navigation, changeAddBathroom }) {
   };
 
   const confirmPress = () => {
-    console.log(products.accessible);
-    changeAddBathroom({miles: 0, source: 0, name: name, address: address, number: `${room}, ${gender}`, status: 0, list: 0, accessible: products.accessible ? Features.accessible : Images.False, gNeutral: products.gNeutral ? Features.gNeutral : Images.False, freePads: products.freePads ? Features.freePads : Images.False, tampons: products.tampons ? Features.tampons : Images.False, clean: products.clean ? Features.clean : Images.False, diapers: products.diapers ? Features.diapers : Images.False, condoms: products.condoms ? Features.condoms : Images.False, emcon: products.emcon ? Features.emcon : Images.False, wipes: products.wipes ? Features.wiped : Images.False, locationRating: option, lat: 0, lng: 0, saved: false, id: 0});
+    console.log('checking confirm press features')
+    console.log(products[0]);
+    console.log(products[0].accessible);
+    changeAddBathroom({miles: 0, source: 0, name: name, address: address, number: `${room}, ${gender}`, status: 0, list: 0, accessible: products[0].accessible ? Features.accessible : Images.False, gNeutral: products[0].gNeutral ? Features.gNeutral : Images.False, freePads: products[0].freePads ? Features.freePads : Images.False, tampons: products[0].tampons ? Features.tampons : Images.False, clean: products[0].clean ? Features.clean : Images.False, diapers: products[0].diapers ? Features.diapers : Images.False, condoms: products[0].condoms ? Features.condoms : Images.False, emcon: products[0].emcon ? Features.emcon : Images.False, wipes: products[0].wipes ? Features.wiped : Images.False, locationRating: option, lat: 0, lng: 0, saved: false, id: 0});
     navigation.navigate('Confirm', {name: name, room: room, locationRating: option, gender: gender, products: products, comments: comment});
   };
 
