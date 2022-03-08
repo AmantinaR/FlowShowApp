@@ -15,6 +15,7 @@ import FeatureButtonList from './FeatureButtonList';
 
 
 export default function ResultsList(props) {
+  console.log(props.data);
   const renderLocation = (location) => {
     return(
       <Location

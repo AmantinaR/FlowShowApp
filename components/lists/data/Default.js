@@ -27,7 +27,7 @@ let Default = [
     wipes: Images.False,
     singleOcc: Images.False,
     pads: Features.freePads,
-    ratings: Ratings,
+
     locationRating: 4,
     saved: true,
 
@@ -52,7 +52,6 @@ let Default = [
     emcon: Images.False,
     wipes: Images.False,
     pads: Images.False,
-    ratings: Ratings,
     locationRating: 4.5,
     saved: true,
   },
@@ -76,7 +75,6 @@ let Default = [
     emcon: Images.False,
     wipes: Images.False,
     pads: Features.freePads,
-    ratings: Ratings,
     locationRating: 4,
     saved: false,
   },
@@ -100,7 +98,6 @@ let Default = [
     emcon: Images.False,
     wipes: Images.False,
     pads: Features.freePads,
-    ratings: Ratings,
     locationRating: 3.5,
     saved: false,
 
@@ -125,7 +122,6 @@ let Default = [
     emcon: Images.False,
     wipes: Images.False,
     pads: Features.freePads,
-    ratings: Ratings,
     locationRating: 2.5,
     saved: false,
   }

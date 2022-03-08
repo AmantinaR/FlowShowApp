@@ -18,7 +18,7 @@ import { useState } from 'react';
 import { useCallback, useMemo, useRef } from 'react';
 import BottomSheet from '@gorhom/bottom-sheet';
 
-export default function SearchLanding({ navigation, bathrooms }) {
+export default function SearchLanding({ navigation, bathrooms, changeBathrooms }) {
   const featureData = [
     {accessible:false,
     pads: false,
@@ -34,7 +34,6 @@ export default function SearchLanding({ navigation, bathrooms }) {
   const [option, setOption] = useState(null);
   const [text, setText] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
-  const [resultdata, setResultData] = useState(bathrooms);
   const [listHeight, setHeight] = useState('40%');
   const [featureSelected, setFeature] = useState(featureData);
 
@@ -58,16 +57,16 @@ export default function SearchLanding({ navigation, bathrooms }) {
     setSearchTerm(text);
     if (text !== '') {
       let newData = bathrooms.filter(location => location.name === text);
-      setResultData(newData);
+      changeBathrooms(newData);
     } else {
-      setResultData(bathrooms);
+      changeBathrooms(bathrooms);
     }
     console.log(text);
 
   };
 
   const updateFeatures = (selected, feature) => {
-    console.log(featureSelected);
+
     let newFeature = featureSelected;
     if (feature == 'accessible') {
       newFeature[0].accessible = !selected;
@@ -133,10 +132,10 @@ export default function SearchLanding({ navigation, bathrooms }) {
       return(true);
     }
 
-    let newFeatureData = bathrooms.filter(featureFilter);
-    setResultData(newFeatureData);
+    let newFeatureData = Default.filter(featureFilter);
+    changeBathrooms({changed: newFeatureData});
 
-    console.log(newFeatureData);
+    console.log(newFeatureData + 'line 138');
   };
   const featurenames = [
     {
@@ -210,11 +209,16 @@ export default function SearchLanding({ navigation, bathrooms }) {
           >
             <Marker coordinate={{latitude: 37.4295238646884, longitude: -122.16790117770296}}
             image={require('../../assets/current-location.png')}/>
-            {resultdata.map((item, index) => {
-              return(
-                <Marker coordinate = {{latitude: item.lat, longitude: item.lng}}
-                title={item.name} key={index}/>
-              );
+            {console.log(bathrooms + 'line 212')}
+            {bathrooms.map((item, index) => {
+
+                if (item.lat !== null) {
+                  return(<Marker coordinate = {{latitude: item.lat, longitude: item.lng}}
+                  title={item.name} key={index}/>);
+                } else {
+                  return(null);
+                }
+
             })}
           </MapView>
           <BottomSheet
@@ -224,7 +228,7 @@ export default function SearchLanding({ navigation, bathrooms }) {
           >
             <FeatureButtonList data={featurenames} onSelect={(selected, feature) => updateFeatures(selected, feature)}/>
             <Text> Results For {text !== '' ? searchTerm : 'All Nearby'}</Text>
-            <ResultList data = {resultdata} feature={featurenames} height={listHeight}/>
+            <ResultList data = {bathrooms} feature={featurenames} height={listHeight}/>
 
           </BottomSheet>
       </View>

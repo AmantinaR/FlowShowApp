@@ -9,11 +9,13 @@ import AddScreenConfirm from './AddScreenConfirm';
 
 const AddStack = createStackNavigator();
 
-export default function AddTab({ navigation }) {
+export default function AddTab({ navigation, changeAddBathroom }) {
   console.log(navigation);
   return (
     <AddStack.Navigator>
-      <AddStack.Screen name = "Input" component={AddScreenInput} options={{headerTitle: 'Add a New Bathroom', headerLeft: () => {}}}/>
+      <AddStack.Screen name = "Input" options={{headerTitle: 'Add a New Bathroom', headerLeft: () => {}}}>
+        {props => <AddScreenInput {...props} changeAddBathroom={changeAddBathroom}/>}
+      </AddStack.Screen>
       <AddStack.Screen name = "Confirm" component={AddScreenConfirm} options={{headerTitle: 'Add Bathroom Confirmation'}}/>
     </AddStack.Navigator>
   );

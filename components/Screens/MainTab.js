@@ -74,13 +74,32 @@ export default function MainTab({ route, navigation }) {
   };
 
   const [bathrooms, setBathrooms] = useState(Default);
-  const changeBathrooms = () => {
-    let newBathrooms = [...bathrooms];
 
+  const changeBathrooms = ({changed}) => {
+    console.log('changed bathroom');
+    console.log(changed);
+    setBathrooms(changed);
+    console.log(bathrooms);
   };
   const changeSaved = ({index}) => {
     let newBathrooms = [...bathrooms];
     newBathrooms[index].saved = !newBathrooms[index].saved;
+    setBathrooms(newBathrooms);
+  };
+
+  const changeAddBathroom = ({miles, source, name, address, number, status, list, accessible, gNeutral, freePads, tampons, clean, diapers, condoms, emcon, wipes, locationRating, lat, lng, saved, id}) => {
+    console.log('made it to changeAddBathroom');
+    console.log('problem on line 90');
+    let newBathrooms = [...bathrooms];
+    console.log('problem on line 91');
+    let newRatings = [...ratings];
+    console.log('problem on line 94');
+    newRatings.push([]);
+    console.log('problem on line 95');
+    let newBathroomInput = {miles: '10 ft', source: Images.Generic, name: name, address: address, number: number, status: 'Open Now', list: 'Bathroom', accessible: accessible, gNeutral: gNeutral, freePads: freePads, tampons: tampons, clean: clean, diapers: diapers, condoms: condoms, emcon: emcon, wipes: wipes, locationRating: null, lat: null, lng: null, saved: false, id: bathrooms.length + 1}
+    console.log(newBathroomInput);
+    console.log('problem on line 99');
+    newBathrooms.push(newBathroomInput);
     setBathrooms(newBathrooms);
   };
 
@@ -113,9 +132,11 @@ export default function MainTab({ route, navigation }) {
               )}}>
               {props => <SavedTab {...props} bathrooms={bathrooms}/>}
         </Tab.Screen>
-        <Tab.Screen name="Add" component={AddTab} options={{headerShown: false}}/>
+        <Tab.Screen name="Add"  options={{headerShown: false}}>
+          {props => <AddTab {...props} changeAddBathroom={(miles, source, name, address, number, status, list, accessible, gNeutral, freePads, tampons, clean, diapers, condoms, emcon, wipes, ratings, locationRating, lat, lng, saved, id) => changeAddBathroom(miles, source, name, address, number, status, list, accessible, gNeutral, freePads, tampons, clean, diapers, condoms, emcon, wipes, ratings, locationRating, lat, lng, saved, id)}/>}
+        </Tab.Screen>
         <Tab.Screen name="Search" options={{headerShown: false}}>
-          {props => <SearchTab {...props} user={user} bathrooms={bathrooms} ratings={ratings} changeSaved = {(bathroom) => changeSaved(bathroom)} changeRatings={(date, number, title, description, order) => changeRatings(date, number, title, description, order)}/>}
+          {props => <SearchTab {...props} user={user} changeBathrooms={(changed) => changeBathrooms(changed)} bathrooms={bathrooms} ratings={ratings} changeSaved = {(bathroom) => changeSaved(bathroom)} changeRatings={(date, number, title, description, order) => changeRatings(date, number, title, description, order)}/>}
         </Tab.Screen>
         <Tab.Screen name="Report" options={{headerShown: false,}}>
           {props => <ReportTab {...props} reports={reports} changeReports={(date, name, floor, products, disposal, comments, step, gender) => changeReports(date, name, floor, products, disposal, comments, step, gender)}/>}

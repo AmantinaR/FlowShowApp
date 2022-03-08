@@ -9,13 +9,20 @@ import GenderRadio from '../buttons/GenderRadio';
 import FeaturesList from '../FeaturesList';
 import GenericButton from '../buttons/GenericButton';
 import BloodRadio from '../buttons/BloodRadio';
+import Features from '../../assets/Features';
+import Images from '../../assets/LocationImages';
 
-export default function AddScreenInput({ navigation }) {
+export default function AddScreenInput({ navigation, changeAddBathroom }) {
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
+  const [address, setAddress] = useState('');
   const [comment, setComment] = useState('');
   const [option, setOption] = useState(null);
   const [gender, setGender] = useState(null);
+
+
+
+
   const dataRate = [
     { value: 1 },
     { value: 2 },
@@ -78,6 +85,12 @@ export default function AddScreenInput({ navigation }) {
     setProducts(newProduct);
   };
 
+  const confirmPress = () => {
+    console.log(products.accessible);
+    changeAddBathroom({miles: 0, source: 0, name: name, address: address, number: `${room}, ${gender}`, status: 0, list: 0, accessible: products.accessible ? Features.accessible : Images.False, gNeutral: products.gNeutral ? Features.gNeutral : Images.False, freePads: products.freePads ? Features.freePads : Images.False, tampons: products.tampons ? Features.tampons : Images.False, clean: products.clean ? Features.clean : Images.False, diapers: products.diapers ? Features.diapers : Images.False, condoms: products.condoms ? Features.condoms : Images.False, emcon: products.emcon ? Features.emcon : Images.False, wipes: products.wipes ? Features.wiped : Images.False, locationRating: option, lat: 0, lng: 0, saved: false, id: 0});
+    navigation.navigate('Confirm', {name: name, room: room, locationRating: option, gender: gender, products: products, comments: comment});
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={{height: 900, marginTop: '4%'}} scrollToOverflowEnabled={true} showsVerticalScrollIndicator={true} maximumZoomScale={0}>
@@ -93,6 +106,10 @@ export default function AddScreenInput({ navigation }) {
         <Text style={[styles.text, {top: '1%'}]}>Bathroom Floor #</Text>
         <TextInput onChangeText={(text) => setRoom(text)} style={styles.textBox} placeholder='Floor #'/>
       </View>
+      <View style={styles.textFlex}>
+        <Text style={[styles.text, {top: '1%'}]}>Building Address</Text>
+        <TextInput onChangeText={(text) => setAddress(text)} style={styles.textBox} placeholder='i.e 123 Alphabet Way'/>
+      </View>
           <View style={{flexDirection: 'column', padding: 10, alignItems: 'center'}}>
             <Text style = {[styles.txt, {margin: 10}]}>What gender is assigned to this bathroom?</Text>
             <GenderRadio data={data} onSelect={(value) => setGender(value)}/>
@@ -105,7 +122,7 @@ export default function AddScreenInput({ navigation }) {
           <FeaturesList onSelect={(selected, product) => updateProducts(selected, product)}/>
           <Text style = {[styles.text, {margin: 15}]}>Additional Comments</Text>
           <TextInput onChangeText={(text) => setComment(text)} multiline style={styles.comments} placeholder={'Please write any comments here (Optional)'}/>
-          <GenericButton text={'Confirm'} onPress={() => navigation.navigate('Confirm', {name: name, room: room, locationRating: option, gender: gender, products: products, comments: comment})}/>
+          <GenericButton text={'Confirm'} onPress={() => confirmPress()}/>
           <StatusBar style="auto" />
         </View>
       </ScrollView>

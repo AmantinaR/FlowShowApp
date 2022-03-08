@@ -17,7 +17,7 @@ import { useState } from 'react';
 
 const SearchStack = createStackNavigator();
 
-export default function SearchTab({ navigation, route, user, ratings, changeRatings, changeSaved, bathrooms }) {
+export default function SearchTab({ navigation, route, user, ratings, changeBathrooms, changeRatings, changeSaved, bathrooms }) {
 
 
   // user={user} ratings={ratings}
@@ -25,7 +25,7 @@ export default function SearchTab({ navigation, route, user, ratings, changeRati
   return (
     <SearchStack.Navigator>
       <SearchStack.Screen name="Landing" options={{headerShown: false}}>
-        {props => <SearchLanding {...props} bathrooms={bathrooms}/>}
+        {props => <SearchLanding {...props} bathrooms={bathrooms} changeBathrooms={changeBathrooms}/>}
       </SearchStack.Screen>
       <SearchStack.Screen name="Bathroom" options={({ route, navigation }) =>({
         headerBackTitle: 'Back', headerTitle: 'Bathroom Details', headerRight: () => (

@@ -16,7 +16,10 @@ import SavedButton from '../buttons/SavedButton';
 
 export default function BathroomScreen({ navigation, route, ratings}) {
   const params = route.params;
+  console.log('bathroom route');
   console.log(route);
+  console.log(params.accessible.toString())
+  console.log('bathroom route');
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground source={params.source} style={styles.imagebkd} imageStyle={styles.image} >
@@ -54,8 +57,9 @@ export default function BathroomScreen({ navigation, route, ratings}) {
         {params.clean !== Images.False ? <Image source={params.clean}/> : undefined}
         {params.diapers !== Images.False ? <Image source={params.diapers}/> : undefined}
         {params.condoms !== Images.False ? <Image source={params.condoms}/> : undefined}
-        {params.planB !== Images.False ? <Image source={params.planB}/> : undefined}
+        {params.emcon !== Images.False ? <Image source={params.emcon}/> : undefined}
         {params.wipes !== Images.False ? <Image source={params.wipes}/> : undefined}
+        {params.pads !== Images.False ? <Image source={params.pads}/> : undefined}
       </View>
       <View style={{width: '92%', flexDirection: 'column', justifyContent: 'flex-start', marginTop: '0.03%', marginBottom: '0.03%'}}>
         <Text style={[styles.clarify, {textAlign: 'left', marginTop: '0.5%'}]}>Swipe through previous ratings!</Text>

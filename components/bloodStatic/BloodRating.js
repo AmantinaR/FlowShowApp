@@ -9,7 +9,6 @@ import HalfBlood from './HalfBlood';
 
 
 export default function BloodRating({number, small}) {
-  console.log(number);
   if (number == null) {
     return(
     <View style={styles.container}>
