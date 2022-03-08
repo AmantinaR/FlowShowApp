@@ -114,9 +114,9 @@ export default function AddScreenConfirm({ navigation, route  }) {
         <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.comments}</Text>
      </View>
     </View>
-    <GenericButton text={'Add Another Bathroom'} onPress={() => navigation.navigate('Input')}/>
-        <TouchableOpacity onPress={() => navigation.navigate('Search')}>
-        <Text style = {styles.im_good}>No, I'm Good</Text>
+    <GenericButton text={'Done'} onPress={() => navigation.navigate('Search')}/>
+        <TouchableOpacity onPress={() => navigation.navigate('Input')}>
+        <Text style = {styles.another}>Add Another Bathroom</Text>
         </TouchableOpacity>
 
       <StatusBar style="auto" />
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
   bottom_buttons: {
     padding: '3%',
   },
-  im_good: {
+  another: {
     fontSize: 16,
     color: '#ff8984',
     textDecorationLine: 'underline',
