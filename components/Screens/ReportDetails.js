@@ -18,7 +18,7 @@ export default function ReportDetails({ route, navigation }) {
       <ReportStatusBar step={params.step} small={false}/>
       <StatusBar style="auto" />
       <View style={styles.summary_body}>
-        <Text style = {{fontWeight: 'bold', fontSize: 18, marginBottom: '1%', fontFamily: 'Helvetica'}}>Summary of Report</Text>
+        <Text style = {{fontWeight: 'bold', fontSize: 18, marginBottom: '5%', fontFamily: 'Helvetica'}}>Summary of Report</Text>
         <View style={styles.summary_line}>
           <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Building:  </Text>
           <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.name}  </Text>
@@ -48,8 +48,9 @@ export default function ReportDetails({ route, navigation }) {
           <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.date}  </Text>
        </View>
       </View>
-      <View>
-        <Text>{params.feedback}</Text>
+      <View style = {styles.feedback}>
+      <Text style = {{marginBottom: '2%'}}>Comments left by the manager:</Text>
+        <Text style={{color: 'rgba(0, 0, 0, 0.5)'}}>{params.feedback}</Text>
       </View>
 
     </SafeAreaView>
@@ -67,9 +68,9 @@ const styles = StyleSheet.create({
   thank_you: {
     color: 'rgba(0, 0, 0, 0.5)',
     marginHorizontal: '5%',
-    marginTop: '-20%',
+    marginTop: '-5%',
     fontFamily: 'Helvetica',
-    marginBottom: 16,
+    marginBottom: '3%',
     textAlign: 'center'
   },
   summary_body:{
@@ -80,7 +81,7 @@ const styles = StyleSheet.create({
   },
   summary_line: {
     flexDirection: 'row',
-    padding: '2%',
+    padding: '1%',
     flexWrap: 'wrap'
   },
   button: {
@@ -117,5 +118,15 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
     margin: '1%',
     fontFamily: 'Helvetica'
+  },
+  feedback: {
+    borderWidth: 1,
+    borderColor: 'rgba(0, 0, 0, 0.25)',
+    borderRadius: 4,
+    width: '80%',
+    height: '27%',
+    padding: 10,
+    marginTop: '-10%',
+    maxWidth: 360
   },
 });

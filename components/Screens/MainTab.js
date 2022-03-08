@@ -59,7 +59,7 @@ export default function MainTab({ route, navigation }) {
       comments: 'This bathroom really needs period products!',
       step: 3,
       source: Images.History,
-      feedback: "We have reviewed the request and are in the process of ordering those tampon dispensers, supply chain shortage means that they’ll take some time to get here and installed. We’ll notify FlowShow when this request is completed."
+      feedback: "We have reviewed the request and are in the process of ordering those tampon dispensers. Supply chain shortages mean that the products will take some time to arrive and be installed. We’ll notify FlowShow when this request is completed."
     },
   ];
   const [reports, setReports] = useState(reportStart);

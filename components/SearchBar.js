@@ -12,7 +12,7 @@ export default function SearchBar(props) {
       <TouchableOpacity style={styles.search} onPress={props.onPress}>
         <View style={{width: 50, alignItems: 'center'}}>
         <FontAwesome5 name='search-location' size={30} color='white' />
-        </View>
+        </View> 
       </TouchableOpacity>
     </View>
 
