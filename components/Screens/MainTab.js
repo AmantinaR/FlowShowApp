@@ -65,7 +65,7 @@ export default function MainTab({ route, navigation }) {
   const [reports, setReports] = useState(reportStart);
   const changeReports = ({date, name, floor, products, disposal, comments, step, gender}) => {
     let newReports = [...reports];
-    let report = {date: date, name: name, gender: gender, floor: floor, products: products, comments: comments, step: step, source:Images.Generic, disposal: disposal, feedback: ''}
+    let report = {date: date, name: name, gender: gender, floor: floor, products: products, comments: comments, step: step,source:Images.Generic, disposal: disposal, feedback: ''}
     newReports.unshift(report);
     setReports(newReports);
     console.log(reports);

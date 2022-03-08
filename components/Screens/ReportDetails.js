@@ -7,6 +7,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import GenericButton from '../buttons/GenericButton';
 import ReportStatusBar from '../ReportStatusBar';
+import Satisfaction from '../buttons/Satisfaction';
 
 export default function ReportDetails({ route, navigation }) {
   const [option, setOption] = useState(null);
@@ -38,6 +39,12 @@ export default function ReportDetails({ route, navigation }) {
        <View style={styles.summary_line}>
           <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Disposal Options Missing:  </Text>
           <Text style = {{fontWeight: 'normal', fontFamily: 'Helvetica'}}>{params.disposallist} </Text>
+       </View>
+       <View style={styles.summary_line}>
+          <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Satisfaction:  </Text>
+          <View style={{marginTop: '-2%'}}>
+            <Satisfaction emotion={params.option} onPress={null} selected={true}/>
+          </View>
        </View>
        <View style={styles.summary_line}>
           <Text style = {{fontWeight: 'bold', fontFamily: 'Helvetica'}}>Comments:  </Text>
