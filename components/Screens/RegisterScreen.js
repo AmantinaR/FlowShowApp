@@ -2,17 +2,21 @@ import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, TouchableOpacity, Image} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import { useState } from 'react';
+
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import GenericButton from '../buttons/GenericButton';
 
 export default function RegisterScreen({ navigation }) {
+  const [text, setText] = useState('');
+
   return (
     <SafeAreaView style={styles.container}>
       <Image source={require("../../assets/logo-large.png")} style={styles.logo}/>
       <Text style = {styles.register_header}>Register</Text>
       <StatusBar style="auto" />
-      <TextInput style={styles.textBox} placeholder='username' autoCorrect={false}/>
+      <TextInput style={styles.textBox} placeholder='username' autoCorrect={false} onChangeText={(text) => setText(text)}/>
       <TextInput style={styles.textBox} placeholder='email' autoCorrect={false}/>
       <TextInput style={styles.textBox} placeholder='password' secureTextEntry={true}/>
       <View style = {styles.row}>
@@ -20,7 +24,7 @@ export default function RegisterScreen({ navigation }) {
           <TouchableOpacity onPress={() => navigation.navigate('Login')}>
              <Text style = {styles.login}> Login</Text>
          </TouchableOpacity>
-         <GenericButton text={'Register'} onPress={() => navigation.navigate('Landing')}/>
+         <GenericButton text={'Register'} onPress={() => navigation.navigate('Landing', {user: text})}/>
       </View>
     </SafeAreaView>
   );

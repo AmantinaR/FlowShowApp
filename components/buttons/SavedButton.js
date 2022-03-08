@@ -5,7 +5,7 @@ import { useState } from "react";
 import { FontAwesome } from '@expo/vector-icons';
 
 export default function SavedButton(props) {
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState(props.bathroom.saved);
 
   const SelectUpdate = () => {
     setSelected(!selected);
