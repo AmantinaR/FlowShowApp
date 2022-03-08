@@ -135,7 +135,6 @@ export default function SearchLanding({ navigation, bathrooms, changeBathrooms }
     let newFeatureData = Default.filter(featureFilter);
     changeBathrooms({changed: newFeatureData});
 
-    console.log(newFeatureData + 'line 138');
   };
   const featurenames = [
     {
@@ -209,7 +208,7 @@ export default function SearchLanding({ navigation, bathrooms, changeBathrooms }
           >
             <Marker coordinate={{latitude: 37.4295238646884, longitude: -122.16790117770296}}
             image={require('../../assets/current-location.png')}/>
-            {console.log(bathrooms + 'line 212')}
+  
             {bathrooms.map((item, index) => {
 
                 if (item.lat !== null) {
