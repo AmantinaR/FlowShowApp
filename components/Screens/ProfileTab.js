@@ -35,7 +35,7 @@ export default function ProfileTab({ route, navigation, user, ratings }) {
       <Image source={require('../../assets/needs.png')}/>
       </View>
       <View style= {{marginTop: '40%'}}>
-        <GenericButton text={'Log Out'} onPress={() => navigation.navigate('Landing')}/>
+        <GenericButton text={'Log Out'} onPress={() => navigation.navigate('Login', {user: ''})}/>
       </View>
     </SafeAreaView>
   );

@@ -11,7 +11,7 @@ import GenericButton from '../buttons/GenericButton';
 
 export default function LandingScreen({ route, navigation }) {
 
-  const name = route.params.user
+  const name = route.params.user;
   return (
     <SafeAreaView style={styles.container}>
       <Image source={require('../../assets/landing-blob.png')} style={styles.blob}/>
