@@ -95,7 +95,7 @@ export default function ReportInput({ navigation, route, changeReports }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={{height: 900, marginTop: '4%'}} scrollToOverflowEnabled={true} showsVerticalScrollIndicator={true} maximumZoomScale={0}>
+      <ScrollView contentContainerStyle={{height: 1200, marginTop: '4%'}} scrollToOverflowEnabled={true} showsVerticalScrollIndicator={true} maximumZoomScale={0}>
         <View style={{flex: 1, alignItems: 'center', padding: 4}}>
         <Text style={{color: 'rgba(0, 0, 0, 0.5)', fontFamily: 'Helvetica'}}>You tell us the issue(s), and we'll work with the building managers to solve them</Text>
         <View style={styles.textFlex}>
