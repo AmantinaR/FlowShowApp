@@ -26,8 +26,11 @@ export default function BathroomScreen({ navigation, route, ratings}) {
         <View style={styles.titleCard}>
           <Text style={styles.nameText}>{params.name}</Text>
           <Text style={styles.numberText}>Floor {params.number}</Text>
-          <View style={styles.blood}>
-            <BloodRating number={params.locationRating} small={false}/>
+          <View style ={{flexDirection: 'row'}}>
+            <Text style={[styles.numberText, {marginLeft:'40%', marginTop:'0.5%'}]}>({(ratings[params.id]).length})</Text>
+            <View style={styles.blood}>
+              <BloodRating number={params.locationRating} small={false}/>
+            </View>
           </View>
         </View>
 
@@ -135,7 +138,7 @@ const styles = StyleSheet.create({
     marginBottom: '5%'
   },
   blood: {
-    marginLeft: '-60%',
+    marginLeft: '-47%',
     justifyContent: 'flex-start'
   },
   titleCard: {
