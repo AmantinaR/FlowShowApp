@@ -76,17 +76,15 @@ export default function Report(props) {
       <View style={styles.mainFlex}>
         <Image style={styles.picture} source={props.source}/>
         <View style={styles.detailsFlex}>
-          {props.feedback !== '' ? <View style= {styles.topRow}>
+          {props.feedback !== '' ? <View style= {{flexDirection: 'row'}}>
             <SimpleLineIcons name='speech' size={19} color={'grey'} />
             <Text style = {styles.feedback}>Feedback left by manager</Text>
           </View> : <View></View>}
-          <View style= {[styles.topRow, {left: '-25%'}]}>
+          <View style= {[styles.topRow, {alignItems: 'left', width:250}]}>
             <Text>
               <Text style = {[styles.text, {fontWeight: 'bold', fontFamily: 'Helvetica'}]}>{props.name}: </Text>
               <Text style = {[styles.text, {fontWeight: 'normal', fontFamily: 'Helvetica'}]}>Floor {props.floor}</Text>
             </Text>
-          </View>
-          <View style= {[styles.topRow, {left: '-6%'}]}>
             <Text>
               <Text style = {[styles.text, {fontWeight: 'bold', fontFamily: 'Helvetica'}]}>Request: </Text>
               <Text style = {[styles.text, {fontWeight: 'normal', fontFamily: 'Helvetica'}]}>{productlist}</Text>
@@ -133,6 +131,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     width: 90,
     height: 90,
+    left: -20
   },
   detailsFlex: {
     alignItems: 'flex-start'
@@ -157,12 +156,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#ff8984',
     fontFamily: 'Helvetica',
-    left: '-90%'
+    marginLeft: '5%'
   },
   topRow: {
-    flexDirection: 'row',
     justifyContent: 'space-around',
-    alignItems: 'stretch',
+    alignItems: 'flex-start',
     width: '90%'
   }
 });

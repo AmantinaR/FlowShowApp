@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
   thank_you: {
     color: 'rgba(0, 0, 0, 0.5)',
     marginHorizontal: '5%',
-    marginTop: '-20%',
+    marginTop: '-5%',
     fontFamily: 'Helvetica',
     marginBottom: 16,
     textAlign: 'center'
@@ -137,11 +137,13 @@ const styles = StyleSheet.create({
   summary_body:{
     margin: '10%',
     flexDirection: 'column',
-    padding: '3%'
+    padding: '3%',
+    width: '90%',
   },
   summary_line: {
     flexDirection: 'row',
-    padding: '2%'
+    padding: '2%',
+    flexWrap: 'wrap'
   },
   button: {
     color: '#ffffff',
