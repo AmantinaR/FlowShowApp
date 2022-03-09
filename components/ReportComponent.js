@@ -80,7 +80,7 @@ export default function Report(props) {
             <SimpleLineIcons name='speech' size={19} color={'grey'} />
             <Text style = {styles.feedback}>Feedback left by manager</Text>
           </View> : <View></View>}
-          <View style= {[styles.topRow, {alignItems: 'left', width:250}]}>
+          <View style= {[styles.topRow, {alignItems: 'left', width:200}]}>
             <Text>
               <Text style = {[styles.text, {fontWeight: 'bold', fontFamily: 'Helvetica'}]}>{props.name}: </Text>
               <Text style = {[styles.text, {fontWeight: 'normal', fontFamily: 'Helvetica'}]}>Floor {props.floor}</Text>
@@ -104,13 +104,12 @@ const styles = StyleSheet.create({
     //flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    width: 315,
+    width: 360,
     marginVertical: 5,
     borderBottomColor: '#F1F2F3',
     paddingVertical: 5,
     borderBottomWidth: 3,
-    marginHorizontal: '13%'
-    //borderWidth:1
+    //marginHorizontal: '13%',
   },
   distanceTextFlex: {
     flexDirection: 'row',
@@ -124,17 +123,18 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
-    width: '90%',
-    padding: 10
+    width: '100%',
+    padding: 10,
   },
   picture: {
     borderRadius: 8,
     width: 90,
     height: 90,
-    left: -20
+    left: -20,
+    marginRight: 10
   },
   detailsFlex: {
-    alignItems: 'flex-start'
+    alignItems: 'flex-start',
   },
   miles: {
     fontWeight: 'bold',
@@ -161,6 +161,6 @@ const styles = StyleSheet.create({
   topRow: {
     justifyContent: 'space-around',
     alignItems: 'flex-start',
-    width: '90%'
+    width: '50%',
   }
 });
