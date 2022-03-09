@@ -80,7 +80,7 @@ let Default = [
   },
   {
     id : 3,
-    miles : '50 ft',
+    miles : '0.3 mi',
     source : Images.Green,
     name : 'Green Library',
     address : '557 Escondido Mall',
@@ -104,7 +104,7 @@ let Default = [
   },
   {
     id : 4,
-    miles : '50 ft',
+    miles : '0.35 mi',
     source : Images.History,
     name : 'History Corner',
     address : '564-570 Lasuen Mall',
