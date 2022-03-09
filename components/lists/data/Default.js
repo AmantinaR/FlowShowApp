@@ -58,7 +58,7 @@ let Default = [
   {
     id : 2,
     miles : '0.2 mi',
-    source : Images.Lathrop,
+    source : Images.Tap,
     name : 'The Axe and Palm',
     address : '520 Lasuen Mall',
     number : "1, Men's",
