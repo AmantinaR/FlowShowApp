@@ -97,7 +97,10 @@ export default function MainTab({ route, navigation }) {
     let newBathroomInput = {miles: '10 ft', source: Images.Generic, name: name, address: address, number: number, status: 'Open Now', list: 'Bathroom', accessible: accessible, gNeutral: gNeutral, freePads: freePads, tampons: tampons, clean: clean, diapers: diapers, condoms: condoms, emcon: emcon, wipes: wipes, locationRating: locationRating, lat: null, lng: null, saved: false, id: bathrooms.length}
     newRatings.push([]);
     setRatings(newRatings);
-    changeRatings({id: 0, date: date, number: locationRating, title: title, description: comments, order: bathrooms.length});
+    if (locationRating !== null) {
+      changeRatings({id: 0, date: date, number: locationRating, title: title, description: comments, order: bathrooms.length});
+
+    }
 
     newBathrooms.push(newBathroomInput);
     setBathrooms(newBathrooms);
