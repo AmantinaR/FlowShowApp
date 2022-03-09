@@ -12,7 +12,7 @@ import Satisfaction from '../buttons/Satisfaction';
 export default function ReportDetails({ route, navigation }) {
   const [option, setOption] = useState(null);
   const params = route.params;
-
+  const feedback = params.feedback !== '' ? params.feedback : 'None yet';
   return (
     <SafeAreaView style={styles.container}>
       <Text style = {styles.thank_you}>You told us the issue and we worked with building managers to get a response</Text>
@@ -57,7 +57,7 @@ export default function ReportDetails({ route, navigation }) {
       </View>
       <View style = {styles.feedback}>
       <Text style = {{marginBottom: '2%'}}>Comments left by the manager:</Text>
-        <Text style={{color: 'rgba(0, 0, 0, 0.5)'}}>{params.feedback}</Text>
+        <Text style={{color: 'rgba(0, 0, 0, 0.5)'}}>{feedback}</Text>
       </View>
 
     </SafeAreaView>
