@@ -59,7 +59,6 @@ const styles = StyleSheet.create({
     fontSize: 16
   },
   list: {
-    //borderWidth: 1,
     marginTop: '-10%',
     marginHorizontal: '10%',
     height: '50%'
