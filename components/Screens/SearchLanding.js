@@ -57,9 +57,9 @@ export default function SearchLanding({ navigation, bathrooms, changeBathrooms }
     setSearchTerm(text);
     if (text !== '') {
       let newData = bathrooms.filter(location => location.name === text);
-      changeBathrooms(newData);
+      changeBathrooms({changed:newData});
     } else {
-      changeBathrooms(bathrooms);
+      changeBathrooms({changed:Default});
     }
     console.log(text);
 
@@ -208,7 +208,7 @@ export default function SearchLanding({ navigation, bathrooms, changeBathrooms }
           >
             <Marker coordinate={{latitude: 37.4295238646884, longitude: -122.16790117770296}}
             image={require('../../assets/current-location.png')}/>
-  
+            {console.log(bathrooms, 'bathrooms before markers')}
             {bathrooms.map((item, index) => {
 
                 if (item.lat !== null) {
