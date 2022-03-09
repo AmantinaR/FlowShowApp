@@ -131,7 +131,7 @@ const styles = StyleSheet.create({
   status: {
     alignItems: 'center',
     justifyContent: 'center',
-    width: 46,
+    width: 55,
   },
   text: {
     fontFamily: 'Helvetica',
