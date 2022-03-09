@@ -130,8 +130,8 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     width: 90,
     height: 90,
-    left: -20,
-    marginRight: 10
+    left: -5,
+    marginRight: 8
   },
   detailsFlex: {
     alignItems: 'flex-start',
