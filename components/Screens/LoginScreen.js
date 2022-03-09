@@ -14,7 +14,8 @@ export default function LoginScreen({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-       <Image source={require("../../assets/logo-large.png")} style={styles.logo}/>
+      <Text style = {[styles.login_header, {fontSize: 28}]}>FlowShow</Text>
+      <Image source={require("../../assets/logo-large.png")} style={styles.logo}/>
       <Text style = {styles.login_header}>Login</Text>
       <StatusBar style="auto" />
       <TextInput style={styles.textBox} placeholder='username' autoCorrect={false} onChangeText={(text) => setText(text)}/>
