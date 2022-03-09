@@ -16,7 +16,7 @@ export default function RateConfirm({ route, navigation, user, changeRatings }) 
   console.log(params.order);
   const index = params.building.id
   const RatePress = () => {
-    changeRatings(params.date, params.rating, params.title, params.description, params.order);
+    changeRatings({date: params.date, number: params.rating, title: params.title, description: params.description, order: params.order, id: 0});
     navigation.navigate('Bathroom', params.building);
   };
 

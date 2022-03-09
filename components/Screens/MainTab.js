@@ -32,12 +32,20 @@ export default function MainTab({ route, navigation }) {
 
   const changeRatings = ({date, number, title, description, order, id}) => {
     let newRatings = [...ratings];
-    let rating = {id: 0, date: date, number: number, title: title, description: description, user: user}
-    console.log(rating);
-    console.log("order:", order);
-    console.log(newRatings[order-1]);
-    newRatings.push([rating]);
-    console.log("new ratings", newRatings);
+    let index = order;
+    console.log('order', order);
+    console.log('ratingsorder', newRatings[index], 'ratingsorder');
+    if (newRatings[index]) {
+      console.log("in ratings if");
+
+      let rating = {id: newRatings[order].length, date: date, number: number, title: title, description: description, user: user}
+      newRatings[index].unshift(rating);
+    } else {
+      console.log("in ratings else");
+      let rating = {id: 0, date: date, number: number, title: title, description: description, user: user}
+      newRatings.push([rating]);
+
+    }
     setRatings(newRatings);
   };
   const reportStart = [
@@ -139,7 +147,7 @@ export default function MainTab({ route, navigation }) {
           {props => <AddTab {...props} changeAddBathroom={(date, title, comments, miles, source, name, address, number, status, list, accessible, gNeutral, freePads, tampons, clean, diapers, condoms, emcon, wipes, ratings, locationRating, lat, lng, saved, id) => changeAddBathroom(date, title, comments, miles, source, name, address, number, status, list, accessible, gNeutral, freePads, tampons, clean, diapers, condoms, emcon, wipes, ratings, locationRating, lat, lng, saved, id)}/>}
         </Tab.Screen>
         <Tab.Screen name="Search" options={{headerShown: false}}>
-          {props => <SearchTab {...props} user={user} changeBathrooms={(changed) => changeBathrooms(changed)} bathrooms={bathrooms} ratings={ratings} changeSaved = {(bathroom) => changeSaved(bathroom)} changeRatings={(date, number, title, description, order) => changeRatings(date, number, title, description, order)}/>}
+          {props => <SearchTab {...props} user={user} changeBathrooms={(changed) => changeBathrooms(changed)} bathrooms={bathrooms} ratings={ratings} changeSaved = {(bathroom) => changeSaved(bathroom)} changeRatings={(date, number, title, description, order, id) => changeRatings(date, number, title, description, order, id)}/>}
         </Tab.Screen>
         <Tab.Screen name="Report" options={{headerShown: false,}}>
           {props => <ReportTab {...props} reports={reports} changeReports={(date, name, floor, products, disposal, comments, step, gender) => changeReports(date, name, floor, products, disposal, comments, step, gender)}/>}
