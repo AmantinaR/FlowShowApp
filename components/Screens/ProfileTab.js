@@ -10,17 +10,13 @@ import Rating from '../Rating';
 import RatingList from '../lists/RatingList';
 import RatingData from '../lists/data/DefaultRating';
 import GenericButton from '../buttons/GenericButton';
-
+import ProfileGenderSelect from '../buttons/ProfileGenderSelect';
 export default function ProfileTab({ route, navigation, user, ratings }) {
   console.log(navigation);
   console.log(route);
   console.log(ratings);
   const [option, setOption] = useState(null);
-  const data = [
-    { value: "Women's" },
-    { value: "Gender Neutral" },
-    { value: "Men's" },
-  ];
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={{marginBottom: '10%', alignItems: 'center'}}>
@@ -32,7 +28,7 @@ export default function ProfileTab({ route, navigation, user, ratings }) {
       <StatusBar style="auto" />
       <View style={{marginTop: '10%'}}>
       <Text style = {styles.preferences_text}>Bathroom Gender Preference</Text>
-      <GenderRadio  data={data} onSelect={(value) => setOption(value)}/>
+      <ProfileGenderSelect/>
       </View>
       <View style = {styles.needs}>
       <Text style = {{fontSize:15, marginBottom: '3%'}}>Accessibility Needs</Text>
