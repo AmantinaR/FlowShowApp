@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   imagebkd: {
-    height: '27%',
+    height: '25%',
     width: '92%',
     alignItems: 'flex-start',
     justifyContent: 'flex-end',
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start'
   },
   titleCard: {
-    marginBottom: '3%',
+    marginBottom: 0,
     //marginLeft: '3%',
     backgroundColor: 'rgba(0, 0, 0, 0.50)',
     padding: '3%',
