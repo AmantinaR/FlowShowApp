@@ -243,6 +243,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#F9F9F9',
     alignItems: 'center',
+    padding: 16
     //justifyContent: 'center',
   },
   map: {

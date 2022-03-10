@@ -7,32 +7,37 @@ import {MaterialCommunityIcons} from '@expo/vector-icons';
 export default function Satisfaction(props) {
   if (props.emotion == "happy") {
     return(
-      <TouchableOpacity onPress={props.onPress}>
-        <MaterialCommunityIcons name={props.selected ? "emoticon" : 'emoticon-outline'} size={26} color='#E8A798'/>
+      <TouchableOpacity style = {styles.container} onPress={props.onPress}>
+        <MaterialCommunityIcons name={props.selected ? "emoticon" : 'emoticon-outline'} size={29} color='#E8A798'/>
+        <Text style={styles.text}>Very Happy</Text>
         </TouchableOpacity>
     );
   } else if (props.emotion == "smile") {
     return(
-      <TouchableOpacity onPress={props.onPress}>
-        <MaterialCommunityIcons name={props.selected ? "emoticon-happy" : 'emoticon-happy-outline'} size={26} color='#E8A798'/>
+      <TouchableOpacity style = {styles.container} onPress={props.onPress}>
+        <MaterialCommunityIcons name={props.selected ? "emoticon-happy" : 'emoticon-happy-outline'} size={29} color='#E8A798'/>
+          <Text style={styles.text}>Happy</Text>
         </TouchableOpacity>
     );
   } else if (props.emotion == "neutral") {
     return(
-      <TouchableOpacity onPress={props.onPress}>
-        <MaterialCommunityIcons name={props.selected ? "emoticon-neutral" : 'emoticon-neutral-outline'} size={26} color='#E8A798'/>
+      <TouchableOpacity style = {styles.container} onPress={props.onPress}>
+        <MaterialCommunityIcons name={props.selected ? "emoticon-neutral" : 'emoticon-neutral-outline'} size={29} color='#E8A798'/>
+          <Text style={styles.text}>Neutral</Text>
         </TouchableOpacity>
     );
   } else if (props.emotion == "sad") {
     return(
-      <TouchableOpacity onPress={props.onPress}>
-        <MaterialCommunityIcons name={props.selected ? "emoticon-sad" : 'emoticon-sad-outline'} size={26} color='#E8A798'/>
+      <TouchableOpacity style = {styles.container} onPress={props.onPress}>
+        <MaterialCommunityIcons name={props.selected ? "emoticon-confused" : 'emoticon-confused-outline'} size={29} color='#E8A798'/>
+          <Text style={styles.text}>Upset</Text>
         </TouchableOpacity>
     );
   } else if (props.emotion == "angry") {
     return(
-      <TouchableOpacity onPress={props.onPress}>
-        <MaterialCommunityIcons name={props.selected ? "emoticon-angry" : 'emoticon-angry-outline'} size={26} color='#E8A798'/>
+      <TouchableOpacity style = {styles.container} onPress={props.onPress}>
+        <MaterialCommunityIcons name={props.selected ? "emoticon-angry" : 'emoticon-angry-outline'} size={29} color='#E8A798'/>
+          <Text style={styles.text}>Very Upset</Text>
         </TouchableOpacity>
     );
   }
@@ -41,6 +46,12 @@ export default function Satisfaction(props) {
 
 const styles = StyleSheet.create({
   container: {
-
+    alignItems: 'center',
+    marginTop: 7,
+    width: 60
+  },
+  text: {
+    fontSize: 10,
+    fontFamily: 'Helvetica'
   },
 });

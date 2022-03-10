@@ -41,21 +41,26 @@ export default function RateScreen({ navigation, route }) {
         </View>
 
       </ImageBackground>
-      <View style={{flexDirection: 'row', padding: 15, alignItems: 'center'}}>
-      <Text style={styles.text}>Rate Bathroom(required):  </Text>
-      <BloodRadio data={data} onSelect={(value) => setOption(value)}/>
+      <View style={{flexDirection: 'row', alignItems: 'center', width: '100%', justifyContent: 'space-between',
+    marginTop: 10}}>
+        <Text style={styles.text}>Rate Bathroom(required): </Text>
+        <BloodRadio data={data} onSelect={(value) => setOption(value)}/>
       </View>
-      <Text style={styles.text}>What features does this bathroom have?</Text>
+      <View style={{flexDirection: 'row', justifyContent: 'flex-start', width: '100%', marginTop: 10}}>
+        <Text style={styles.text}>What features does this bathroom have?</Text>
+      </View>
       <FeaturesList onSelect={(selected, tag) => console.log(tag)}/>
       <View style={{flexDirection: 'row', alignItems: 'center', width: '100%', justifyContent: 'center'}}>
-        <Text style={styles.text, {top: '1%', }}>Rating Title(required): </Text>
+        <Text style={styles.text}>Rating Title(required):</Text>
         <TextInput style={styles.textBox} placeholder='' onChangeText={(text) => setTitle(text)}/>
       </View>
-      <View style={{flexDirection: 'row', justifyContent: 'flex-start', width: '80%', marginTop: '5%'}}>
-      <Text>Rating Description (Optional)</Text>
+      <View style={{flexDirection: 'row', justifyContent: 'flex-start', width: '100%', marginTop: '5%'}}>
+      <Text style={styles.text}>Rating Description (Optional)</Text>
       </View>
       <TextInput multiline maxLength={100} style={styles.comments} placeholder={'Please write any comments here (Optional)'} onChangeText={(descr) => setDescription(descr)}/>
-      <GenericButton text={'Confirm'} onPress={() => {navigation.navigate('RateConfirm', {building: params, rating: option, title: title, description: description, date: fullDate, order: order})}}/>
+      <View style={{marginBottom: 40}}>
+        <GenericButton text={'Confirm'} onPress={() => {navigation.navigate('RateConfirm', {building: params, rating: option, title: title, description: description, date: fullDate, order: order})}}/>
+      </View>
     </ScrollView>
     </SafeAreaView>
   );
@@ -70,12 +75,13 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     alignItems: 'center',
-    justifyContent: 'center',
-    height: 900,
-    padding: 10
+    justifyContent: 'space-around',
+    height: 1000,
+    padding: 16,
+    maxWidth: '100%'
   },
   imagebkd: {
-    height: '26%',
+    height: '24%',
     width: '100%',
     alignItems: 'flex-start',
     justifyContent: 'flex-end',
@@ -109,11 +115,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'rgba(0, 0, 0, 0.25)',
     borderRadius: 4,
-    width: '84%',
+    width: '100%',
     height: '18%',
     padding: 10,
     marginTop: '1%',
-    marginBottom: '3%',
+    marginBottom: '30%',
     maxWidth: 360
 
   },

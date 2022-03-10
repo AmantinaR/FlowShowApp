@@ -23,14 +23,16 @@ export default function ReportLanding({ navigation, reports }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{flexDirection: 'row', justifyContent: 'flex-start', width: '85%', marginBottom: '-10%'}}>
-        <Text style={styles.text}>Status of Bathroom Reports</Text>
+      <View style={styles.container}>
+        <View style={{flexDirection: 'row', justifyContent: 'flex-start', width: 350, marginBottom: '-15%'}}>
+          <Text style={styles.text}>Status of Bathroom Reports</Text>
+        </View>
+        <View style={styles.list}>
+          <ReportsList data={reports}/>
+        </View>
+        <GenericButton text={'Report Bathroom'} onPress={() => navigation.navigate('Input')}/>
+        <StatusBar style="auto" />
       </View>
-      <View style={styles.list}>
-        <ReportsList data={reports}/>
-      </View>
-      <GenericButton text={'Report Bathroom'} onPress={() => navigation.navigate('Input')}/>
-      <StatusBar style="auto" />
     </SafeAreaView>
   );
 }
@@ -41,6 +43,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'space-around',
+    padding: 5,
+    
   },
   container1: {
     width: 300,

@@ -9,7 +9,7 @@ export default function FeatureList(props) {
     <View style={styles.list}>
       <View style={styles.container}>
         <FeatureButton title='Pads' onSelect={props.onSelect} tag='pads'/>
-        <FeatureButton title='Free Pads'onSelect={props.onSelect} tag='freepads'/>
+        <FeatureButton title='Free Products'onSelect={props.onSelect} tag='freepads'/>
         <FeatureButton title='Tampons'onSelect={props.onSelect} tag='tampons'/>
         <FeatureButton title='Single occupancy'onSelect={props.onSelect} tag='singleOcc'/>
         <FeatureButton title='Wipes'onSelect={props.onSelect} tag='wipes'/>
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginBottom: 8.86,
     flexWrap: 'wrap',
-    width: '100%'
+    width: '95%'
   },
   list: {
     marginTop: 8.86

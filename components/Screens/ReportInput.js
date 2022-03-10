@@ -95,8 +95,8 @@ export default function ReportInput({ navigation, route, changeReports }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={{height: 1200, marginTop: '4%'}} scrollToOverflowEnabled={true} showsVerticalScrollIndicator={true} maximumZoomScale={0}>
-        <View style={{flex: 1, alignItems: 'center', padding: 4}}>
+      <ScrollView contentContainerStyle={{height: 1200, marginTop: '2%'}} scrollToOverflowEnabled={true} showsVerticalScrollIndicator={true} maximumZoomScale={0}>
+        <View style={{flex: 1, alignItems: 'center', padding: 16}}>
         <Text style={{color: 'rgba(0, 0, 0, 0.5)', fontFamily: 'Helvetica'}}>You tell us the issue(s), and we'll work with the building managers to solve them</Text>
         <View style={styles.textFlex}>
           <Text style={styles.text}>Bathroom Building</Text>
@@ -122,7 +122,7 @@ export default function ReportInput({ navigation, route, changeReports }) {
           <Text style={styles.text}>How satisfied are you with the cleanliness?</Text>
           <SatisfactionRadio data={data} onSelect={(value) => setOption(value)}/>
         </View>
-        <TextInput onChangeText={(comment) => setComment(comment)} style={styles.comments} placeholder='Please write any comments (Optional)...'/>
+        <TextInput multiline maxLength={500} onChangeText={(comment) => setComment(comment)} style={styles.comments} placeholder='Please write any comments (Optional)...'/>
         <View style={styles.confirm}>
         <GenericButton text={"Confirm"} onPress={() => pressConfirm()}/>
         </View>
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 15,
+    padding: 16,
     height: 1200,
     marginTop: 10
 },
@@ -180,7 +180,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'rgba(0, 0, 0, 0.25)',
     borderRadius: 4,
-    width: 300,
+    width: '100%',
     height: '18%',
     padding: 10,
     marginTop: '5%',
