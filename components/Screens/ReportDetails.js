@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 import {useState} from 'react';
-import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, Button, SafeAreaView, TextInput, TouchableOpacity, ScrollView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -15,6 +15,8 @@ export default function ReportDetails({ route, navigation }) {
   const feedback = params.feedback !== '' ? params.feedback : 'None yet';
   return (
     <SafeAreaView style={styles.container}>
+    <ScrollView contentContainerStyle={{height: 800, marginTop: '8%'}} scrollToOverflowEnabled={true} showsVerticalScrollIndicator={true} maximumZoomScale={0}>
+      <View style={{flex: 1, alignItems: 'center', padding: 4}}>
       <Text style = {styles.thank_you}>You told us the issue and we worked with building managers to get a response</Text>
       <ReportStatusBar step={params.step} small={false}/>
       <StatusBar style="auto" />
@@ -59,7 +61,8 @@ export default function ReportDetails({ route, navigation }) {
       <Text style = {{marginBottom: '2%'}}>Comments left by the manager:</Text>
         <Text style={{color: 'rgba(0, 0, 0, 0.5)'}}>{feedback}</Text>
       </View>
-
+      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }

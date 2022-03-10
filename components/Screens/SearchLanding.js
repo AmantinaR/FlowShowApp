@@ -144,7 +144,7 @@ export default function SearchLanding({ navigation, bathrooms, changeBathrooms }
     },
     {
       id : 1,
-      title:'Free Pads',
+      title:'Free Products',
       tag: 'freePads'
     },
     {
@@ -208,7 +208,7 @@ export default function SearchLanding({ navigation, bathrooms, changeBathrooms }
           >
             <Marker coordinate={{latitude: 37.4295238646884, longitude: -122.16790117770296}}
             image={require('../../assets/current-location.png')}/>
-            
+
             {bathrooms.map((item, index) => {
 
                 if (item.lat !== null) {

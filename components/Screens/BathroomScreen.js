@@ -53,16 +53,16 @@ export default function BathroomScreen({ navigation, route, ratings}) {
         <Text style={[styles.clarify, {textAlign: 'left', marginTop: '0.5%'}]}>Displayed features based on aggregated ratings</Text>
       </View>
       <View style={styles.features}>
-        {params.accessible !== Images.False ? <Image source={params.accessible}/> : undefined}
-        {params.gNeutral !== Images.False ? <Image source={params.gNeutral}/> : undefined}
-        {params.freePads !== Images.False ? <Image source={params.freePads}/> : undefined}
-        {params.tampons !== Images.False ? <Image source={params.tampons}/> : undefined}
-        {params.clean !== Images.False ? <Image source={params.clean}/> : undefined}
-        {params.diapers !== Images.False ? <Image source={params.diapers}/> : undefined}
-        {params.condoms !== Images.False ? <Image source={params.condoms}/> : undefined}
-        {params.emcon !== Images.False ? <Image source={params.emcon}/> : undefined}
-        {params.wipes !== Images.False ? <Image source={params.wipes}/> : undefined}
-        {params.pads !== Images.False ? <Image source={params.pads}/> : undefined}
+        {params.accessible !== Images.False ? <Image style={{margin: 4}} source={params.accessible}/> : undefined}
+        {params.gNeutral !== Images.False ? <Image style={{margin: 4}} source={params.gNeutral}/> : undefined}
+        {params.freePads !== Images.False ? <Image style={{margin: 4}} source={params.freePads}/> : undefined}
+        {params.tampons !== Images.False ? <Image style={{margin: 4}} source={params.tampons}/> : undefined}
+        {params.clean !== Images.False ? <Image style={{margin: 4}} source={params.clean}/> : undefined}
+        {params.diapers !== Images.False ? <Image style={{margin: 4}} source={params.diapers}/> : undefined}
+        {params.condoms !== Images.False ? <Image style={{margin: 4}} source={params.condoms}/> : undefined}
+        {params.emcon !== Images.False ? <Image style={{margin: 4}} source={params.emcon}/> : undefined}
+        {params.wipes !== Images.False ? <Image style={{margin: 4}} source={params.wipes}/> : undefined}
+        {params.pads !== Images.False ? <Image style={{margin: 4}} source={params.pads}/> : undefined}
       </View>
       <View style={{width: '92%', flexDirection: 'column', justifyContent: 'flex-start', marginTop: '10%', marginBottom: '3%'}}>
         <Text style={[styles.clarify, {textAlign: 'left', marginTop: '0.5%'}]}>Swipe through previous ratings!</Text>
@@ -121,8 +121,8 @@ const styles = StyleSheet.create({
   },
   features: {
     flexDirection: 'row',
-    width: '98%',
-    justifyContent: 'space-around',
+    width: '95%',
+    justifyContent: 'center',
     flexWrap: 'wrap',
     marginBottom: '1%'
   },

@@ -98,7 +98,7 @@ export default function AddScreenInput({ navigation, changeAddBathroom }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <ScrollView contentContainerStyle={{height: 1100, marginTop: '4%'}} scrollToOverflowEnabled={true} showsVerticalScrollIndicator={true} maximumZoomScale={0}>
+      <ScrollView contentContainerStyle={{height: 1400, marginTop: '4%'}} scrollToOverflowEnabled={true} showsVerticalScrollIndicator={true} maximumZoomScale={0}>
         <View style={{flex: 1, alignItems: 'center', padding: 4}}>
           <View style={{alignItems: 'center', paddingHorizontal: 4}}><Text style = {styles.disclaimer}>By the way, we cross check your entry across our database to make sure there are no double entries</Text>
           </View>
@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(0, 0, 0, 0.25)',
     borderRadius: 4,
     width: '84%',
-    height: '18%',
+    height: '15%',
     padding: 10,
     marginTop: '0%',
     maxWidth: 360
