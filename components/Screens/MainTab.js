@@ -84,6 +84,7 @@ export default function MainTab({ route, navigation }) {
   };
 
   const [bathrooms, setBathrooms] = useState(Default);
+  const [savedBathrooms, setSavedBathrooms] = useState(Default);
 
   const changeBathrooms = ({changed}) => {
     console.log('changed bathroom');
@@ -92,9 +93,9 @@ export default function MainTab({ route, navigation }) {
     console.log(bathrooms);
   };
   const changeSaved = ({index}) => {
-    let newBathrooms = [...bathrooms];
+    let newBathrooms = [...savedBathrooms];
     newBathrooms[index].saved = !newBathrooms[index].saved;
-    setBathrooms(newBathrooms);
+    setSavedBathrooms(newBathrooms);
   };
 
   const changeAddBathroom = ({date, miles, source, name, address, number, status, list, accessible, gNeutral, freePads, tampons, clean, diapers, condoms, emcon, wipes, locationRating, lat, lng, saved, id, title, comments}) => {
@@ -141,7 +142,7 @@ export default function MainTab({ route, navigation }) {
              <FontAwesome name='bookmark' size={24} color={'#FF8984'}/>
              </View>
               )}}>
-              {props => <SavedTab {...props} bathrooms={bathrooms}/>}
+              {props => <SavedTab {...props} bathrooms={savedBathrooms}/>}
         </Tab.Screen>
         <Tab.Screen name="Add"  options={{headerShown: false}}>
           {props => <AddTab {...props} changeAddBathroom={(date, title, comments, miles, source, name, address, number, status, list, accessible, gNeutral, freePads, tampons, clean, diapers, condoms, emcon, wipes, ratings, locationRating, lat, lng, saved, id) => changeAddBathroom(date, title, comments, miles, source, name, address, number, status, list, accessible, gNeutral, freePads, tampons, clean, diapers, condoms, emcon, wipes, ratings, locationRating, lat, lng, saved, id)}/>}
