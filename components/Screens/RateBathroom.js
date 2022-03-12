@@ -50,8 +50,8 @@ export default function RateScreen({ navigation, route }) {
         <Text style={styles.text}>What features does this bathroom have?</Text>
       </View>
       <FeaturesList onSelect={(selected, tag) => console.log(tag)}/>
-      <View style={{flexDirection: 'row', alignItems: 'center', width: '100%', justifyContent: 'center'}}>
-        <Text style={styles.text}>Rating Title(required):</Text>
+      <View style={{flexDirection: 'row', alignItems: 'center', width: '100%', justifyContent: 'flex-start'}}>
+        <Text style={[styles.text, {marginRight: 15}]}>Rating Title:</Text>
         <TextInput style={styles.textBox} placeholder='' onChangeText={(text) => setTitle(text)}/>
       </View>
       <View style={{flexDirection: 'row', justifyContent: 'flex-start', width: '100%', marginTop: '5%'}}>
@@ -150,7 +150,7 @@ const styles = StyleSheet.create({
     height: 40,
     padding: 10,
     margin: 10,
-    width: '50%',
+    width: '69%',
     borderRadius: 4
   },
 });

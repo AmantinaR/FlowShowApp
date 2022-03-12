@@ -13,7 +13,7 @@ export default function RegisterScreen({ navigation }) {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Image source={require("../../assets/logo-large.png")} style={styles.logo}/>
+      <Image source={require("../../assets/updated-logo.png")} style={styles.logo}/>
       <Text style = {styles.register_header}>Register</Text>
       <StatusBar style="auto" />
       <TextInput style={styles.textBox} placeholder='username' autoCorrect={false} onChangeText={(text) => setText(text)}/>
@@ -38,7 +38,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 logo: {
-  padding: '5%'
+  padding: '5%',
+  width: 93,
+  height: 133.5
 },
 register_header: {
   fontWeight: 'bold',

@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     width: 25,
     height: 25,
     flexDirection: 'row',
-    borderRadius: 2,
+    borderRadius: 100,
     padding: '2%',
     shadowColor: "#000",
     shadowOffset: {
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     width: 25,
     height: 25,
     flexDirection: 'row',
-    borderRadius: 2,
+    borderRadius: 100,
     padding: '2%',
     shadowColor: "#000",
     shadowOffset: {

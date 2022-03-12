@@ -139,13 +139,13 @@ export default function SearchLanding({ navigation, bathrooms, changeBathrooms }
   const featurenames = [
     {
       id : 0,
-      title:'Pads',
-      tag: 'pads'
+      title:'Free Products',
+      tag: 'freePads'
     },
     {
       id : 1,
-      title:'Free Products',
-      tag: 'freePads'
+      title:'Pads',
+      tag: 'pads'
     },
     {
       id : 2,
@@ -154,7 +154,7 @@ export default function SearchLanding({ navigation, bathrooms, changeBathrooms }
     },
     {
       id : 3,
-      title:'Single occupancy',
+      title:'Single Occupancy',
       tag: 'singleOcc'
     },
     {

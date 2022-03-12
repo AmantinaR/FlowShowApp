@@ -15,8 +15,8 @@ export default function ReportDetails({ route, navigation }) {
   const feedback = params.feedback !== '' ? params.feedback : 'None yet';
   return (
     <SafeAreaView style={styles.container}>
-    <ScrollView contentContainerStyle={{height: 800, marginTop: '8%'}} scrollToOverflowEnabled={true} showsVerticalScrollIndicator={true} maximumZoomScale={0}>
-      <View style={{flex: 1, alignItems: 'center', padding: 4}}>
+    <ScrollView contentContainerStyle={{height: 800, marginTop: '8%', maxWidth: '100%'}} scrollToOverflowEnabled={true} showsVerticalScrollIndicator={true} maximumZoomScale={0}>
+      <View style={{flex: 1, alignItems: 'center', padding: 16}}>
       <Text style = {styles.thank_you}>You told us the issue and we worked with building managers to get a response</Text>
       <ReportStatusBar step={params.step} small={false}/>
       <StatusBar style="auto" />
@@ -87,12 +87,14 @@ const styles = StyleSheet.create({
     margin: '10%',
     flexDirection: 'column',
     padding: '3%',
+    width: '100%',
 
   },
   summary_line: {
     flexDirection: 'row',
     padding: '1%',
-    flexWrap: 'wrap'
+    flexWrap: 'wrap',
+    width: '100%'
   },
   button: {
     color: '#ffffff',
@@ -133,10 +135,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'rgba(0, 0, 0, 0.25)',
     borderRadius: 4,
-    width: '80%',
+    width: '100%',
     height: '27%',
     padding: 10,
-    marginTop: '-10%',
+    //marginTop: '-10%',
     maxWidth: 360
   },
 });

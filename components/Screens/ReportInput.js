@@ -103,7 +103,7 @@ export default function ReportInput({ navigation, route, changeReports }) {
           <TextInput onChangeText={(building) => setBuilding(building)} style={styles.textBox} placeholder='Building Name' />
         </View>
         <View style={styles.textFlex}>
-          <Text style={styles.text}>Bathroom Floor #</Text>
+          <Text style={styles.text}>Bathroom Floor #  </Text>
           <TextInput onChangeText={(room) => setRoom(room)} style={styles.textBox} placeholder='Floor #'/>
         </View>
         <View style={{flexDirection: 'column', padding: 10, alignItems: 'center'}}>
@@ -121,6 +121,9 @@ export default function ReportInput({ navigation, route, changeReports }) {
         <View style={{marginTop: '4%'}}>
           <Text style={styles.text}>How satisfied are you with the cleanliness?</Text>
           <SatisfactionRadio data={data} onSelect={(value) => setOption(value)}/>
+        </View>
+        <View style={{flexDirection: 'row', justifyContent: 'flex-start', width: '100%', marginTop: '10%'}}>
+        <Text style={styles.text}>Additional Comments (Optional)</Text>
         </View>
         <TextInput multiline maxLength={500} onChangeText={(comment) => setComment(comment)} style={styles.comments} placeholder='Please write any comments (Optional)...'/>
         <View style={styles.confirm}>
@@ -174,7 +177,8 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   text: {
-    fontFamily: 'Helvetica'
+    fontFamily: 'Helvetica',
+    fontSize: 16
   },
   comments: {
     borderWidth: 1,

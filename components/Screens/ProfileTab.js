@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
   },
   preferences_text: {
     fontSize: 15,
-    left: '-3%',
+    left: '0%',
     marginBottom: '3%',
     fontFamily: 'Helvetica'
   },

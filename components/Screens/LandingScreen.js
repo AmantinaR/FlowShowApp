@@ -15,7 +15,7 @@ export default function LandingScreen({ route, navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <Image source={require('../../assets/landing-blob.png')} style={styles.blob}/>
-      <Image source={require("../../assets/logo-large.png")} style={styles.logo}/>
+      <Image source={require("../../assets/updated-logo.png")} style={styles.logo}/>
       <StatusBar style="auto" />
       <View style={styles.buttonsBox}>
         <GenericButton text={'Find Bathroom'} onPress={() => navigation.navigate('Tabs', { screen: 'Search', user: name})}/>

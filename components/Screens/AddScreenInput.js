@@ -104,7 +104,7 @@ export default function AddScreenInput({ navigation, changeAddBathroom }) {
           </View>
 
         <View style={styles.textFlex}>
-          <View style={{alignItems: 'center'}}><Text style={styles.text}>What building is this </Text><Text style={styles.text}>bathroom in?</Text></View>
+          <View style={{alignItems: 'center'}}><Text style={styles.text}>What building is</Text><Text style={styles.text}>this bathroom in?</Text></View>
           <TextInput onChangeText={(text) => setName(text)} style={styles.textBox} placeholder='Building Name' />
         </View>
         <View style={styles.textFlex}>
@@ -112,26 +112,28 @@ export default function AddScreenInput({ navigation, changeAddBathroom }) {
           <TextInput onChangeText={(text) => setRoom(text)} style={styles.textBox} placeholder='Floor #'/>
         </View>
         <View style={styles.textFlex}>
-          <Text style={[styles.text, {top: '1%'}]}>Building Address</Text>
+          <Text style={[styles.text, {top: '1%'}]}>Building Address </Text>
           <TextInput onChangeText={(text) => setAddress(text)} style={styles.textBox} placeholder='i.e 123 Alphabet Way'/>
         </View>
         <View style={{flexDirection: 'column', padding: 10, alignItems: 'center'}}>
-          <Text style = {[styles.txt, {margin: 10}]}>What gender is assigned to this bathroom?</Text>
+          <Text style = {[styles.text, {margin: 10}]}>What gender is assigned to this bathroom?</Text>
           <GenderRadio data={data} onSelect={(value) => setGender(value)}/>
         </View>
-          <Text style = {[styles.txt, {margin: 15}]}>What features does this bathroom have?</Text>
+          <Text style = {[styles.text, {margin: 10}]}>What features does this bathroom have?</Text>
           <FeaturesList onSelect={(selected, product) => updateProducts(selected, product)}/>
-          <View style={{width: 300, borderBottomWidth: 1, borderBottomColor: 'rgba(0, 0, 0, 0.25)', marginBottom: 10}}></View>
-          <Text style={{fontFamily: 'Helvetica', fontWeight: 'bold'}}>Rate this Bathroom (optional)</Text>
-          <View style={{flexDirection: 'row', padding: 15, alignItems: 'center'}}>
-            <Text style = {styles.text}>Rate Bathroom: </Text>
+          <View style={{width: 300, borderBottomWidth: 1, borderBottomColor: 'rgba(0, 0, 0, 0.25)', marginBottom: 20, marginTop: 15}}></View>
+          <Text style={{fontFamily: 'Helvetica', fontWeight: 'bold', fontSize: 16}}>Rate this Bathroom (optional)</Text>
+          <View style={{flexDirection: 'row', padding: 15, alignItems: 'center', width: '100%', justifyContent: 'center', marginTop: 5}}>
+            <Text style = {[styles.text, {marginRight: 0}]}>     Rate Bathroom:   </Text>
             <BloodRadio data={dataRate} onSelect={(value) => setOption(value)}/>
           </View>
-          <View style={{flexDirection: 'row', alignItems: 'center', width: '100%', justifyContent: 'center'}}>
-            <Text style={styles.text, {top: '1%', }}>Rating Title(required): </Text>
-            <TextInput style={styles.textBox} placeholder='' onChangeText={(text) => setTitle(text)}/>
+          <View style={{flexDirection: 'row', paddingHorizontal: 15, alignItems: 'center', width: '100%', justifyContent: 'center'}}>
+            <Text style={styles.text}>Rating Title:  </Text>
+            <TextInput style={[styles.textBox, {left: 23}]} placeholder='' onChangeText={(text) => setTitle(text)}/>
           </View>
-          <Text style = {[styles.text, {margin: 15}]}>Additional Comments</Text>
+          <View style={{flexDirection: 'row', justifyContent: 'flex-start', width: '100%', marginTop: '5%', marginBottom: 15}}>
+          <Text style={styles.text}>Additional Comments (Optional)</Text>
+          </View>
           <TextInput onChangeText={(text) => setComment(text)} multiline style={styles.comments} placeholder={'Please write any comments here (Optional)'}/>
           <GenericButton text={'Confirm'} onPress={() => confirmPress()}/>
           <StatusBar style="auto" />
@@ -171,6 +173,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   text: {
+    fontSize: 16,
     fontFamily: 'Helvetica'
   },
   textBox: {

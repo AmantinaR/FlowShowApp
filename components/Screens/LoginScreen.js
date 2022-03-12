@@ -15,7 +15,7 @@ export default function LoginScreen({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <Text style = {[styles.login_header, {fontSize: 28}]}>FlowShow</Text>
-      <Image source={require("../../assets/logo-large.png")} style={styles.logo}/>
+      <Image source={require("../../assets/updated-logo.png")} style={styles.logo}/>
       <Text style = {styles.login_header}>Login</Text>
       <StatusBar style="auto" />
       <TextInput style={styles.textBox} placeholder='username' autoCorrect={false} onChangeText={(text) => setText(text)}/>
@@ -41,7 +41,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   logo: {
-    padding: '5%'
+    padding: '5%',
+    width: 93,
+    height: 133.5
   },
   login_header: {
     fontWeight: 'bold',

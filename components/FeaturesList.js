@@ -8,10 +8,10 @@ export default function FeatureList(props) {
   return(
     <View style={styles.list}>
       <View style={styles.container}>
-        <FeatureButton title='Pads' onSelect={props.onSelect} tag='pads'/>
         <FeatureButton title='Free Products'onSelect={props.onSelect} tag='freepads'/>
+        <FeatureButton title='Pads' onSelect={props.onSelect} tag='pads'/>
         <FeatureButton title='Tampons'onSelect={props.onSelect} tag='tampons'/>
-        <FeatureButton title='Single occupancy'onSelect={props.onSelect} tag='singleOcc'/>
+        <FeatureButton title='Single Occupancy'onSelect={props.onSelect} tag='singleOcc'/>
         <FeatureButton title='Wipes'onSelect={props.onSelect} tag='wipes'/>
         <FeatureButton title='Condoms'onSelect={props.onSelect} tag='condoms'/>
         <FeatureButton title='Emergency Contraception'onSelect={props.onSelect} tag='emcon'/>
@@ -36,6 +36,6 @@ const styles = StyleSheet.create({
     width: '95%'
   },
   list: {
-    marginTop: 8.86
+    marginTop: 1
   }
 });
